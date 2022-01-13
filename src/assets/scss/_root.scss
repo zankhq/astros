@@ -1,0 +1,85 @@
+:root {
+	-webkit-tap-highlight-color: transparent;
+	-webkit-text-size-adjust: 100%;
+	line-height: 1.75;
+	overflow-wrap: break-word;
+	scroll-behavior: smooth;
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+}
+
+*,
+:after,
+:before {
+	background-repeat: no-repeat;
+	box-sizing: border-box;
+}
+:after,
+:before {
+	text-decoration: inherit;
+	vertical-align: inherit;
+}
+
+body {
+	background: var(--color-bg);
+	font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+		"Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+	font-size: var(--text-base);
+	line-height: 1.75;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	block-size: -moz-available;
+	block-size: -webkit-fill-available;
+	block-size: stretch;
+	color: #111827;
+	color: var(--color-text-primary);
+	font-weight: 400;
+	margin: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	*,
+	:after,
+	:before {
+		-webkit-animation-delay: -1ms !important;
+		animation-delay: -1ms !important;
+		-webkit-animation-duration: 1ms !important;
+		animation-duration: 1ms !important;
+		-webkit-animation-iteration-count: 1 !important;
+		animation-iteration-count: 1 !important;
+		background-attachment: scroll !important;
+		scroll-behavior: auto !important;
+		transition-delay: 0s !important;
+		transition-duration: 0s !important;
+	}
+}
+
+[aria-busy="true"] {
+	cursor: progress;
+}
+[aria-controls] {
+	cursor: pointer;
+}
+[aria-disabled="true"],
+[disabled] {
+	cursor: not-allowed;
+}
+[aria-hidden="false"][hidden]:not(:focus) {
+	clip: rect(0, 0, 0, 0);
+	position: absolute;
+}
+
+::-webkit-scrollbar {
+	width: 0.3rem;
+}
+::-webkit-scrollbar-track {
+	background: transparent;
+}
+::-webkit-scrollbar-thumb {
+	background: var(--color-primary);
+	border-radius: 0;
+}

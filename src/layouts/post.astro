@@ -1,0 +1,116 @@
+---
+import Layout from './base.astro'
+import Section from '../components/section/FullWidthSection.astro'
+import TwitterShare from '../components/social/TwitterShare.astro'
+import WebMentions from '../components/social/WebMentions.astro'
+import { readMinutes } from '../utils/readMinutes'
+import { formatDate } from '../utils/formatDate'
+import { blogPostSchema } from '../utils/jsonLD'
+import { getAllMentions, isForUrl, sortMentions } from '../utils/mentions'
+
+const { content } = Astro.props
+
+const allAuthors = Astro.fetchContent('../data/authors/*.md')
+const author = allAuthors.find((author) => author.slug === content.author)
+
+const authorName = author ? `${author.first_name} ${author.last_name}` : content.author
+
+const minutes = readMinutes(content)
+
+const allMentions = await getAllMentions()
+const webMentions = allMentions.children
+    .filter(isForUrl(Astro.request.canonicalURL.href))
+    .sort(sortMentions(true))
+
+const tweetId = content.tweetId
+---
+
+<Layout title={content.title} description={content.description} image={content.image} pathname={Astro.request.url.pathname} canonicalURL={Astro.request.canonicalURL.href}>
+    <head>
+        {blogPostSchema(content)}
+    </head>
+    
+    <Section alt class="h-entry">
+        <header>
+            <h1 class="p-name">{content.title}</h1>
+
+            <p class="p-summary h5 lead">{content.description}</p>
+
+            <small>
+                <time class="dt-published" datetime={content.published_date}>{formatDate(content.published_date)}</time>
+                by
+                <b class="h-card p-author">
+                    <a class="u-url" href={author.url}>{authorName}</a>
+                </b>
+                • {minutes} min read
+            </small>
+
+            {content.modified_date &&
+                <small>
+                    <time class="dt-updated" datetime={content.modified_date}>
+                        <i>Updated: {formatDate(content.modified_date)}</i>
+                    </time>
+                </small>
+            }
+        </header>
+
+        <article class="e-content">
+            <slot />
+        </article>
+
+        <footer id="webmentions">
+            <WebMentions webMentions={webMentions} url={Astro.request.canonicalURL.href}>
+                <TwitterShare
+                    description={content.description}
+                    title={content.title}
+                    tweetId={tweetId}
+                    url={Astro.request.canonicalURL.href}
+                />
+            </WebMentions>
+        </footer>
+    </Section>
+</Layout>
+
+<style lang="scss">
+    header {
+        margin-bottom: var(--spacer-lg);
+
+        & small {
+            display: block;
+            margin-top: var(--spacer-tiny);
+        }
+
+        & h1 {
+            margin: 0 0 0.5em;
+            font-size: var(--size-h3);
+
+            @media (min-width: 640px) {
+                & {
+                    font-size: var(--size-h2);
+                }
+            }
+        }
+
+        & .lead {
+            color: var(--color-primary);
+        }
+    }
+
+    article {
+        & h1, h2, h3, h4 {
+            margin: 1.5em 0 0.5em;
+        }
+
+        & :global(pre + p) {
+			margin-top: var(--spacer-sm);
+		}
+
+        & .twitter-tweet + p {
+            margin-top: 1em;
+        }
+    }
+
+    footer {
+        margin-top: var(--spacer-xl);
+    }
+</style>

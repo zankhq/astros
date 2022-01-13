@@ -1,0 +1,15 @@
+{
+	"menu-home": "Home",
+	"menu-services": "Service",
+	"menu-about": "About",
+	"menu-blog": "Blog",
+	"menu-shop": "Shop",
+	"menu-documentation": "Documentation",
+	"menu-contact": "Contact",
+	"lorem-ipsum-short": "Lorem ipsum dolor sit amet, consec tetur adipiscing elit, sed do eiusmod tempor.",
+	"lorem-ipsum-medium": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non luctus nisl, eu consectetur sem. Mauris non eros feugiat, interdum est eu, congue neque. Curabitur ultricies metus vitae leo iaculis mattis. Curabitur finibus ipsum non leo varius luctus.",
+	"lorem-ipsum-long": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque metus turpis, lobortis vel ultrices vitae, fringilla ornare erat. Curabitur a fermentum purus. Aenean at facilisis mi. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nullam malesuada massa diam, vestibulum dapibus leo tempor sed. Phasellus fringilla laoreet lacus et pulvinar. Sed nulla ante, porta nec vehicula eget, varius a est. Curabitur imperdiet tempus gravida. Vivamus vulputate eu libero eu ullamcorper. Morbi egestas, ligula at consectetur maximus, nunc dui malesuada nisi, sit amet pulvinar urna justo nec erat. Nunc elementum blandit consectetur. Nunc rhoncus dictum quam, at ullamcorper justo elementum commodo. Proin viverra sollicitudin mattis. Morbi feugiat maximus metus, eu maximus turpis cursus ut. In semper augue urna, interdum rhoncus dui consequat porta.",
+	"hero-caption-a": "That's where you put the",
+	"hero-caption-b": "catchphrase",
+	"test-key": "test label"
+}

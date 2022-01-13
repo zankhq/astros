@@ -1,0 +1,37 @@
+[
+	{
+		"title": "menu-home",
+		"href": "/",
+		"type": "link"
+	},
+	{
+		"title": "menu-services",
+		"href": "/services",
+		"type": "link"
+	},
+	{
+		"title": "menu-about",
+		"href": "/about",
+		"type": "link"
+	},
+	{
+		"title": "menu-blog",
+		"href": "/blog",
+		"type": "link"
+	},
+	{
+		"title": "menu-shop",
+		"href": "/shop",
+		"type": "link"
+	},
+	{
+		"title": "menu-documentation",
+		"href": "/documentation",
+		"type": "link"
+	},
+	{
+		"title": "menu-contact",
+		"href": "/contact",
+		"type": "button"
+	}
+]

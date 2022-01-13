@@ -1,0 +1,19 @@
+{
+	"name": "Astros template",
+	"short_name": "Astros template",
+	"description": "Astro js templated",
+	"dir": "auto",
+	"lang": "en-US",
+	"display": "fullscreen",
+	"orientation": "any",
+	"scope": "/",
+	"start_url": "/",
+	"background_color": "#ffc331",
+	"theme_color": "#ffc331",
+	"icons": [
+		{
+			"src": "google-touch-icon.png",
+			"sizes": "512x512"
+		}
+	]
+}

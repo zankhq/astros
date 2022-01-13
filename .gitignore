@@ -1,0 +1,23 @@
+# build output
+dist/
+_cache/
+public/styles/@fontsource/
+
+# dependencies
+node_modules/
+.snowpack/
+
+# Local Netlify folder
+.netlify/
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# environment variables
+.env
+.env.production
+
+# macOS-specific files
+.DS_Store

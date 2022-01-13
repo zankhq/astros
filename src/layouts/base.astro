@@ -1,0 +1,71 @@
+---
+import site from 'data/site.json';
+import routes from 'data/routes.json';
+import Footer from 'components/footer/SimpleFooter.astro';
+import MainHead from 'components/MainHead.astro';
+import Nav from 'components/header/SimpleHeader.astro';
+import ScrollTop from 'components/utils/GoTopWithProgress.astro';
+import ScrollStatus from 'components/utils/ScrollStatus.astro';
+import MouseBackground from 'components/utils/MouseBackground.astro';
+
+interface Props {
+	title: string;
+	description: string;
+	image: string;
+	pathname?: string;
+	canonicalURL: string;
+}
+
+const {
+	title = site.title,
+	description = site.description,
+	image = site.image,
+	pathname,
+	canonicalURL
+} = Astro.props as props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<MainHead title={title} description={description} image={image} canonicalURL={canonicalURL} />
+	</head>
+
+	<body>
+		<a
+			id="skip-to-content"
+			href="#main"
+			class="sr-only sr-only-focusable"
+		>
+			Skip to content
+		</a>
+
+		<Nav logo="/images/logo.svg" pathname={pathname} navItems={routes} sticky={true} hideOnScroll={true} />
+
+        <main id="main">
+			<slot />
+        </main>
+
+		<Footer />
+
+		<ScrollTop/>
+
+		<ScrollStatus />
+
+	</body>
+</html>
+
+<style lang="scss">
+	main {
+		flex: 1 0 0;
+	}
+
+	a[href="#main"].sr-only.sr-only-focusable {
+		top: var(--spacer-xs);
+		left: var(--spacer-xs);
+		background: var(--color-text-primary);
+		color: var(--color-primary);
+		padding: var(--spacer-xs);
+		z-index: 1;
+	}
+</style>

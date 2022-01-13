@@ -1,0 +1,51 @@
+---
+import marked from 'marked'
+import Layout from 'layouts/base.astro'
+import PostPreview from 'components/blog/PostPreview.astro'
+import Section from 'components/section/FullWidthSection.astro'
+import site from 'data/site.json'
+import { readMinutes } from 'utils/readMinutes'
+
+export async function getStaticPaths({ paginate, rss }) {
+    function isPublished(post) {
+        return !post.draft
+    }
+
+    function includeReadingTime(post) {
+        return {
+            ...post,
+            minutes: readMinutes(post)
+        }
+    }
+
+    function sortPosts(a, b) {
+        return new Date(b.published_date).getTime() - new Date(a.published_date).getTime()
+    }
+
+    const allPosts = Astro.fetchContent('../blog/*.md')
+        .filter(isPublished)
+        .map(includeReadingTime)
+        .sort(sortPosts)
+
+    return paginate(allPosts, { pageSize: 25 })
+}
+
+const { page } = Astro.props
+const { data: posts } = page
+---
+
+<Layout title="Blog" pathname={Astro.request.url.pathname} canonicalURL={page.url.current}>
+    <section>
+        <div class="container hero">
+            <h1 class="h6"><strong>JAMSTACK DEVELOPERS FOR HIRE</strong></h1>
+            <h2 class="h1">Blog</h2>
+            <p>Exploring the Jamstack and the future of web development.</p>
+        </div>
+    </section>
+
+    <Section alt title="All Posts">
+        {posts.map((post) => (
+            <PostPreview post={post} />
+        ))}
+    </Section>
+</Layout>

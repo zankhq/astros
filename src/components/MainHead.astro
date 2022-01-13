@@ -1,0 +1,108 @@
+---
+import site from 'data/site.json'
+import Lottie from 'components/libs/Lottie.astro'
+import SetDefaultTheme from 'components/theme/SetDefaultTheme.astro';
+import SetDefaultLanguage from 'components/localization/SetDefaultLanguage.astro';
+import { SEO } from 'astro-seo'
+
+interface Props {
+  title: string
+  description: string
+  image: string
+  canonicalURL: string
+}
+
+const {
+  title = site.title,
+  description = site.description,
+  image = site.social.image,
+  canonicalURL
+} = Astro.props as Props
+
+const imageAbsolute = `${site.url}${image}`
+const blogRssFeed = `${site.url}feed/blog.xml`
+---
+
+<!-- Common -->
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta
+  name="keywords"
+  content="web development, consulting, jamstack, serverless, static site, netlify, svelte, software, engineering, software engineering, api development"
+/>
+<meta name="robots" content="index,follow" />
+<meta name="author" content={site.author} />
+<link rel="alternate" type="application/rss+xml" title="Blog | Astros" href={blogRssFeed} />
+
+<SEO
+	title={title}
+	description={description}
+	canonical={canonicalURL}
+	openGraph={{
+		basic: {
+			title: {title},
+			type: "website",
+			image: {imageAbsolute},
+			url: {canonicalURL}
+		},
+		optional: {
+			description: {description},
+			locale: "en_US",
+			localeAlternate: ["en_US", "en_GB", "it_IT"],
+			siteName: {title},
+		},
+		image: {
+			secureUrl: {canonicalURL},
+			type: "open_graph_image_mime_type",
+			alt: {title}
+		}
+	}}
+/>
+
+<!-- Favicons -->
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<meta name="theme-color" content="#ffc331" />
+<link rel="manifest" href="/manifest.json" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="application-name" content="{site.company.name}" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="{site.title}" />
+
+
+<!-- Sitemap -->
+<link rel="sitemap" href="/sitemap.xml" />
+
+<!-- Global Styles -->
+<link rel="stylesheet" href={Astro.resolve("../assets/scss/main.css")} />
+
+<!-- WebMentions -->
+<link rel="webmention" href="https://webmention.io/astros.zank.it/webmention" />
+<link rel="pingback" href="https://webmention.io/astros.zank.it/xmlrpc" />
+
+<!-- Libs -->
+
+<!-- Decomment to use lottie animations -->
+<!-- <Lottie /> -->
+
+<!-- Decomment to use scroll animation library -->
+<!-- <Sal /> -->
+
+<script>
+if ("serviceWorker" in navigator) {
+	// Path che contiene il service worker
+	navigator.serviceWorker
+		.register('/service-worker.js')
+		.then(function (registration) {
+			// Service worker registered correctly
+		})
+		.catch(function (error) {
+			console.log("Service worker installation failed: ", error);
+		});
+}
+</script>
+
+<SetDefaultTheme />
+
+<SetDefaultLanguage />

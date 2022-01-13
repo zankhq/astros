@@ -1,0 +1,62 @@
+<form name="contact" method="POST" netlify-honeypot="bot-field" data-netlify="true">
+  <input type="hidden" name="form-name" value="contact" />
+  <p class="honeypot">
+    <label>
+      Don’t fill this out if you're human:
+      <input name="bot-field" />
+    </label>
+  </p>
+  <div class="form__row form__row--split">
+    <div>
+      <label class="label-inline h6" for="name">Your Name *</label>
+      <input id="name" name="name" type="text" class="light" required />
+    </div>
+    <div>
+      <label class="label-inline h6" for="email">Your Email Address *</label>
+      <input id="email" name="email" type="email" class="light" required />
+    </div>
+  </div>
+  <div>
+    <div>
+      <label class="label-inline h6" for="message">Your Message *</label>
+      <textarea id="message" name="message" rows="6" class="light" required />
+    </div>
+  </div>
+
+  <button type="submit">submit</button>
+</form>
+
+<style lang="scss">
+  form {
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--spacer-sm);
+
+    & .honeypot {
+      display: none;
+    }
+  }
+
+  .label-inline {
+    margin-left: 0;
+  }
+
+  .form__row {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: var(--spacer-sm);
+
+    @media (min-width: 768px) {
+      & {
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: var(--spacer-md);
+      }
+    }
+  }
+
+  @media (min-width: 768px) {
+    [type='submit'] {
+      align-self: flex-start;
+    }
+  }
+</style>

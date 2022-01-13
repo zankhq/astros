@@ -1,0 +1,66 @@
+---
+import Layout from 'layouts/base.astro'
+import PostPreview from 'components/blog/PostPreview.astro'
+import Section from 'components/section/FullWidthSection.astro'
+import site from 'data/site.json'
+import { readMinutes } from 'utils/readMinutes'
+import { uniq } from 'utils/uniq'
+
+export async function getStaticPaths({ paginate }) {
+    function includeReadingTime(post) {
+        return {
+            ...post,
+            minutes: readMinutes(post)
+        }
+    }
+
+    function title(tag) {
+        return `Posts tagged "${tag}"`
+    }
+
+    function description(tag) {
+        return `All posts from Astros Blog tagged with “${tag}”`
+    }
+
+    const allPosts = Astro.fetchContent('../../blog/*.md')
+    const allTags = uniq(
+        allPosts
+            .map(({ tags }) => tags)
+            .flat()
+    )
+
+    const paths = allTags.map((tag) => {
+        const posts = allPosts.filter(p => p.tags.indexOf(tag) >= 0);
+
+        return paginate(posts, {
+            params: { tag },
+            props: {
+                title: title(tag),
+                description: description(tag),
+                posts
+            }
+        })
+    });
+
+    return paths;
+}
+
+const { page } = Astro.props;
+const { tag, title, description, data: posts } = page
+---
+
+<Layout title={title} description={description} pathname={Astro.request.url.pathname} canonicalURL={page.url.current}>
+    <section>
+        <div class="container hero">
+            <h1 class="h6"><strong>JAMSTACK DEVELOPERS FOR HIRE</strong></h1>
+            <h2 class="h1">Blog</h2>
+            <p>Exploring the Jamstack and the future of web development.</p>
+        </div>
+    </section>
+
+    <Section alt title={title}>
+        {posts.map((post) => (
+            <PostPreview post={post} />
+        ))}
+    </Section>
+</Layout>

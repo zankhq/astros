@@ -1,0 +1,80 @@
+:root {
+	/* Container widths */
+	--container-widht: 90vw;
+	--container-max-width: 90rem;
+	--container-hero-max-width: 90rem;
+
+	/* Colors */
+	/* https://colorhunt.co/palette/f38181fce38aeaffd095e1d3 */
+	--color-bg: hsl(0deg 0% 98%);
+	--color-bg-alt: white;
+	--color-primary: #a365db;
+	--color-primary-darker: #8a3cd1;
+	--color-secondary: #edb5ff;
+	--color-tertiary: #95e1d3;
+	--color-text-primary: #111827;
+	--color-text-primary-inverted: #f9fafb;
+	--color-text-white: white;
+	--color-text-black: #111827;
+	--color-border: rgba(0, 0, 0, 0.1411764705882353);
+	--color-border-light: #e2f4ff;
+	--gradient-primary: linear-gradient(95deg, #059dff 15%, #6549d5 45%, #e33fa1 75%, #fb5343) 95%/200% 100%;
+
+	/* Spacer Sizes */
+	--spacer-tiny: 0.25rem;
+	--spacer-xs: 0.5rem;
+	--spacer-sm: 1rem;
+	--spacer-md: 2.5rem;
+	--spacer-lg: 4rem;
+	--spacer-xl: 6rem;
+
+	/* Font Scale */
+	--size-h1: 2.488rem;
+	--size-h2: 2.074rem;
+	--size-h3: 1.728rem;
+	--size-h4: 1.44rem;
+	--size-h5: 1.2rem;
+	--size-h6: 0.833rem;
+	--size-p: 1rem;
+
+	/* Font weight */
+	--weight-regular: 400;
+	--weight-medium: 500;
+	--weight-bold: 600;
+	--weight-bolder: 700;
+	--weight-black: 900;
+
+	/* Header height */
+	--header-height: 6rem;
+	--header-scrolled-height: 4rem;
+
+	/* Drop Shadows */
+	--shadow-sm: drop-shadow(-1px 1px 2px var(--color-secondary));
+	--shadow-md: drop-shadow(0px 2px 4px var(--color-secondary));
+
+	/* Box shadow */
+	--box-shadow: 0 1rem 5rem -0.5rem var(--color-primary);
+	--box-shadow-light: 0 1rem 5rem -1rem var(--color-primary);
+	--box-shadow-button: 0 0 20px 5px rgba(251, 83, 67, 0.2);
+	--box-shadow-input: 0 20px 48px -14px rgb(153 161 170 / 25%);
+
+	/* Transitions */
+	--transition: all 0.3s ease-in-out;
+
+	&[data-theme="dark"] {
+		/* Colors */
+		--color-bg: #141a20;
+		--color-bg-alt: #111827;
+		--color-primary: #a365db;
+		--color-primary-darker: #8a3cd1;
+		--color-secondary: #c100ff;
+		--color-tertiary: #85dcba;
+		--color-text-primary: #f9fafb;
+		--color-text-primary-inverted: #111827;
+		--color-border: hsla(0, 0%, 100%, 0.1);
+		--color-border-light: #272736;
+
+		/* Box shadow */
+		--box-shadow-input: none;
+	}
+}

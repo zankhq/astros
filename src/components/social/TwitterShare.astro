@@ -1,0 +1,45 @@
+---
+interface Props {
+  description: string
+  title: string
+  tweetId: string | undefined
+  url: string
+}
+
+const { description, title, tweetId, url } = Astro.props as Props
+
+const shareLink = `https://twitter.com/intent/tweet/?text=${encodeURI(`${title} | ${description} by @astros.zank.it`)}&amp;url=${encodeURI(url)}`
+const findLink = `https://twitter.com/search?f=tweets&src=typd&q=${encodeURI(url)}`
+---
+
+<div>
+  <svg aria-hidden="true" fill="#55acee" width="24" height="24">
+    <use xlink:href="/assets/sprites.svg#twitter" />
+  </svg>
+
+  {tweetId ? (
+    <small>
+      <a href={`https://twitter.com/intent/tweet?in_reply_to=${tweetId}`}>Join the conversation</a> on
+      Twitter. Or, if you liked this article and think others should read it, please
+      <a href={`https://twitter.com/intent/retweet?tweet_id=${tweetId}`}>retweet it</a>.
+    </small>
+  )
+  : (
+    <small>
+      If you liked this article and think others should read it, please
+      <a href={shareLink}>share it</a>.
+      Or,
+      <a href={findLink}>find the conversation</a>
+      on Twitter.
+    </small>
+  )}
+</div>
+
+<style lang="scss">
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: var(--spacer-sm);
+  }
+</style>

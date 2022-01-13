@@ -1,0 +1,18 @@
+[build]
+    command = "yarn build"
+    publish = "dist"
+
+[dev]
+    command = "yarn start"
+
+[[plugins]]
+    package = "netlify-plugin-a11y"
+
+[[plugins]]
+    package = "netlify-plugin-cache-folder"
+
+[[redirects]]
+    from = "/api/*"
+    to = "/.netlify/functions/:splat"
+    status = 200
+

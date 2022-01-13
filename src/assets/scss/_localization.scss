@@ -1,0 +1,12 @@
+html[lang] [lang] {
+	display: none;
+}
+
+html[lang="en"] [lang="en"],
+html[lang="it"] [lang="it"],
+html[lang="fr"] [lang="fr"],
+html[lang="de"] [lang="de"],
+html[lang="ru"] [lang="ru"],
+html[lang="es"] [lang="es"] {
+	display: unset;
+}

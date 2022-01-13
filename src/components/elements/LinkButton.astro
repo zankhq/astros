@@ -1,0 +1,16 @@
+---
+import Translate from 'components/localization/Translate.astro'
+
+interface Props {
+  title: string
+  url: string
+}
+
+const { title = 'View all', url = '#' } = Astro.props as props
+---
+<a href={url} class="link-s">
+	<Translate key={title} />
+	<svg class="testimonial__link__icon link-s-icon" viewBox="0 0 17 14" aria-hidden="true" focusable='false'>
+		<path d="M1 7.375L16 7.375M16 7.375L10.375 1.75M16 7.375L10.375 13" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+	</svg>
+</a>

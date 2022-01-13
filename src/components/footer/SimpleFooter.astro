@@ -1,0 +1,200 @@
+---
+
+import ThemeToggle from 'components/theme/ThemeToggle.astro'
+
+	
+const socialLinks = [
+	{
+		title: 'Email us at info@astros.zank.it',
+		href: 'mailto:info@astros.zank.it',
+		icon: 'email'
+	},
+	{
+		title: 'Find us on Twitter',
+		href: 'https://twitter.com/astros.zank.it',
+		icon: 'twitter'
+	},
+	{
+		title: 'Find us on dev.to',
+		href: 'https://dev.to/astros.zank.it',
+		icon: 'devto'
+	},
+	{
+		title: 'Find us on Github',
+		href: 'https://github.com/zk-g',
+		icon: 'github'
+	},
+	{
+		title: 'RSS Feed',
+		href: 'https://astros.zank.it/feed/blog.xml',
+		icon: 'rss'
+	}
+]
+
+const year = new Date().getFullYear()
+---
+
+<footer class="footer">
+  <div class="footer__container container container--px flex">
+	
+    <div class="footer__header flex">
+      <a href="#" class="footer__brand" title="Back to the homepage">Astros</a>
+
+      <div class="footer__social-icons social-icons flex">
+			{socialLinks.map(({ href, title, icon }) => (
+				<a href={href} rel="me">
+					<span class="sr-only">{title}</span>
+					<svg>
+						<use xlink:href={`/assets/sprites.svg#${icon}`} />
+					</svg>
+				</a>
+			))}
+      </div>
+    </div>
+
+    <nav class="footer__inner flex">
+      <ul class="footer__list list" role="menu">
+        <h3 class="list__title">Home</h3>
+
+        <li class="list__item" role="none">
+          <a href="#" class="list__link" role="menuitem">Partners</a>
+        </li>
+        <li class="list__item" role="none">
+          <a href="#" class="list__link" role="menuitem">Features</a>
+        </li>
+        <li class="list__item" role="none">
+          <a href="#" class="list__link" role="menuitem">Testimonial</a>
+        </li>
+        <li class="list__item" role="none">
+          <a href="#" class="list__link" role="menuitem">Team</a>
+        </li>
+      </ul>
+      <ul class="footer__list list" role="menu">
+        <h3 class="list__title">Pages</h3>
+
+        <li class="list__item" role="none">
+          <a href="#" class="list__link" role="menuitem">About Us</a>
+        </li>
+        <li class="list__item" role="none">
+          <a href="#" class="list__link" role="menuitem">Careers</a>
+        </li>
+        <li class="list__item" role="none">
+          <a href="#" class="list__link" role="menuitem">Case Studies</a>
+        </li>
+        <li class="list__item" role="none">
+          <a href="#" class="list__link" role="menuitem">Pricing</a>
+        </li>
+      </ul>
+      <ul class="footer__list list" role="menu">
+        <h3 class="list__title">Blog</h3>
+
+        <li class="list__item" role="none">
+          <a href="#" class="list__link" role="menuitem">Blog Listing</a>
+        </li>
+        <li class="list__item" role="none">
+          <a href="#" class="list__link" role="menuitem">Blog Article</a>
+        </li>
+        <li class="list__item" role="none">
+          <a href="#" class="list__link" role="menuitem">Newsroom</a>
+        </li>
+      </ul>
+      <ul class="footer__list list" role="menu">
+        <h3 class="list__title">Portfolio</h3>
+
+        <li class="list__item" role="none">
+          <a href="#" class="list__link" role="menuitem">Portfolio</a>
+        </li>
+        <li class="list__item" role="none">
+          <a href="#" class="list__link" role="menuitem">Single Case</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+<style lang="scss">
+.footer {
+  background-color: var(--clr-white);
+  padding-top: clamp(2rem, 10vw, 5rem);
+  padding-bottom: clamp(2rem, 10vw, 5rem);
+}
+
+.footer__container {
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.footer__header {
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.footer__inner {
+  flex-wrap: wrap;
+  gap: 1rem clamp(2rem, 7vw, 6.25rem);
+}
+
+.footer__brand {
+  display: inline-block;
+  width: max-content;
+  font-size: clamp(var(--size-h4), 4vw + 0.5rem, 2rem);
+  font-weight: var(--weight-black);
+  color: var(--color-text-primary);
+}
+
+.footer__social-icons {
+  	flex-wrap: unset;
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+    max-width: 15rem;
+    height: 2rem;
+}
+.footer__social-icons .social {
+
+}
+
+.social-icons__link {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 3.125rem;
+  height: 3.125rem;
+  font-size: 1.75rem;
+  background-color: var(--color-bg);
+  color: var(--color-text-primary);
+  border-radius: 0.625rem;
+  transition: none 300ms ease-in-out;
+  transition-property: opacity, color, box-shadow;
+}
+
+.social-icons__link:hover {
+  opacity: 0.8;
+}
+
+.list__title {
+  font-size: var(--size-h5);
+  font-weight: var(--weight-bold);
+  margin-bottom: clamp(1rem, 5vw, 1.5rem);
+}
+
+.list__item:not(:last-child) {
+  margin-bottom: 0.5rem;
+}
+
+.list__link {
+  display: inline-block;
+  font-weight: var(--weight-regular);
+  font-size: var(--size-p);
+  color: var(--color-text-primary);
+  transition: transform 300ms ease-in-out;
+}
+
+.list__link:hover {
+  transform: translateX(0.2rem);
+}
+
+.footer__text {
+  color: var(--color-text-primary);
+}
+</style>

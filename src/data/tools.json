@@ -1,0 +1,129 @@
+{
+    "cms": {
+        "title": "HEADLESS CMS",
+        "items": [
+            {
+                "title": "Contentful",
+                "logo": "/assets/sprites.svg#contentful"
+            },
+            {
+                "title": "Dato CMS",
+                "logo": "/assets/sprites.svg#datocms"
+            },
+            {
+                "title": "Forestry",
+                "logo": "/assets/sprites.svg#forestry"
+            },
+            {
+                "title": "Netlify CMS",
+                "logo": "/assets/sprites.svg#netlify-cms"
+            },
+            {
+                "title": "Prismic",
+                "logo": "/assets/sprites.svg#prismic"
+            },
+            {
+                "title": "Sanity.io",
+                "logo": "/assets/sprites.svg#sanity"
+            },
+            {
+                "title": "Storyblok",
+                "logo": "/assets/sprites.svg#storyblok"
+            },
+            {
+                "title": "Strapi",
+                "logo": "/assets/sprites.svg#strapi"
+            }
+        ]
+    },
+    "hosts": {
+        "title": "DEPLOYMENT PLATFORMS",
+        "items": [
+            {
+                "title": "AWS",
+                "logo": "/assets/sprites.svg#aws"
+            },
+            {
+                "title": "Azure",
+                "logo": "/assets/sprites.svg#azure"
+            },
+            {
+                "title": "Begin.com",
+                "logo": "/assets/sprites.svg#begin"
+            },
+            {
+                "title": "Cloudflare Pages",
+                "logo": "/assets/sprites.svg#cloudflare"
+            },
+            {
+                "title": "Digital Ocean",
+                "logo": "/assets/sprites.svg#digitalocean"
+            },
+            {
+                "title": "Firebase",
+                "logo": "/assets/sprites.svg#firebase"
+            },
+            {
+                "title": "Netlify",
+                "logo": "/assets/sprites.svg#netlify"
+            },
+            {
+                "title": "Render",
+                "logo": "/assets/sprites.svg#render"
+            },
+            {
+                "title": "Vercel",
+                "logo": "/assets/sprites.svg#vercel"
+            }
+        ]
+    },
+    "ssg": {
+        "title": "STATIC SITE GENERATORS",
+        "items": [
+            {
+                "title": "11ty",
+                "logo": "/assets/sprites.svg#11ty"
+            },
+            {
+                "title": "Astro",
+                "logo": "/assets/sprites.svg#astro"
+            },
+            {
+                "title": "Gatsby",
+                "logo": "/assets/sprites.svg#gatsby"
+            },
+            {
+                "title": "Gridsome",
+                "logo": "/assets/sprites.svg#gridsome"
+            },
+            {
+                "title": "Hugo",
+                "logo": "/assets/sprites.svg#hugo"
+            },
+            {
+                "title": "Jekyll",
+                "logo": "/assets/sprites.svg#jekyll"
+            },
+            {
+                "title": "NextJS",
+                "logo": "/assets/sprites.svg#nextjs"
+            },
+            {
+                "title": "NuxtJS",
+                "logo": "/assets/sprites.svg#nuxtjs"
+            },
+            {
+                "title": "Sapper",
+                "logo": "/assets/sprites.svg#sapper"
+            },
+            {
+                "title": "Scully",
+                "logo": "/assets/sprites.svg#scully"
+            },
+            {
+                "title": "SvelteKit",
+                "logo": "/assets/sprites.svg#sveltekit"
+            }
+        ]
+    }
+}

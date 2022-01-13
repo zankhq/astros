@@ -1,0 +1,15 @@
+---
+
+---
+
+<script>
+window.addEventListener('scroll', function(e) {
+	var root = document.documentElement;
+
+	if(this.scrollY > header.offsetHeight / 2) {
+		root.classList.add('site-scrolled');
+	} else {
+		root.classList.remove('site-scrolled');
+	}
+});
+</script>

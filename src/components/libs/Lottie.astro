@@ -1,0 +1,37 @@
+<script src={Astro.resolve("../../assets/js/lottie/lottie-player.js")} defer></script>
+<script src={Astro.resolve("../../assets/js/lottie/lottie-interactivity.min.js")} defer></script>
+
+<script>
+window.addEventListener('load', (event) => {
+
+	let lottiePlayers = document.querySelectorAll('.lottie-scroll');
+
+	for (let lp of lottiePlayers) {
+		// https://lottiefiles.github.io/lottie-player/methods.html
+		let l = lp.getLottie();
+
+		let lottieInteractivityOptions = {
+			mode:"scroll",
+			player: lp,
+			actions: [
+				{
+					visibility:[0,1],
+					type: "seek",
+					frames: [0, l.totalFrames],
+				},
+			]  
+		};
+		
+		if (l.isLoaded) {
+			LottieInteractivity.create(lottieInteractivityOptions);
+		} else {
+			l.addEventListener('data_ready', (e) => {
+				lottieInteractivityOptions.actions[0].frames = [0, l.totalFrames];
+				LottieInteractivity.create(lottieInteractivityOptions);
+			});
+		}
+
+	}
+	
+});
+</script>
