@@ -1,0 +1,46 @@
+---
+import { Translate } from 'astro-localization'
+import { Image } from 'astro-image'
+
+interface Props {
+  title: string
+  description: string
+  image: string
+}
+
+const { title, description, image } = Astro.props as props
+---
+
+<div class="member">
+	<Image src={image} height="300" />
+	<div class="memeber-info">
+		<h3 class="member-title"><Translate key={title} /></h3>
+		<span class="member-description"><Translate key={description} /></span>
+	</div>
+</div>
+
+<style lang="scss">
+.member {
+	position: relative;
+	border-radius: 1.25rem;
+	display: flex;
+	align-items: center;
+    flex-direction: column;
+
+	img {
+		width: 100%;
+		height: 26.25rem;
+		object-fit: cover;
+		border-radius: inherit;
+	}
+
+	.memeber-info {
+		text-align: center;
+		margin-top: 1.5rem;
+
+		h3 {
+			margin-bottom: 0.5rem;
+		}
+	}
+}
+</style>

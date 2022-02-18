@@ -1,0 +1,14 @@
+.container {
+	width: var(--container-widht, 90vw);
+	max-width: var(--container-max-width, 90rem);
+	margin: 0 auto;
+}
+
+a {
+	text-decoration: none;
+}
+
+a.menu-link {
+	font-weight: var(--weight-medium, 500);
+	color: var(--color-text-primary, #111827);
+}

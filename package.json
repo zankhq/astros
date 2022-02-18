@@ -9,10 +9,20 @@
 		"preview": "astro preview"
 	},
 	"devDependencies": {
-		"astro": "^0.22.9"
+		"astro": "latest",
+		"prettier": "^2.5.1",
+		"prettier-plugin-astro": "^0.0.12",
+		"sass": "^1.49.8"
 	},
 	"dependencies": {
+		"astro-footers": "^0.0.2",
+		"astro-form": "^0.0.2",
+		"astro-headers": "^0.0.3",
+		"astro-image": "^0.0.2",
+		"astro-localization": "^0.0.3",
+		"astro-sections": "^0.0.4",
 		"astro-seo": "^0.4.2",
-		"netlify-plugin-cache-folder": "^0.0.8"
+		"astro-theme": "^0.0.2",
+		"astro-utils": "^0.0.4"
 	}
 }

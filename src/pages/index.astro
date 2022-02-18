@@ -1,96 +1,117 @@
 ---
-import Layout  from '~/layouts/base.astro'
-import BadgeList from 'components/elements/BadgeList.astro'
-import ContactForm from 'components/contactform/ContactForm.astro'
-import Hero from 'components/hero/ImageHero.astro'
-import FullWidthSection from 'components/section/FullWidthSection.astro'
-import ImageSection from 'components/section/ImageSection.astro'
-import HalfSection from 'components/section/HalfSection.astro'
-import EmptySection from 'components/section/EmptySection.astro'
-import Translate from 'components/localization/Translate.astro'
-import Feature from 'components/elements/Feature.astro'
-import Image from 'components/elements/Image.astro'
-import TeamMember from 'components/elements/TeamMember.astro'
-import LinkButton from 'components/elements/LinkButton.astro'
-import tools from 'data/tools.json'
-import { organizationSchema, websiteSchema } from 'utils/jsonLD'
+import Layout from "../layouts/base.astro";
+import Feature from "../components/Feature.astro";
+import TeamMember from "../components/TeamMember.astro";
+import LinkButton from "../components/LinkButton.astro";
+import { Form } from "astro-form";
+import { Section, ImageSection, HalfSection, EmptySection, Hero } from "astro-sections";
+import { Image } from "astro-image";
 
-const { cms, hosts, ssg } = tools
+import it from "../data/localization/it.json";
+import en from "../data/localization/en.json";
+
+import form from "../data/forms/contactform.json";
+
+const lmap = { it, en };
 ---
 
 <Layout pathname={Astro.request.url.pathname} canonicalURL={Astro.request.canonicalURL.href}>
-    <head>
-        {websiteSchema}
-        {organizationSchema}
-    </head>
+	<Hero
+		id="hero"
+		{lmap}
+		image="/images/illustrations/Astronaut-pana.svg"
+		title="hero-caption"
+		titleUnderline="hero-caption-b"
+		subtitle="lorem-ipsum-medium"
+		buttonText="Get started"
+		buttonLink="#"
+	/>
 
-    <Hero id="hero" title="hero-caption-a" titleUnderline="hero-caption-b" subtitle="lorem-ipsum-medium" buttonText="Get started" buttonLink="#"/>
-
-	<EmptySection id="partners" class="partners" >
+	<EmptySection id="partners" class="partners">
 		<div class="wrapper">
 			<a href="#" class="item">
-				<Image src="https://raw.githubusercontent.com/alawe45/Html-Css-Js-game-agency-project/master/images/partner-1.png" alt="Riot Games" class="partner__img"/>
+				<Image
+					src="https://raw.githubusercontent.com/alawe45/Html-Css-Js-game-agency-project/master/images/partner-1.png"
+					alt="Riot Games"
+					class="partner__img"
+				/>
 			</a>
 			<a href="#" class="item">
-				<Image src="https://raw.githubusercontent.com/alawe45/Html-Css-Js-game-agency-project/master/images/partner-2.png" alt="Blizzard" class="partner__img"/>
+				<Image
+					src="https://raw.githubusercontent.com/alawe45/Html-Css-Js-game-agency-project/master/images/partner-2.png"
+					alt="Blizzard"
+					class="partner__img"
+				/>
 			</a>
 			<a href="#" class="item">
-				<Image src="https://raw.githubusercontent.com/alawe45/Html-Css-Js-game-agency-project/master/images/partner-3.png" alt="Zynga" class="partner__img"/>
+				<Image
+					src="https://raw.githubusercontent.com/alawe45/Html-Css-Js-game-agency-project/master/images/partner-3.png"
+					alt="Zynga"
+					class="partner__img"
+				/>
 			</a>
 			<a href="#" class="item">
-				<Image src="https://raw.githubusercontent.com/alawe45/Html-Css-Js-game-agency-project/master/images/partner-4.png" alt="Sega" class="partner__img"/>
+				<Image
+					src="https://raw.githubusercontent.com/alawe45/Html-Css-Js-game-agency-project/master/images/partner-4.png"
+					alt="Sega"
+					class="partner__img"
+				/>
 			</a>
 			<a href="#" class="item">
-				<Image src="https://raw.githubusercontent.com/alawe45/Html-Css-Js-game-agency-project/master/images/partner-5.png" alt="Activision" class="partner__img"/>
+				<Image
+					src="https://raw.githubusercontent.com/alawe45/Html-Css-Js-game-agency-project/master/images/partner-5.png"
+					alt="Activision"
+					class="partner__img"
+				/>
 			</a>
 		</div>
 	</EmptySection>
 
-	<HalfSection id="features" class="features" title="FEATURES" subtitle="What we are offering" description="lorem-ipsum-short">
+	<HalfSection id="features" class="features" {lmap} title="FEATURES" subtitle="What we are offering" description="lorem-ipsum-short">
 		<div class="wrapper">
-			<Feature title="Website design" description="lorem-ipsum-short" image="/images/icons/thumb-up.svg" />
-			<Feature title="Game launch" description="lorem-ipsum-short" image="/images/icons/computer.svg" />
-			<Feature title="Social media" description="lorem-ipsum-short" image="/images/icons/sim.svg" />
-			<Feature title="Website design" description="lorem-ipsum-short" image="/images/icons/rocket.svg" />
-      </div>
+			<Feature {lmap} title="Website design" description="lorem-ipsum-short" image="/images/icons/thumb-up.svg" />
+			<Feature {lmap} title="Game launch" description="lorem-ipsum-short" image="/images/icons/computer.svg" />
+			<Feature {lmap} title="Social media" description="lorem-ipsum-short" image="/images/icons/computer.svg" />
+			<Feature {lmap} title="Website design" description="lorem-ipsum-short" image="/images/icons/rocket.svg" />
+		</div>
 	</HalfSection>
 
-	<FullWidthSection id="team" class="team" title="TEAM" subtitle="Meet our team">
+	<Section id="team" class="team" {lmap} title="TEAM" subtitle="Meet our team">
 		<div class="wrapper">
-			<TeamMember title="Samantha Rea" description="Product Designer" image="/images/illustrations/huumans/standing-19.svg"/>
-			<TeamMember title="Samantha Rea" description="Product Designer" image="/images/illustrations/huumans/sitting-8.svg"/>
-			<TeamMember title="John Doe" description="SEO Specialist" image="/images/illustrations/huumans/standing-1.svg"/>
+			<TeamMember title="Samantha Rea" description="Product Designer" image="/images/illustrations/huumans/standing-19.svg" />
+			<TeamMember title="Samantha Rea" description="Product Designer" image="/images/illustrations/huumans/sitting-8.svg" />
+			<TeamMember title="John Doe" description="SEO Specialist" image="/images/illustrations/huumans/standing-1.svg" />
 		</div>
-		<div class="footer">
+		<div slot="footer">
 			<LinkButton />
 		</div>
-    </FullWidthSection>
+	</Section>
 
-    <FullWidthSection title="TECHNOLOGY WE USE" subtitle="Building the Modern Web">
-        <BadgeList title={cms.title} badges={cms.items} />
-        <BadgeList title={ssg.title} badges={ssg.items} />
-        <BadgeList title={hosts.title} badges={hosts.items} />
-    </FullWidthSection>
+	<ImageSection
+		imgUrl="/images/illustrations/Astronaut-cuate.svg"
+		imgAlt="Illustration"
+		{lmap}
+		imgAnimateOnScroll={true}
+		title="SITES WITH BENEFITS"
+		subtitle="Why use the Jamstack?"
+	>
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dapibus varius mauris congue euismod. Duis semper tincidunt orci, eu consequat
+			nulla vulputate et. Mauris non ornare urna, nec interdum lacus. Sed et scelerisque nulla. Fusce sagittis ullamcorper risus, at ultrices lectus
+			rhoncus nec. Suspendisse at condimentum mauris. Aliquam erat volutpat. Nunc sodales vehicula lacus, quis sagittis urna suscipit quis. Integer sit
+			amet erat posuere, posuere ex non, auctor ante. Maecenas ullamcorper sem non porta sollicitudin. Integer id urna semper, pretium leo eget, rhoncus
+			nulla. Fusce faucibus scelerisque tincidunt.
+		</p>
+	</ImageSection>
 
-	<ImageSection imgUrl="/images/illustrations/Astronaut-cuate.svg" imgAlt="Illustration" imgAnimateOnScroll={true} title="SITES WITH BENEFITS" subtitle="Why use the Jamstack?">
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dapibus varius mauris congue euismod. Duis semper tincidunt orci, 
-		eu consequat nulla vulputate et. Mauris non ornare urna, nec interdum lacus. Sed et scelerisque nulla. Fusce sagittis ullamcorper risus, 
-		at ultrices lectus rhoncus nec. Suspendisse at condimentum mauris. Aliquam erat volutpat. Nunc sodales vehicula lacus, quis sagittis urna suscipit quis. 
-		Integer sit amet erat posuere, posuere ex non, auctor ante. Maecenas ullamcorper sem non porta sollicitudin. Integer id urna semper, pretium leo eget, 
-		rhoncus nulla. Fusce faucibus scelerisque tincidunt.</p>
-    </ImageSection>
-
-    <FullWidthSection id="contact" title="JAMSTACK DEVELOPERS FOR HIRE" subtitle="Get in Touch">
-        <p>
-            We love what we do and are always up for an interesting conversation, whether you're ready to
-            get started or just have a few questions.
-        </p>
-        <ContactForm />
-    </FullWidthSection>
+	<Section id="contact" {lmap} title="JAMSTACK DEVELOPERS FOR HIRE" subtitle="Get in Touch">
+		<p>We love what we do and are always up for an interesting conversation, whether you're ready to get started or just have a few questions.</p>
+		<Form {form} provider="netlify" honeypot={true} />
+	</Section>
 </Layout>
 
 <style lang="scss">
-  	.partners {
+	.partners {
 		text-align: center;
 
 		.wrapper {
@@ -122,5 +143,4 @@ const { cms, hosts, ssg } = tools
 		grid-template-columns: repeat(auto-fit, minmax(min(100%, 21.875rem), 1fr));
 		gap: 1.5rem;
 	}
-
 </style>

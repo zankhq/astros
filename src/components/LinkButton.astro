@@ -1,0 +1,61 @@
+---
+import { Translate } from "astro-localization";
+
+interface Props {
+	title: string;
+	url: string;
+	lmap: Object;
+}
+
+const { title = "View all", url = "#", lmap = {} } = Astro.props as Props;
+---
+
+<a href={url} class="link-s">
+	<Translate {lmap} key={title} />
+	<svg class="testimonial__link__icon link-s-icon" viewBox="0 0 17 14" aria-hidden="true" focusable="false">
+		<path d="M1 7.375L16 7.375M16 7.375L10.375 1.75M16 7.375L10.375 13" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+	</svg>
+</a>
+
+<style lang="scss">
+	.link-s {
+		position: relative;
+		display: flex;
+		align-items: center;
+		width: max-content;
+		font-size: var(--size-p);
+		font-weight: var(--weight-bolder);
+		color: var(--color-primary);
+		padding: 0 0.5rem;
+		margin: auto;
+		margin-top: 3rem;
+		transition: color 300ms ease-in-out;
+	}
+
+	.link-s:hover {
+		color: var(--color-text-white);
+	}
+
+	.link-s::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: -1;
+		width: 0;
+		height: 100%;
+		background-color: var(--color-primary);
+		transition: width 300ms ease-in-out;
+	}
+
+	.link-s:hover::before {
+		width: 100%;
+	}
+
+	.link-s-icon {
+		width: 1.0625rem;
+		height: 0.875rem;
+		margin-left: 0.5rem;
+		stroke: currentColor;
+	}
+</style>

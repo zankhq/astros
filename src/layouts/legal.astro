@@ -1,12 +1,12 @@
 ---
-import Layout from './base.astro';
-import Section from '../components/section/FullWidthSection.astro';
+import Layout from "./base.astro";
+import Section from "../components/section/Section.astro";
 
 interface Props {
 	content: {
 		title: string;
 		last_updated?: string;
-	}
+	};
 }
 
 const { content } = Astro.props as props;
@@ -15,15 +15,13 @@ const lastUpdated = content.last_updated && new Date(content.last_updated).toDat
 ---
 
 <Layout title={content.title} pathname={Astro.request.url.pathname} canonicalURL={Astro.request.canonicalURL.href}>
-    <Section alt>
+	<Section alt>
 		<h1>{content.title}</h1>
 
-		{lastUpdated && (
-			<p class="legal__last-updated">Last Updated: {lastUpdated}</p>
-		)}
+		{lastUpdated && <p class="legal__last-updated">Last Updated: {lastUpdated}</p>}
 
 		<slot />
-    </Section>
+	</Section>
 </Layout>
 
 <style lang="scss">

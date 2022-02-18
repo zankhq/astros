@@ -1,12 +1,15 @@
 ---
-import site from 'data/site.json';
-import routes from 'data/routes.json';
-import Footer from 'components/footer/SimpleFooter.astro';
-import MainHead from 'components/MainHead.astro';
-import Nav from 'components/header/SimpleHeader.astro';
-import ScrollTop from 'components/utils/GoTopWithProgress.astro';
-import ScrollStatus from 'components/utils/ScrollStatus.astro';
-import MouseBackground from 'components/utils/MouseBackground.astro';
+import site from "../data/site.json";
+import footer from "../data/footer.json";
+import routes from "../data/routes.json";
+import Head from "../components/Head.astro";
+import { Footer } from "astro-footers";
+import { Header } from "astro-headers";
+import { GoTopWithProgress } from "astro-utils";
+import it from "../data/localization/it.json";
+import en from "../data/localization/en.json";
+
+const lmap = { it, en };
 
 interface Props {
 	title: string;
@@ -16,56 +19,99 @@ interface Props {
 	canonicalURL: string;
 }
 
-const {
-	title = site.title,
-	description = site.description,
-	image = site.image,
-	pathname,
-	canonicalURL
-} = Astro.props as props;
+const { pathname, canonicalURL, title = site.title, description = site.description, image = site.image } = Astro.props as Props;
 ---
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 	<head>
-		<MainHead title={title} description={description} image={image} canonicalURL={canonicalURL} />
+		<Head {title} {description} {image} {canonicalURL} />
 	</head>
 
 	<body>
-		<a
-			id="skip-to-content"
-			href="#main"
-			class="sr-only sr-only-focusable"
-		>
-			Skip to content
-		</a>
+		<a id="skip-to-content" href="#main" class="sr-only sr-only-focusable"> Skip to content </a>
 
-		<Nav logo="/images/logo.svg" pathname={pathname} navItems={routes} sticky={true} hideOnScroll={true} />
+		<Header {lmap} {pathname} navItems={routes} sticky={true} hideOnScroll={true} />
 
-        <main id="main">
+		<main id="main">
 			<slot />
-        </main>
+		</main>
 
-		<Footer />
+		<Footer {footer} />
 
-		<ScrollTop/>
-
-		<ScrollStatus />
-
+		<GoTopWithProgress />
 	</body>
 </html>
 
-<style lang="scss">
+<style global lang="scss">
 	main {
 		flex: 1 0 0;
 	}
 
+	.sr-only {
+		border: 0;
+		-webkit-clip-path: inset(50%);
+		clip-path: inset(50%);
+		height: 1px;
+		margin: 0;
+		overflow: hidden;
+		padding: 0;
+		position: absolute !important;
+		white-space: nowrap;
+		width: 1px;
+	}
+
+	.sr-only.sr-only-focusable:focus {
+		-webkit-clip-path: initial;
+		clip-path: none;
+		height: auto;
+		margin: 0;
+		overflow: visible;
+		padding: 0;
+		white-space: normal;
+		width: auto;
+	}
+
 	a[href="#main"].sr-only.sr-only-focusable {
-		top: var(--spacer-xs);
-		left: var(--spacer-xs);
-		background: var(--color-text-primary);
-		color: var(--color-primary);
-		padding: var(--spacer-xs);
+		top: var(--spacer-xs, 0.5rem);
+		left: var(--spacer-xs, 0.5rem);
+		background: var(--color-text-primary, #111827);
+		color: var(--color-primary, #a365db);
+		padding: var(--spacer-xs, 0.5rem);
 		z-index: 1;
+	}
+
+	body {
+		background: var(--color-bg);
+		font-family: var(
+			--font-family,
+			Inter,
+			system-ui,
+			-apple-system,
+			BlinkMacSystemFont,
+			"Segoe UI",
+			Roboto,
+			"Helvetica Neue",
+			Arial,
+			"Noto Sans",
+			sans-serif,
+			"Apple Color Emoji",
+			"Segoe UI Emoji",
+			"Segoe UI Symbol",
+			"Noto Color Emoji"
+		);
+		font-size: var(--text-base);
+		line-height: 1.75;
+		min-height: 100vh;
+		display: flex;
+		flex-direction: column;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		block-size: -moz-available;
+		block-size: -webkit-fill-available;
+		block-size: stretch;
+		color: var(--color-text-primary, #111827);
+		font-weight: 400;
+		margin: 0;
 	}
 </style>

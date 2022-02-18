@@ -1,0 +1,87 @@
+{
+	"title": "Contact us",
+	"action": "",
+	"fields": [
+		{
+			"name": "name",
+			"label": "Name",
+			"type": "text",
+			"placeholder": "Enter your name",
+			"disabled": false,
+			"required": true
+		},
+		{
+			"name": "email",
+			"label": "Email",
+			"type": "email",
+			"placeholder": "Enter your email",
+			"disabled": true,
+			"required": true
+		},
+		{
+			"name": "message",
+			"label": "Message",
+			"type": "textarea",
+			"placeholder": "Enter your message",
+			"disabled": false,
+			"required": true
+		},
+		{
+			"name": "test",
+			"label": "Test",
+			"type": "select",
+			"options": [
+				{
+					"value": "test",
+					"label": "test"
+				},
+				{
+					"value": "test2",
+					"label": "test2"
+				}
+			],
+			"disabled": false,
+			"required": true
+		},
+		{
+			"name": "Fuck",
+			"label": "Fuck",
+			"type": "select",
+			"options": [{ "value": "test", "label": "test" }],
+			"multiple": true,
+			"disabled": false,
+			"required": true
+		},
+		{
+			"name": "gay",
+			"label": "Are you gay",
+			"type": "radio",
+			"options": ["yes", "yes"],
+			"disabled": false,
+			"required": true
+		}
+	],
+	"buttons": [
+		{
+			"type": "submit",
+			"title": "Send"
+		}
+	],
+	"process": [
+		{
+			"type": "email",
+			"from": "",
+			"to": "",
+			"subject": "",
+			"body": ""
+		},
+		{
+			"type": "notification",
+			"message": ""
+		},
+		{
+			"type": "redirect",
+			"url": "/thank-you"
+		}
+	]
+}

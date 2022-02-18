@@ -1,35 +1,5 @@
 {
-	"moduleResolution": "node",
-	"compilerOptions": {
-		"importHelpers": true,
-		"forceConsistentCasingInFileNames": true,
-		"strict": true,
-		"baseUrl": ".",
-		"paths": {
-			"components/*": [
-				"src/components/*"
-			],
-			"data/*": [
-				"data/*"
-			],
-			"/layouts/*": [
-				"layouts/*"
-			],
-			"utils/*": [
-				"utils/*"
-			],
-			"pages/*": [
-				"pages/*"
-			],
-			"assets/*": [
-				"assets/*"
-			],
-			"public/*": [
-				"public/*"
-			]
-		}
-	},
-	"include": [
-		"src"
-	]
+  "compilerOptions": {
+    "moduleResolution": "node"
+  }
 }
