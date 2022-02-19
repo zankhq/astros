@@ -18,9 +18,10 @@
 		"astro-footers": "^0.0.2",
 		"astro-form": "^0.0.2",
 		"astro-headers": "^0.0.3",
+		"astro-icon": "^0.6.0",
 		"astro-image": "^0.0.2",
 		"astro-localization": "^0.0.3",
-		"astro-sections": "^0.0.4",
+		"astro-sections": "^0.0.5",
 		"astro-seo": "^0.4.2",
 		"astro-theme": "^0.0.2",
 		"astro-utils": "^0.0.4"

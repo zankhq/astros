@@ -1,23 +1,25 @@
 ---
-import docs from '../data/docs.json'
-const {currentPage} = Astro.props;
+import docs from "../data/docs.json";
+const { currentPage } = Astro.props;
 ---
 
 <nav>
-  <ul class="nav-groups">  
-    {docs.sidebar.map(category => (
-      <li>
-        <div class="nav-group">
-          <h2 class="nav-group-title">{category.text}</h2>
-          <ul>
-            {category.children.map(child => (
-              <li class={`nav-link ${currentPage === child.link ? 'is-active' : ''}`}><a href={`${Astro.site.pathname}${child.link}`}>{child.text}</a></li>
-            ))}
-          </ul>
-        </div>
-      </li>
-    ))}
-  </ul>
+	<ul class="nav-groups">
+		{docs.sidebar.map((category) => (
+			<li>
+				<div class="nav-group">
+					<h2 class="nav-group-title">{category.text}</h2>
+					<ul>
+						{category.children.map((child) => (
+							<li class={`nav-link ${currentPage === child.link ? "is-active" : ""}`}>
+								<a href={`${Astro.site.pathname}${child.link}`}>{child.text}</a>
+							</li>
+						))}
+					</ul>
+				</div>
+			</li>
+		))}
+	</ul>
 </nav>
 
 <style>
@@ -33,14 +35,14 @@ const {currentPage} = Astro.props;
 		margin-top: 2rem;
 	}
 	.nav-group-title {
-		font-size: 1.0rem;
+		font-size: 1rem;
 		font-weight: 700;
 		padding: 0.1rem 0;
 		text-transform: uppercase;
 		margin-bottom: 0.5rem;
 	}
 	.nav-link a {
-		font-size: 1.0rem;
+		font-size: 1rem;
 		margin: 1px;
 		padding: 0.2rem 0;
 		font: inherit;
