@@ -12,3 +12,9 @@ a.menu-link {
 	font-weight: var(--weight-medium, 500);
 	color: var(--color-text-primary, #111827);
 }
+
+@media screen and (min-width: 100em) {
+	.hero-image-wrapper .hero-image {
+		transform: scale(1.2) translateX(2rem);
+	}
+}

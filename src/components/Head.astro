@@ -1,7 +1,6 @@
 ---
 import site from "../data/site.json";
 import { SEO } from "astro-seo";
-import { SetDefaultTheme } from "astro-theme";
 
 interface Props {
 	title: string;
@@ -85,5 +84,3 @@ const blogRssFeed = `${site.url}feed/blog.xml`;
 </script>
 
 <link rel="stylesheet" type="text/css" href={Astro.resolve("../styles/global.scss")} />
-
-<SetDefaultTheme />

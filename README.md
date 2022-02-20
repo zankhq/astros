@@ -1,14 +1,14 @@
-<a href="https://astro.build">
-  <img src="https://raw.githubusercontent.com/withastro/astro/main/assets/social/banner.svg" />
+<a href="https://astros.warps.it">
+  <img src=".github/assets/astros.gif" />
 </a>
 
-# [Astros](https://astros.warps.io)
+# [Astros](https://astros.warps.it)
 
 Astros is a showcase template for various components of the [Astro](https://astro.build) framework.
 
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/warpsio/astros)
 
-### [📘 Documentation →](https://astros.warps.io/documentation)
+### [📘 Documentation →](https://astros.warps.it/documentation)
 
 ### [🧑‍🚀 Astro website →](https://astro.build/)
 
@@ -50,7 +50,7 @@ Astros depends on the following packages:
 | [astro-utils](https://github.com/warpsio/astro-utils)               | Collection of useful utilities (WIP)                     |
 | [astro-seo](https://github.com/jonasmerlin/astro-seo)               | SEO friendly meta tags                                   |
 
-For documentation check https://astros.warps.io/documentation or individual components.
+For documentation check https://astros.warps.it/documentation or individual components.
 
 ## FAQ
 
@@ -71,3 +71,10 @@ npm link astro-blog astro-form astro-footers astro-headers astro-image astro-loc
 ```
 
 </details>
+
+<br/>
+<br/>
+
+---
+
+<p align="right"><a href="https://warps.it/" target="_blank">warps.it</p>
