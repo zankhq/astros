@@ -1,0 +1,16 @@
+---
+const { page } = Astro.props;
+---
+
+<div>
+	{page.url.prev && (
+		<a class="action__go-to-x" href={page.url.prev} title="Go to Previous">
+			&larr; Prev
+		</a>
+	)}
+	{page.url.next && (
+		<a class="action__go-to-x" href={page.url.next} title="Go to Next">
+			Next &rarr;
+		</a>
+	)}
+</div>

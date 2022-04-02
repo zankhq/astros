@@ -7,7 +7,24 @@
 	{
 		"title": "menu-services",
 		"href": "/services",
-		"type": "link"
+		"type": "link",
+		"items": [
+			{
+				"title": "Web design",
+				"href": "/services/web-design",
+				"type": "link"
+			},
+			{
+				"title": "Marketing campaign",
+				"href": "/services/marketing",
+				"type": "link"
+			},
+			{
+				"title": "Billboard advertising",
+				"href": "/services/billboard",
+				"type": "link"
+			}
+		]
 	},
 	{
 		"title": "menu-about",

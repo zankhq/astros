@@ -1,0 +1,46 @@
+---
+import Layout from '../../layouts/base.astro';
+import PostPreview from '../../components/blog/PostPreview.astro';
+import Paginator from '../../components/blog/Paginator.astro';
+import site from '../../data/site.json';
+
+export async function getStaticPaths({ paginate, rss }) {
+	const allPosts = Astro.fetchContent('./*.md');
+
+	const sortedPosts = allPosts.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+	rss({
+		title: `${site.title} | Blog`,
+		description: site.description,
+		customData: `<language>en-us</language>`,
+		items: sortedPosts.map(item => ({
+			title: item.title,
+			description: item.description,
+			link: item.url,
+			pubDate: item.date,
+		})),
+	});
+
+	return paginate(sortedPosts, {
+		pageSize: 8,
+	});
+}
+
+const { page } = Astro.props;
+const { data: posts } = page;
+---
+
+<Layout>
+	<section>
+		{posts.map(post => <PostPreview post={post} />)}
+		<Paginator {page} />
+	</section>
+</Layout>
+
+<style lang="scss">
+	section {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, 20rem);
+		gap: 2rem;
+	}
+</style>

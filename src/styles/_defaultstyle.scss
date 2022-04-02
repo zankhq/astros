@@ -13,8 +13,79 @@ a.menu-link {
 	color: var(--color-text-primary, #111827);
 }
 
+a.menu-link {
+	position: relative;
+	padding: 0 0.3rem;
+	transition: opacity 300ms ease-in-out;
+
+	&::before {
+		content: "";
+		position: absolute;
+		left: 0;
+		bottom: -0.4rem;
+		width: 0;
+		height: 0.25rem;
+		border-radius: 1rem;
+		background-color: var(--color-primary, #a365db);
+		transition: width 300ms ease-in-out;
+	}
+
+	&:hover {
+		opacity: 0.8;
+
+		&::before {
+			width: 100%;
+		}
+	}
+
+	/* Active link */
+	&.active {
+		font-weight: var(--weight-bolder, 700);
+
+		&::before {
+			width: 100%;
+		}
+	}
+
+	&[aria-current] {
+		font-weight: var(--weight-bolder, 700);
+
+		&::before {
+			width: 100%;
+		}
+	}
+}
+
 @media screen and (min-width: 100em) {
 	.hero-image-wrapper .hero-image {
 		transform: scale(1.2) translateX(2rem);
+	}
+}
+
+/**
+* Language switcher
+*/
+select.language-switcher {
+	text-align: center;
+	padding: 0.5rem;
+	-o-appearance: none;
+	-ms-appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	background: none;
+	border: none;
+	cursor: pointer;
+
+	&:focus,
+	&:focus-visible,
+	&:focus-within {
+		border: none;
+		background: none;
+		outline: none;
+	}
+
+	&::-ms-expand {
+		display: none;
 	}
 }

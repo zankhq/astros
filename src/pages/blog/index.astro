@@ -1,9 +1,35 @@
 ---
-import Layout from "../../layouts/base.astro";
+import { parse, isBefore } from 'date-fns';
+import Layout from '../../layouts/base.astro';
+import PostPreview from '../../components/blog/PostPreview.astro';
+
+function sortByDate(a, b) {
+	if (isBefore(a.publishDate, b.publishDate)) return 1;
+	if (isBefore(b.publishDate, a.publishDate)) return -1;
+	return 0;
+}
+
+const posts = Astro.fetchContent('./*.md')
+	.map(({ publishDate, url, ...props }) => ({
+		publishDate: parse(publishDate, 'MMMM d, yyyy', new Date()),
+		href: url,
+		...props,
+	}))
+	.sort(sortByDate);
+
+const meta = { title: 'Blog' };
 ---
 
-<Layout pathname={Astro.request.url.pathname} canonicalURL={Astro.request.canonicalURL.href} />
+<Layout>
+	<section>
+		{posts.map(post => <PostPreview post={post} />)}
+	</section>
+</Layout>
 
 <style lang="scss">
-
+	section {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, 20rem);
+		gap: 2rem;
+	}
 </style>

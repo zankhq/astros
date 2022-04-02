@@ -1,11 +1,11 @@
 {
 	"title": "Astro js template",
 	"description": "General purpose template to build fast websites, faster.",
-	"url": "https://astros.zank.it/",
-	"domain": "astros.zank.it",
+	"url": "https://astros.warps.it/",
+	"domain": "astros.warps.it",
 	"author": "Giulio Zanchetta",
 	"social": {
-		"twitter": "astros.zank.it",
+		"twitter": "astros.warps.it",
 		"twitter_card": "summary_large_image",
 		"image": "assets/share.png"
 	},

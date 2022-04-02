@@ -18,9 +18,11 @@ Astros is a showcase template for various components of the [Astro](https://astr
 
 On the folder run
 
-`npm i`
+`npm i` or `yarn`
 
-`npm run dev`
+`npm run dev` or `yarn dev`
+
+(if it's not working report an [issue](https://github.com/warpsio/astros/issues))
 
 ## 🚀 Deploy
 
@@ -42,13 +44,14 @@ Astros depends on the following packages:
 | :------------------------------------------------------------------ | :------------------------------------------------------- |
 | [astro-sections](https://github.com/warpsio/astro-sections)         | Easily define structured sections (WIP)                  |
 | [astro-headers](https://github.com/warpsio/astro-headers)           | Collection of configurable unstyled headers (WIP)        |
-| [asstro-footers](https://github.com/warpsio/astro-footers)          | Collection of configurable footers (WIP)                 |
+| [astro-footers](https://github.com/warpsio/astro-footers)           | Collection of configurable footers (WIP)                 |
 | [astro-form](https://github.com/warpsio/astro-form)                 | Create form from json in astro (WIP)                     |
-| [astro-image](https://github.com/warpsio/astro-image)               | Create animated images easyli (WIP)                      |
+| [astro-image](https://github.com/warpsio/astro-image)               | Create animated images easily (WIP)                      |
 | [astro-localization](https://github.com/warpsio/astro-localization) | Localize your website from a simple json structure (WIP) |
 | [astro-theme](https://github.com/warpsio/astro-theme)               | Handle theming on your website (WIP)                     |
 | [astro-utils](https://github.com/warpsio/astro-utils)               | Collection of useful utilities (WIP)                     |
 | [astro-seo](https://github.com/jonasmerlin/astro-seo)               | SEO friendly meta tags                                   |
+| [astro-icon](https://github.com/natemoo-re/astro-icon)              | A straight-forward Icon component for Astro              |
 
 For documentation check https://astros.warps.it/documentation or individual components.
 
@@ -56,7 +59,7 @@ For documentation check https://astros.warps.it/documentation or individual comp
 
 <details>
   <summary>Work with modules in relink</summary>
-  This is helful if you want to apply some changes to various modules while you are working on the website.
+  This is helpful if you want to apply some changes to various modules while you are working on the website.
 
 To do so you have to go into each module and run
 
@@ -67,12 +70,11 @@ npm link
 then in the main website folder run
 
 ```
-npm link astro-blog astro-form astro-footers astro-headers astro-image astro-localization astro-lottie astro-sections astro-theme astro-utils
+npm link astro-form astro-footers astro-image astro-localization astro-lottie astro-sections
 ```
 
 </details>
 
-<br/>
 <br/>
 
 ---

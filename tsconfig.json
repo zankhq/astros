@@ -1,5 +1,41 @@
 {
-  "compilerOptions": {
-    "moduleResolution": "node"
-  }
+	"compilerOptions": {
+		"strict": true,
+		"moduleResolution": "node",
+		"module": "es2020",
+		"lib": [
+			"es2020"
+		],
+		"target": "es2019",
+		"importsNotUsedAsValues": "error",
+		"isolatedModules": true,
+		"resolveJsonModule": true,
+		"sourceMap": true,
+		"esModuleInterop": true,
+		"skipLibCheck": true,
+		"forceConsistentCasingInFileNames": true,
+		"allowJs": true,
+		"checkJs": true,
+		"baseUrl": ".",
+		"paths": {
+			"$": [
+				"./src"
+			],
+			"$components": [
+				"./src/components"
+			],
+			"$pages": [
+				"./src/pages"
+			],
+			"$layouts": [
+				"./src/layouts"
+			],
+		}
+	},
+	"include": [
+		"src/**/*.astro",
+		"src/**/*.d.ts",
+		"src/**/*.js",
+		"src/**/*.ts"
+	],
 }

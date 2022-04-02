@@ -1,2 +1,6 @@
+# I, for one, welcome our new robotic overlords
+
 User-agent: *
-Disallow: /
+Allow: /
+
+Sitemap: https://astros.warps.it/sitemap.xml
