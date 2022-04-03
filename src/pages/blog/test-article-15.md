@@ -6,7 +6,7 @@ title:
 description: 
   en: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
   it: 'Lorema ipsumo dolor sit amet, consectetur adipiscing elit.'
-image: '../../images/blog/pexels-christina-morillo-1181343.jpg'
+image: '/images/blog/pexels-nana-dua-3586249.jpg'
 date: 2021-12-08T08:10:40.636Z
 tags:
   - astro

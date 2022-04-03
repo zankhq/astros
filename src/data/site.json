@@ -11,5 +11,8 @@
 	},
 	"company": {
 		"name": "Astros"
+	},
+	"blog": {
+		"postsPerPage": 9
 	}
 }

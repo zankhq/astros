@@ -1,3 +1,25 @@
 ---
+import Layout from './base.astro';
+import SubHero from '../components/SubHero.astro';
+import { getLocalizedLabel, setLocalizationsPropToMap, addLocalizationsPropToMap } from '$/utils'
+import { Translate } from 'astro-localization';
 
+var lmap = {};
+
+const { content } = Astro.props;
+
+setLocalizationsPropToMap(content.title, lmap);
+setLocalizationsPropToMap(content.description, lmap);
+
+var locales = Object.keys(lmap);
+
+addLocalizationsPropToMap(content, locales, lmap, 'title');
+addLocalizationsPropToMap(content, locales, lmap, 'description');
 ---
+
+<Layout>
+	<SubHero title="Test" {lmap}/>
+	<article class="container">
+		<slot />
+	</article>
+</Layout>
