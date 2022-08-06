@@ -2,11 +2,11 @@
 	"compilerOptions": {
 		"strict": true,
 		"moduleResolution": "node",
-		"module": "es2020",
+		"module": "ESNext",
 		"lib": [
-			"es2020"
+			"ESNext"
 		],
-		"target": "es2019",
+		"target": "ESNext",
 		"importsNotUsedAsValues": "error",
 		"isolatedModules": true,
 		"resolveJsonModule": true,

@@ -1,6 +1,7 @@
 ---
-import site from "../data/site.json";
-import { SEO } from "astro-seo";
+import site from '../data/site.json';
+import { SEO } from 'astro-seo';
+import '../styles/global.scss';
 
 interface Props {
 	title: string;
@@ -9,7 +10,12 @@ interface Props {
 	canonicalURL: string;
 }
 
-const { title = site.title, description = site.description, image = site.social.image, canonicalURL } = Astro.props as Props;
+const {
+	title = site.title,
+	description = site.description,
+	image = site.social.image,
+	canonicalURL,
+} = Astro.props as Props;
 
 const imageAbsolute = `${site.url}${image}`;
 const blogRssFeed = `${site.url}feed/blog.xml`;
@@ -31,23 +37,14 @@ const blogRssFeed = `${site.url}feed/blog.xml`;
 	{description}
 	canonical={canonicalURL}
 	openGraph={{
-		basic: {
-			title: { title },
-			type: "website",
-			image: { imageAbsolute },
-			url: { canonicalURL }
-		},
+		basic: { title: { title }, type: 'website', image: { imageAbsolute }, url: { canonicalURL } },
 		optional: {
 			description: { description },
-			locale: "en_US",
-			localeAlternate: ["en_US", "en_GB", "it_IT"],
-			siteName: { title }
+			locale: 'en_US',
+			localeAlternate: ['en_US', 'en_GB', 'it_IT'],
+			siteName: { title },
 		},
-		image: {
-			secureUrl: { canonicalURL },
-			type: "open_graph_image_mime_type",
-			alt: { title }
-		}
+		image: { secureUrl: { canonicalURL }, type: 'open_graph_image_mime_type', alt: { title } },
 	}}
 />
 
@@ -70,17 +67,15 @@ const blogRssFeed = `${site.url}feed/blog.xml`;
 <link rel="pingback" href="https://webmention.io/astros.warps.it/xmlrpc" />
 
 <script>
-	if ("serviceWorker" in navigator) {
+	if ('serviceWorker' in navigator) {
 		// Path che contiene il service worker
 		navigator.serviceWorker
-			.register("/service-worker.js")
+			.register('/service-worker.js')
 			.then(function (registration) {
 				// Service worker registered correctly
 			})
 			.catch(function (error) {
-				console.log("Service worker installation failed: ", error);
+				console.log('Service worker installation failed: ', error);
 			});
 	}
 </script>
-
-<link rel="stylesheet" type="text/css" href={Astro.resolve("../styles/global.scss")} />

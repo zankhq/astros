@@ -1,6 +1,6 @@
 ---
-import Layout from "./base.astro";
-import Section from "../components/section/Section.astro";
+import Layout from './base.astro';
+import Section from '../components/section/Section.astro';
 
 interface Props {
 	content: {
@@ -14,7 +14,7 @@ const { content } = Astro.props as props;
 const lastUpdated = content.last_updated && new Date(content.last_updated).toDateString();
 ---
 
-<Layout title={content.title} pathname={Astro.request.url.pathname} canonicalURL={Astro.request.canonicalURL.href}>
+<Layout title={content.title} pathname={Astro.request.url.pathname} canonicalURL={Astro.request.canonicalURL}>
 	<Section alt>
 		<h1>{content.title}</h1>
 

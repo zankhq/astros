@@ -4,13 +4,7 @@ import Feature from '../components/Feature.astro';
 import TeamMember from '../components/TeamMember.astro';
 import LinkButton from '../components/LinkButton.astro';
 import { Form } from 'astro-form';
-import {
-	Section,
-	ImageSection,
-	HalfSection,
-	EmptySection,
-	Hero,
-} from 'astro-sections';
+import { Section, ImageSection, HalfSection, EmptySection, Hero } from 'astro-sections';
 import { Image } from 'astro-image';
 
 import it from '../data/localization/it.json';
@@ -21,10 +15,7 @@ import form from '../data/forms/contactform.json';
 const lmap = { it, en };
 ---
 
-<Layout
-	pathname={Astro.request.url.pathname}
-	canonicalURL={Astro.request.canonicalURL.href}
->
+<Layout pathname={Astro.request.url.pathname} canonicalURL={Astro.request.canonicalURL}>
 	<Hero
 		id="hero"
 		{lmap}
@@ -84,30 +75,10 @@ const lmap = { it, en };
 		description="lorem-ipsum-short"
 	>
 		<div class="wrapper">
-			<Feature
-				{lmap}
-				title="Website design"
-				description="lorem-ipsum-short"
-				image="/images/icons/thumb-up.svg"
-			/>
-			<Feature
-				{lmap}
-				title="Game launch"
-				description="lorem-ipsum-short"
-				image="/images/icons/computer.svg"
-			/>
-			<Feature
-				{lmap}
-				title="Social media"
-				description="lorem-ipsum-short"
-				image="/images/icons/computer.svg"
-			/>
-			<Feature
-				{lmap}
-				title="Website design"
-				description="lorem-ipsum-short"
-				image="/images/icons/rocket.svg"
-			/>
+			<Feature {lmap} title="Website design" description="lorem-ipsum-short" image="/images/icons/thumb-up.svg" />
+			<Feature {lmap} title="Game launch" description="lorem-ipsum-short" image="/images/icons/computer.svg" />
+			<Feature {lmap} title="Social media" description="lorem-ipsum-short" image="/images/icons/computer.svg" />
+			<Feature {lmap} title="Website design" description="lorem-ipsum-short" image="/images/icons/rocket.svg" />
 		</div>
 	</HalfSection>
 
@@ -143,15 +114,12 @@ const lmap = { it, en };
 		subtitle="Why use the Jamstack?"
 	>
 		<p>
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dapibus
-			varius mauris congue euismod. Duis semper tincidunt orci, eu consequat
-			nulla vulputate et. Mauris non ornare urna, nec interdum lacus. Sed et
-			scelerisque nulla. Fusce sagittis ullamcorper risus, at ultrices lectus
-			rhoncus nec. Suspendisse at condimentum mauris. Aliquam erat volutpat.
-			Nunc sodales vehicula lacus, quis sagittis urna suscipit quis. Integer sit
-			amet erat posuere, posuere ex non, auctor ante. Maecenas ullamcorper sem
-			non porta sollicitudin. Integer id urna semper, pretium leo eget, rhoncus
-			nulla. Fusce faucibus scelerisque tincidunt.
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dapibus varius mauris congue euismod. Duis
+			semper tincidunt orci, eu consequat nulla vulputate et. Mauris non ornare urna, nec interdum lacus. Sed et
+			scelerisque nulla. Fusce sagittis ullamcorper risus, at ultrices lectus rhoncus nec. Suspendisse at
+			condimentum mauris. Aliquam erat volutpat. Nunc sodales vehicula lacus, quis sagittis urna suscipit quis.
+			Integer sit amet erat posuere, posuere ex non, auctor ante. Maecenas ullamcorper sem non porta sollicitudin.
+			Integer id urna semper, pretium leo eget, rhoncus nulla. Fusce faucibus scelerisque tincidunt.
 		</p>
 	</ImageSection>
 

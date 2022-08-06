@@ -1,6 +1,6 @@
 ---
-import Layout from "../../layouts/base.astro";
-import Sidebar from "../../components/Sidebar.astro";
+import Layout from '../../layouts/base.astro';
+import Sidebar from '../../components/Sidebar.astro';
 ---
 
 <Layout title="Blog">
@@ -23,12 +23,17 @@ import Sidebar from "../../components/Sidebar.astro";
 					<h2 class="h3">Installation</h2>
 					<div class="card">
 						<div class="card-body">
-							<a href="https://app.netlify.com/start/deploy?repository=https://github.com/netlify/netlify-statuskit"
-								><img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify" /></a
-							>
+							<a
+								href="https://app.netlify.com/start/deploy?repository=https://github.com/netlify/netlify-statuskit"
+								><img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify" />
+							</a>
 
 							<ul class="installation-steps">
-								<li>If not already intalled, install latest <a href="https://nodejs.org/en/">Node version (Current)</a></li>
+								<li>
+									If not already intalled, install latest <a href="https://nodejs.org/en/"
+										>Node version (Current)
+									</a>
+								</li>
 								<li>In the project directory run <code>npm install</code></li>
 								<li>To start the project for development run <code>npm run dev</code></li>
 								<li>To build the project for production <code>npm run build</code></li>
@@ -44,32 +49,32 @@ import Sidebar from "../../components/Sidebar.astro";
 	</section>
 </Layout>
 
-<script hoist>
+<script>
 	// https://codepen.io/datchley/pen/Jvdryy
 	const triggers = Array.from(document.querySelectorAll('[data-toggle="collapse"]'));
 
 	window.addEventListener(
-		"click",
-		(ev) => {
+		'click',
+		ev => {
 			const elm = ev.target;
 			if (triggers.includes(elm)) {
-				const selector = elm.getAttribute("data-target");
-				collapse(selector, "toggle");
+				const selector = elm.getAttribute('data-target');
+				collapse(selector, 'toggle');
 			}
 		},
 		false
 	);
 
 	const fnmap = {
-		toggle: "toggle",
-		show: "add",
-		hide: "remove"
+		toggle: 'toggle',
+		show: 'add',
+		hide: 'remove',
 	};
 
 	const collapse = (selector, cmd) => {
 		const targets = Array.from(document.querySelectorAll(selector));
-		targets.forEach((target) => {
-			target.classList[fnmap[cmd]]("show");
+		targets.forEach(target => {
+			target.classList[fnmap[cmd]]('show');
 		});
 	};
 </script>

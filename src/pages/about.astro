@@ -1,8 +1,8 @@
 ---
-import Layout from "../layouts/base.astro";
+import Layout from '../layouts/base.astro';
 ---
 
-<Layout pathname={Astro.request.url.pathname} canonicalURL={Astro.request.canonicalURL.href} />
+<Layout pathname={Astro.request.url.pathname} canonicalURL={Astro.request.canonicalURL} />
 
 <style lang="scss">
 

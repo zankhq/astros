@@ -70,7 +70,7 @@ npm link
 then in the main website folder run
 
 ```
-npm link astro-form astro-footers astro-image astro-localization astro-lottie astro-sections
+npm link astro-footers astro-image astro-form astro-utils astro-theme astro-sections astro-localization astro-headers astro-blog
 ```
 
 </details>
