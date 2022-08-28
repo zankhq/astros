@@ -9,18 +9,18 @@
 		"preview": "astro preview"
 	},
 	"devDependencies": {
-		"astro": "^1.0.0-rc.7",
+		"astro": "^1.1.1",
 		"astro-fonts": "^0.2.6",
 		"astro-xelement": "^3.2.0",
 		"autoprefixer": "^10.4.8",
 		"lodash": "^4.17.21",
 		"netlify-plugin-cache-folder": "^0.0.8",
-		"open-props": "^1.4.5",
+		"open-props": "^1.4.14",
 		"postcss": "^8.4.16",
 		"postcss-jit-props": "^1.0.7",
 		"prettier": "^2.7.1",
-		"prettier-plugin-astro": "^0.3.0",
-		"sass": "^1.54.3"
+		"prettier-plugin-astro": "^0.5.3",
+		"sass": "^1.54.5"
 	},
 	"dependencies": {
 		"astro-footers": "^0.0.6",
@@ -30,9 +30,9 @@
 		"astro-image": "^0.0.6",
 		"astro-localization": "^0.0.6",
 		"astro-sections": "^0.0.6",
-		"astro-seo": "^0.5.1",
+		"astro-seo": "^0.6.0",
 		"astro-theme": "^0.0.6",
 		"astro-utils": "^0.0.6",
-		"date-fns": "^2.29.1"
+		"date-fns": "^2.29.2"
 	}
 }
