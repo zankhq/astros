@@ -23,16 +23,16 @@
 		"sass": "^1.54.5"
 	},
 	"dependencies": {
-		"astro-footers": "^0.0.6",
-		"astro-form": "^0.0.6",
-		"astro-headers": "^0.0.6",
+		"astro-footers": "^0.0.7",
+		"astro-form": "^0.0.7",
+		"astro-headers": "^0.0.7",
 		"astro-icon": "^0.7.3",
-		"astro-image": "^0.0.6",
-		"astro-localization": "^0.0.6",
-		"astro-sections": "^0.0.6",
+		"astro-image": "^0.0.7",
+		"astro-localization": "^0.0.7",
+		"astro-sections": "^0.0.7",
 		"astro-seo": "^0.6.0",
-		"astro-theme": "^0.0.6",
-		"astro-utils": "^0.0.6",
+		"astro-theme": "^0.0.7",
+		"astro-utils": "^0.0.7",
 		"date-fns": "^2.29.2"
 	}
 }
