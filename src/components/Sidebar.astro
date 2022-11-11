@@ -1,24 +1,27 @@
 ---
-import docs from "../data/docs.json";
+import docs from '../data/docs.json';
+
 const { currentPage } = Astro.props;
 ---
 
 <nav>
 	<ul class="nav-groups">
-		{docs.sidebar.map((category) => (
-			<li>
-				<div class="nav-group">
-					<h2 class="nav-group-title">{category.text}</h2>
-					<ul>
-						{category.children.map((child) => (
-							<li class={`nav-link ${currentPage === child.link ? "is-active" : ""}`}>
-								<a href={`${Astro.site.pathname}${child.link}`}>{child.text}</a>
-							</li>
-						))}
-					</ul>
-				</div>
-			</li>
-		))}
+		{
+			docs.sidebar.map(category => (
+				<li>
+					<div class="nav-group">
+						<h2 class="nav-group-title">{category.text}</h2>
+						<ul>
+							{category.children.map(child => (
+								<li class={`nav-link ${currentPage === child.link ? 'is-active' : ''}`}>
+									<a href={`${Astro?.url}${child.link}`}>{child.text}</a>
+								</li>
+							))}
+						</ul>
+					</div>
+				</li>
+			))
+		}
 	</ul>
 </nav>
 

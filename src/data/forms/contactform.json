@@ -44,8 +44,8 @@
 			"required": true
 		},
 		{
-			"name": "Fuck",
-			"label": "Fuck",
+			"name": "multiselect",
+			"label": "Multi select",
 			"type": "select",
 			"options": [{ "value": "test", "label": "test" }],
 			"multiple": true,
@@ -53,8 +53,8 @@
 			"required": true
 		},
 		{
-			"name": "gay",
-			"label": "Are you gay",
+			"name": "radio",
+			"label": "Radio",
 			"type": "radio",
 			"options": ["yes", "yes"],
 			"disabled": false,
