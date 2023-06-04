@@ -12,9 +12,9 @@ export default defineConfig({
   site: "https://astroship.zank.it",
   integrations: [
     tailwind(),
-    image({
-      serviceEntryPoint: "@astrojs/image/sharp",
-    }),
+    // image({
+    //   serviceEntryPoint: "@astrojs/iimage/sharp",
+    // }),
     mdx(),
     sitemap(),
     NetlifyCMS({
