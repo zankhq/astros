@@ -2,7 +2,6 @@
 import { SEO } from "astro-seo";
 import Footer from "@components/footer.astro";
 import Navbar from "@components/navbar/navbar.astro";
-import "@fontsource/inter/variable.css";
 
 export interface Props {
   title: string;
@@ -10,16 +9,11 @@ export interface Props {
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
 
-const resolvedImageWithDomain = new URL(
-  "/opengraph.jpg",
-  Astro.site
-).toString();
+const resolvedImageWithDomain = new URL("/opengraph.jpg", Astro.site).toString();
 
 const { title } = Astro.props;
 
-const makeTitle = title
-  ? title + " | " + "Astroship"
-  : "Astroship - Starter Template for Astro with Tailwind CSS";
+const makeTitle = title ? title + " | " + "Astroship" : "Astroship - Starter Template for Astro with Tailwind CSS";
 ---
 
 <!DOCTYPE html>
