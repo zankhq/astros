@@ -1,6 +1,4 @@
-# I, for one, welcome our new robotic overlords
-
 User-agent: *
 Allow: /
 
-Sitemap: https://astros.warps.it/sitemap.xml
+Sitemap: http://astroship.web3templates.com/sitemap-index.xml

@@ -1,38 +1,40 @@
 {
-	"name": "astros",
-	"version": "0.0.1",
-	"private": true,
-	"scripts": {
-		"dev": "astro dev",
-		"start": "astro dev",
-		"build": "astro build",
-		"preview": "astro preview"
-	},
-	"devDependencies": {
-		"astro": "^1.1.1",
-		"astro-fonts": "^0.2.6",
-		"astro-xelement": "^3.2.0",
-		"autoprefixer": "^10.4.8",
-		"lodash": "^4.17.21",
-		"netlify-plugin-cache-folder": "^0.0.8",
-		"open-props": "^1.4.14",
-		"postcss": "^8.4.16",
-		"postcss-jit-props": "^1.0.7",
-		"prettier": "^2.7.1",
-		"prettier-plugin-astro": "^0.5.3",
-		"sass": "^1.54.5"
-	},
-	"dependencies": {
-		"astro-footers": "^0.0.7",
-		"astro-form": "^0.0.7",
-		"astro-headers": "^0.0.7",
-		"astro-icon": "^0.7.3",
-		"astro-image": "^0.0.7",
-		"astro-localization": "^0.0.7",
-		"astro-sections": "^0.0.7",
-		"astro-seo": "^0.6.0",
-		"astro-theme": "^0.0.7",
-		"astro-utils": "^0.0.7",
-		"date-fns": "^2.29.2"
-	}
+  "name": "astroship",
+  "type": "module",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "generateArticle": "node ./scripts/generateArticle.js"
+  },
+  "dependencies": {
+    "@astrojs/image": "^0.16.0",
+    "@astrojs/mdx": "^0.18.0",
+    "@astrojs/rss": "^2.2.0",
+    "@astrojs/sitemap": "^1.2.0",
+    "@astrojs/tailwind": "^3.1.0",
+    "@fontsource/inter": "^4.5.15",
+    "astro": "^2.1.2",
+    "astro-feather-icons": "^1.0.2",
+    "astro-icon": "^0.8.0",
+    "astro-navbar": "^1.1.5",
+    "astro-netlify-cms": "^0.5.3",
+    "astro-seo": "^0.7.1",
+    "bad-words": "^3.0.4",
+    "dotenv": "^16.0.3",
+    "openai": "^3.2.1",
+    "rehype-autolink-headings": "^6.1.1",
+    "rehype-slug": "^5.1.0",
+    "rss-parser": "^3.12.0",
+    "tailwindcss": "^3.2.7"
+  },
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.9",
+    "rehype": "^12.0.1",
+    "sharp": "^0.31.3"
+  }
 }

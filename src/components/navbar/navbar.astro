@@ -1,0 +1,73 @@
+---
+import Container from "@components/container.astro";
+import Link from "@components/ui/link.astro";
+import Dropdown from "./dropdown.astro";
+import { Image } from "@astrojs/image/components";
+import logo from "assets/logo.svg";
+import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
+
+const menuitems = [
+  //   {
+  //     title: "Item",
+  //     path: "#",
+  //     children: [
+  //       { title: "Subitem", path: "#" },
+  //     ],
+  //   },
+  {
+    title: "Features",
+    path: "/about",
+  },
+  {
+    title: "Pricing",
+    path: "/pricing",
+  },
+  {
+    title: "Blog",
+    path: "/blog",
+  },
+];
+---
+
+<Container>
+  <header class="flex flex-col lg:flex-row justify-between items-center relative z-10 my-5">
+    <Astronav>
+      <div class="flex w-full lg:w-auto items-center justify-between">
+        <a href="/" class="text-lg">
+          <Image class="inline-block" src={logo} alt="Astros" width={30} height={30} />
+          <span class="font-semibold text-slate-800">Astros</span>
+        </a>
+        <div class="block lg:hidden">
+          <MenuIcon class="w-4 h-4 text-gray-800" />
+        </div>
+      </div>
+      <MenuItems class="hidden w-full lg:w-auto mt-2 lg:flex lg:mt-0">
+        <ul class="flex flex-col items-center lg:flex-row lg:gap-3">
+          {
+            menuitems.map((item, index) => (
+              <>
+                {item?.children && <Dropdown title={item.title} children={item?.children} lastItem={index === menuitems.length - 1} />}
+
+                {!item?.children && (
+                  <li>
+                    <a href={item.path} class="flex lg:px-3 py-2 text-gray-600 hover:text-gray-900">
+                      {item.title}
+                    </a>
+                  </li>
+                )}
+              </>
+            ))
+          }
+        </ul>
+        <div class="lg:hidden flex items-center mt-3 gap-4">
+          <Link href="/contact" size="md" block>Contact</Link>
+        </div>
+      </MenuItems>
+    </Astronav>
+    <div>
+      <div class="hidden lg:flex items-center gap-4">
+        <Link href="/contact" size="md">Contact</Link>
+      </div>
+    </div>
+  </header>
+</Container>

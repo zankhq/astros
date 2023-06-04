@@ -1,41 +1,15 @@
 {
-	"compilerOptions": {
-		"strict": true,
-		"moduleResolution": "node",
-		"module": "ESNext",
-		"lib": [
-			"ESNext"
-		],
-		"target": "ESNext",
-		"importsNotUsedAsValues": "error",
-		"isolatedModules": true,
-		"resolveJsonModule": true,
-		"sourceMap": true,
-		"esModuleInterop": true,
-		"skipLibCheck": true,
-		"forceConsistentCasingInFileNames": true,
-		"allowJs": true,
-		"checkJs": true,
-		"baseUrl": ".",
-		"paths": {
-			"$": [
-				"./src"
-			],
-			"$components": [
-				"./src/components"
-			],
-			"$pages": [
-				"./src/pages"
-			],
-			"$layouts": [
-				"./src/layouts"
-			],
-		}
-	},
-	"include": [
-		"src/**/*.astro",
-		"src/**/*.d.ts",
-		"src/**/*.js",
-		"src/**/*.ts"
-	],
+  "extends": "astro/tsconfigs/base",
+  "compilerOptions": {
+    "strictNullChecks": true,
+    "baseUrl": "src",
+    "paths": {
+      "@lib/*": ["lib/*"],
+      "@utils/*": ["utils/*"],
+      "@components/*": ["components/*"],
+      "@layouts/*": ["layouts/*"],
+      "@assets/*": ["assets/*"],
+      "@pages/*": ["pages/*"]
+    }
+  }
 }

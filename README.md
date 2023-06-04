@@ -1,82 +1,121 @@
-<a href="https://astros.warps.it">
-  <img src=".github/assets/astros.gif" />
-</a>
+# Astroship - Astro Starter Template 🛸
 
-# [Astros](https://astros.warps.it)
+Astroship is a starter template for startups, marketing websites, landing pages & blog. Built with Astro & TailwindCSS.
 
-Astros is a showcase template for various components of the [Astro](https://astro.build) framework.
+This Free Template is sponsored by [Web3Templates](https://web3templates.com)
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/warpsio/astros)
+## Live Demo
 
-### [📘 Documentation →](https://astros.warps.it/documentation)
+### [https://astroship.zank.it/](https://astroship.zank.it/)
 
-### [🧑‍🚀 Astro website →](https://astro.build/)
+## Deploy this template
 
----
+You can instantly clone this to your GitHub and deploy the site by clicking the below buttons to deploy to your chosen providers!
 
-## 🧪 Test
+Click here to deploy on Netlify:
 
-On the folder run
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/zk-g/astroship/)
 
-`npm i` or `yarn`
+## Preview
 
-`npm run dev` or `yarn dev`
+![image](https://user-images.githubusercontent.com/1884712/200831799-10ef2456-a02e-4068-b580-4b5326f0b33b.png)
 
-(if it's not working report an [issue](https://github.com/warpsio/astros/issues))
+### Pagespeed Score
 
-## 🚀 Deploy
+[![pagespeed](https://user-images.githubusercontent.com/1884712/210250214-7aa98167-7993-4b90-8138-326b8fa0c223.png)](https://pagespeed.web.dev/report?url=https%3A%2F%2Fastroship.web3templates.com%2F)
 
-### Netlify (suggested)
 
-You can either click on the button above to deploy to Netlify automatically, or you can fork this repository and deploy manually from https://app.netlify.com/start.
+## Installation
 
-You can leave build settings as defaults.
+If you are reading this on github, you can click on the "Use this template" button above to create a new repository from astroship to your account. Then you can do a `git clone` to clone it to your local system.
 
-### Others
+Alternatively, you can clone the project directly from this repo to your local system.
 
-You can check the deploy documentation at https://docs.astro.build/en/guides/deploy/
+### 1. Clone the repo
 
-## 🧞 Dependencies
-
-Astros depends on the following packages:
-
-| Command                                                             | Action                                                   |
-| :------------------------------------------------------------------ | :------------------------------------------------------- |
-| [astro-sections](https://github.com/warpsio/astro-sections)         | Easily define structured sections (WIP)                  |
-| [astro-headers](https://github.com/warpsio/astro-headers)           | Collection of configurable unstyled headers (WIP)        |
-| [astro-footers](https://github.com/warpsio/astro-footers)           | Collection of configurable footers (WIP)                 |
-| [astro-form](https://github.com/warpsio/astro-form)                 | Create form from json in astro (WIP)                     |
-| [astro-image](https://github.com/warpsio/astro-image)               | Create animated images easily (WIP)                      |
-| [astro-localization](https://github.com/warpsio/astro-localization) | Localize your website from a simple json structure (WIP) |
-| [astro-theme](https://github.com/warpsio/astro-theme)               | Handle theming on your website (WIP)                     |
-| [astro-utils](https://github.com/warpsio/astro-utils)               | Collection of useful utilities (WIP)                     |
-| [astro-seo](https://github.com/jonasmerlin/astro-seo)               | SEO friendly meta tags                                   |
-| [astro-icon](https://github.com/natemoo-re/astro-icon)              | A straight-forward Icon component for Astro              |
-
-For documentation check https://astros.warps.it/documentation or individual components.
-
-## FAQ
-
-<details>
-  <summary>Work with modules in relink</summary>
-  This is helpful if you want to apply some changes to various modules while you are working on the website.
-
-To do so you have to go into each module and run
-
-```
-npm link
+```bash
+git clone https://github.com/surjithctly/astroship.git myProjectName
+# or
+git clone https://github.com/surjithctly/astroship.git .
 ```
 
-then in the main website folder run
+The `.` will clone it to the current directory so make sure you are inside your project folder first.
+
+### 2. Install Dependencies
+
+```bash
+npm install
+# or
+yarn install
+# or (recommended)
+pnpm install
+```
+
+### 3. Start development Server
+
+```bash
+npm run dev
+# or
+yarn dev
+# or (recommended)
+pnpm dev
+```
+
+### Preview & Build
+
+```bash
+npm run preview
+npm run build
+# or
+yarn preview
+yarn build
+# or (recommended)
+pnpm preview
+pnpm build
+```
+
+We recommend using [pnpm](https://pnpm.io/) to save disk space on your computer.
+
+### Other Commands
+
+```bash
+pnpm astro ...
+pnpm astro add
+pnpm astro --help
+```
+
+## Project Structure
+
+Inside of your Astro project, you'll see the following folders and files:
 
 ```
-npm link astro-footers astro-image astro-form astro-utils astro-theme astro-sections astro-localization astro-headers astro-blog
+/
+├── public/
+│   └── ...
+├── src/
+│   ├── components/
+│   │   └── ...
+│   ├── layouts/
+│   │   └── ...
+│   └── pages/
+│       └── ...
+└── package.json
 ```
 
-</details>
+Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
 
-<br/>
+Any static assets, like images, can be placed in the `public/` directory.
 
----
+## TailwindCSS
 
-<p align="right"><a href="https://warps.it/" target="_blank">warps.it</p>
+TailwindCSS is already configured in this repo, so you can start using it without any installation.
+
+## Credits
+
+[Hero Illustration](https://www.figma.com/community/file/1108400791662599811) by [Streamline](https://www.streamlinehq.com/)
+
+## 👀 Want to learn more?
+
+Feel free to check out [Astro Docs](https://docs.astro.build) or jump into our [Discord Chat](https://web3templates.com/discord).
+
+[![Built with Astro](https://astro.badg.es/v1/built-with-astro.svg)](https://astro.build)

@@ -1,0 +1,66 @@
+---
+const globeMaxSize = 1000;
+---
+
+<canvas id="cobe" width={globeMaxSize} height={globeMaxSize}></canvas>
+
+<script define:vars={{ globeMaxSize }} type="module">
+  import createGlobe from "https://cdn.skypack.dev/cobe";
+
+  let canvas = document.getElementById("cobe");
+  let globeSize = computeGlobeSize(globeMaxSize);
+
+  canvas.width = globeSize;
+  canvas.height = globeSize;
+
+  let phi = 0;
+
+  function computeGlobeSize(globeMaxSize) {
+    let size = globeMaxSize;
+    const { innerWidth: width } = window;
+    if (width < globeMaxSize) {
+      size = width - 100;
+    }
+    return size;
+  }
+
+  function addGlobe(canvas) {
+    const globe = createGlobe(canvas, {
+      width: globeSize,
+      height: globeSize,
+      phi: 0,
+      theta: 0,
+      dark: 0,
+      diffuse: 1.2,
+      scale: 1,
+      mapSamples: 16000,
+      mapBrightness: 5,
+      baseColor: [1, 1, 1],
+      markerColor: [1, 0.5, 1],
+      glowColor: [1, 1, 1],
+      offset: [0, 0],
+      opacity: 0.9,
+      markers: [
+        { location: [37.7595, -122.4367], size: 0.03 },
+        { location: [40.7128, -74.006], size: 0.1 },
+      ],
+      onRender: (state) => {
+        // Called on every animation frame.
+        // `state` will be an empty object, return updated params.
+        state.phi = phi;
+        phi += 0.001;
+      },
+    });
+
+    return globe;
+  }
+
+  addGlobe(canvas);
+
+  // TODO: Update the globe dimensions when the window is resized
+  //   window.addEventListener("resize", () => {
+  //     let globeSize = computeGlobeSize(globeMaxSize);
+  //     canvas.width = globeSize;
+  //     canvas.height = globeSize;
+  //   });
+</script>
