@@ -34,6 +34,7 @@
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.9",
-    "rehype": "^12.0.1"
+    "rehype": "^12.0.1",
+    "sharp": "^0.32.1"
   }
 }
