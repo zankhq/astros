@@ -1,0 +1,18 @@
+.heading-wrapper {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+@media (min-width: 50em) {
+  .heading-wrapper {
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    margin-inline-start: calc(-1 * 25px);
+  }
+  .heading-wrapper .anchor-link {
+    visibility: hidden;
+  }
+  .heading-wrapper:hover .anchor-link {
+    visibility: visible;
+  }
+}

@@ -1,0 +1,32 @@
+name: Generate article
+
+on:
+  workflow_dispatch:
+
+env:
+  node_version: "18.x"
+
+jobs:
+  generate-image:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Generate article
+        uses: actions/checkout@v3
+      - name: setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.node_version }}
+      - name: Generate env file
+        run: |
+          touch .env
+          echo OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }} >> .env
+          echo BLOG_FEEDS=${{ secrets.BLOG_FEEDS }} >> .env
+      - name: Install dependencies
+        run: npm install
+      - name: generateArticle
+        run: npm run generateArticle
+      - name: Push changes
+        uses: mikeal/publish-to-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH_NAME: main

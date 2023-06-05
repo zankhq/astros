@@ -1,0 +1,40 @@
+---
+import { Icon } from "astro-icon";
+
+export interface Props {
+  prevUrl: string;
+  nextUrl: string;
+  prevText?: string;
+  nextText?: string;
+  class?: string;
+}
+
+const {
+  prevUrl,
+  nextUrl,
+  prevText = "Prev",
+  nextText = "Next",
+  class: className,
+} = Astro.props;
+---
+
+{
+  (prevUrl || nextUrl) && (
+    <div class:list={["container flex", className]}>
+      <div class="flex flex-row mx-auto container justify-center gap-8">
+        <a href={prevUrl} class={`${!prevUrl ? "invisible" : ""}`}>
+          <div class="flex flex-row align-middle">
+            <Icon name="tabler:chevron-left" class="w-6 h-6" />
+            <p class="ml-2">{prevText}</p>
+          </div>
+        </a>
+        <a href={nextUrl} class={`${!nextUrl ? "invisible" : ""}`}>
+          <div class="flex flex-row align-middle">
+            <span class="mr-2">{nextText}</span>
+            <Icon name="tabler:chevron-right" class="w-6 h-6" />
+          </div>
+        </a>
+      </div>
+    </div>
+  )
+}
