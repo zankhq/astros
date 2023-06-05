@@ -6,13 +6,6 @@
       "name": "Development server",
       "request": "launch",
       "type": "node-terminal"
-    },
-    {
-      "type": "node",
-      "request": "launch",
-      "name": "Generate article",
-      "skipFiles": ["<node_internals>/**"],
-      "program": "${workspaceFolder}\\scripts\\generateArticle.js"
     }
   ]
 }
