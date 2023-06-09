@@ -23,6 +23,8 @@ export default defineConfig({
           name: "github",
           repo: "warpsi/astros",
           branch: "main",
+          base_url: "https://astros-7h0.pages.dev",
+          auth_endpoint: "/api/auth",
         },
         collections: [
           // Content collections
