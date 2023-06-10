@@ -24,9 +24,6 @@ import { LanguageSelector } from "astro-i18next/components";
         <a href="#" class="duration-300 hover:text-gray-900"> Pricing</a>
       </li>
     </ul>
-    <div class="flex justify-center">
-      <LanguageSelector showFlag={true} languageMapping={{ en: "English", it: "Italiano" }} />
-    </div>
     <div class="m-auto mt-4 flex w-max items-center justify-between space-x-4 text-gray-500">
       <a class="duration-300 hover:text-gray-900" href="#" title="twitter" target="blank" aria-label="twitter">
         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="m-auto h-5 w-5" viewBox="0 0 16 16">
@@ -49,7 +46,11 @@ import { LanguageSelector } from "astro-i18next/components";
           ></path>
         </svg>
       </a>
-    </div><div class="mt-12 text-center">
+    </div>
+    <div class="flex justify-center mt-12">
+      <LanguageSelector showFlag={false} languageMapping={{ en: "English", it: "Italiano" }} class="appearance-none py-1 px-2 rounded bg-slate-100" />
+    </div>
+    <div class="mt-4 text-center">
       <span class="text-sm tracking-wide text-gray-500">Copyright © astroship 2023 - Present | All rights reserved</span>
     </div>
   </div>
