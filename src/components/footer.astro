@@ -1,11 +1,12 @@
 ---
 import logo from "assets/logo.svg";
 import { Image } from "@astrojs/image/components";
+import { localizePath } from "astro-i18next";
 ---
 
 <footer class="pb-12 pt-24">
   <div class="mx-auto max-w-6xl px-6 md:px-12 lg:px-6 xl:px-0">
-    <a href="/" aria-label="logo" class="group flex items-center justify-center space-x-2">
+    <a href={localizePath("/")} aria-label="logo" class="group flex items-center justify-center space-x-2">
       <Image class="inline-block" src={logo} alt="Astros" width={30} height={30} />
       <span class="text-semibold duration-300 text-gray-400 group-hover:text-gray-900">Astros</span>
     </a>

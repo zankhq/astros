@@ -1,6 +1,7 @@
 ---
 // @ts-ignore
 import { Icon } from "astro-icon";
+import { localizePath } from "astro-i18next";
 
 const features = [
   {
@@ -59,7 +60,7 @@ const features = [
             <dd class="mt-4 flex flex-auto flex-col text-base leading-7 text-gray-600">
               <p class="flex-auto">{item.description}</p>
               <p class="mt-6">
-                <a href="#" class="text-sm font-semibold leading-6 text-indigo-600">
+                <a href={localizePath("#")} class="text-sm font-semibold leading-6 text-indigo-600">
                   Learn more <span aria-hidden="true">→</span>
                 </a>
               </p>

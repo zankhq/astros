@@ -1,5 +1,6 @@
 ---
 import { Picture } from "@astrojs/image/components";
+import { localizePath } from "astro-i18next";
 
 export interface Props {
   posts: Array<any>;
@@ -37,14 +38,14 @@ const { posts } = Astro.props;
           </div>
 
           <h3 class="mt-3 text-lg font-semibold leading-6 text-white">
-            <a href={`/${blogPostEntry.slug}`}>
+            <a href={localizePath(`/${blogPostEntry.slug}`)}>
               <span class="absolute inset-0" />
               {blogPostEntry.data.title}
             </a>
           </h3>
 
           <h4 class="pt-3 text-xs font-medium text-gray-300 uppercase tracking-wider">
-            <a href={`/category/${blogPostEntry.data.category?.toLowerCase()}`}>{blogPostEntry.data.category}</a>
+            <a href={localizePath(`/category/${blogPostEntry.data.category?.toLowerCase()}`)}>{blogPostEntry.data.category}</a>
           </h4>
         </article>
       ))

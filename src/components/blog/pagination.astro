@@ -1,5 +1,6 @@
 ---
 import { Icon } from "astro-icon";
+import { localizePath } from "astro-i18next";
 
 export interface Props {
   prevUrl: string;
@@ -9,26 +10,20 @@ export interface Props {
   class?: string;
 }
 
-const {
-  prevUrl,
-  nextUrl,
-  prevText = "Prev",
-  nextText = "Next",
-  class: className,
-} = Astro.props;
+const { prevUrl, nextUrl, prevText = "Prev", nextText = "Next", class: className } = Astro.props;
 ---
 
 {
   (prevUrl || nextUrl) && (
     <div class:list={["container flex", className]}>
       <div class="flex flex-row mx-auto container justify-center gap-8">
-        <a href={prevUrl} class={`${!prevUrl ? "invisible" : ""}`}>
+        <a href={localizePath(prevUrl)} class={`${!prevUrl ? "invisible" : ""}`}>
           <div class="flex flex-row align-middle">
             <Icon name="tabler:chevron-left" class="w-6 h-6" />
             <p class="ml-2">{prevText}</p>
           </div>
         </a>
-        <a href={nextUrl} class={`${!nextUrl ? "invisible" : ""}`}>
+        <a href={localizePath(nextUrl)} class={`${!nextUrl ? "invisible" : ""}`}>
           <div class="flex flex-row align-middle">
             <span class="mr-2">{nextText}</span>
             <Icon name="tabler:chevron-right" class="w-6 h-6" />

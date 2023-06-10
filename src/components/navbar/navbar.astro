@@ -6,6 +6,7 @@ import { Image } from "@astrojs/image/components";
 import logo from "assets/logo.svg";
 import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
 import { LanguageSelector } from "astro-i18next/components";
+import { localizePath } from "astro-i18next";
 
 const menuitems = [
   //   {
@@ -34,7 +35,7 @@ const menuitems = [
   <header class="flex flex-col lg:flex-row justify-between items-center relative z-10 my-5">
     <Astronav>
       <div class="flex w-full lg:w-auto items-center justify-between">
-        <a href="/" class="text-lg">
+        <a href={localizePath("/")} class="text-lg">
           <Image class="inline-block" src={logo} alt="Astros" width={30} height={30} />
           <span class="font-semibold text-slate-800">Astros</span>
         </a>
@@ -51,7 +52,7 @@ const menuitems = [
 
                 {!item?.children && (
                   <li>
-                    <a href={item.path} class="flex lg:px-3 py-2 text-gray-600 hover:text-gray-900">
+                    <a href={localizePath(item.path)} class="flex lg:px-3 py-2 text-gray-600 hover:text-gray-900">
                       {item.title}
                     </a>
                   </li>
@@ -61,7 +62,7 @@ const menuitems = [
           }
         </ul>
         <div class="lg:hidden flex items-center mt-3 gap-4">
-          <Link href="/contact" size="md" block>Contact</Link>
+          <Link href={localizePath("/contact")} size="md" block>Contact</Link>
         </div>
       </MenuItems>
     </Astronav>
@@ -70,7 +71,7 @@ const menuitems = [
     </div>
     <div>
       <div class="hidden lg:flex items-center gap-4">
-        <Link href="/contact" size="md">Contact</Link>
+        <Link href={localizePath("/contact")} size="md">Contact</Link>
       </div>
     </div>
   </header>

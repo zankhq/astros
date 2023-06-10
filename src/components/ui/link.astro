@@ -1,4 +1,6 @@
 ---
+import { localizePath } from "astro-i18next";
+
 interface Props {
   href: string;
   size?: "md" | "lg";
@@ -8,14 +10,7 @@ interface Props {
   [x: string]: any;
 }
 
-const {
-  href,
-  block,
-  size = "lg",
-  style = "primary",
-  class: className,
-  ...rest
-} = Astro.props;
+const { href, block, size = "lg", style = "primary", class: className, ...rest } = Astro.props;
 
 const sizes = {
   lg: "px-5 py-2.5",
@@ -31,14 +26,8 @@ const styles = {
 ---
 
 <a
-  href={href}
+  href={localizePath(href)}
   {...rest}
-  class:list={[
-    "rounded text-center transition focus-visible:ring-2 ring-offset-2 ring-gray-200",
-    block && "w-full",
-    sizes[size],
-    styles[style],
-    className,
-  ]}
+  class:list={["rounded text-center transition focus-visible:ring-2 ring-offset-2 ring-gray-200", block && "w-full", sizes[size], styles[style], className]}
   ><slot />
 </a>

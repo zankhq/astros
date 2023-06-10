@@ -4,6 +4,7 @@ import { getCollection } from "astro:content";
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/container.astro";
 import { Icon } from "astro-icon";
+import { localizePath } from "astro-i18next";
 
 changeLanguage("en");
 
@@ -23,7 +24,7 @@ const { Content } = await entry.render();
 <Layout title={entry.data.title}>
   <Container>
     <div class="mx-auto prose prose-lg mt-14">
-      <a href={`/category/${entry.data.category?.toLowerCase()}`} class="text-blue-400 uppercase tracking-wider text-sm font-medium no-underline">
+      <a href={localizePath(`/category/${entry.data.category?.toLowerCase()}`)} class="text-blue-400 uppercase tracking-wider text-sm font-medium no-underline">
         {entry.data.category}
       </a>
       <h1 class="text-4xl lg:text-5xl font-bold lg:tracking-tight mt-1 lg:leading-tight">
@@ -41,7 +42,7 @@ const { Content } = await entry.render();
         <div class="w-full md:w-auto flex flex-wrap gap-3">
           {
             entry.data.tags.map((tag) => (
-              <a href={`/tag/${tag}`} class="text-sm text-gray-500">
+              <a href={localizePath(`/tag/${tag}`)} class="text-sm text-gray-500">
                 #{tag}
               </a>
             ))
@@ -54,7 +55,7 @@ const { Content } = await entry.render();
       <Content />
     </div>
     <div class="mx-auto mt-20">
-      <a href="/blog">
+      <a href={localizePath("/blog")}>
         <div class="flex flex-row align-middle justify-center">
           <Icon name="tabler:chevron-left" class="w-6 h-6" />
           <p class="ml-2">Back to blog</p>
@@ -77,8 +78,7 @@ const { Content } = await entry.render();
         data-lang="en"
         data-loading="lazy"
         crossorigin="anonymous"
-        async
-      ></script>
+        async></script>
     </div>
   </Container>
 </Layout>
