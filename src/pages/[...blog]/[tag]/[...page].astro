@@ -1,4 +1,5 @@
 ---
+import { changeLanguage } from "i18next";
 import { getCollection } from "astro:content";
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/container.astro";
@@ -6,33 +7,24 @@ import Posts from "@components/blog/posts.astro";
 import Sectionhead from "@components/sectionhead.astro";
 import Pagination from "@components/blog/pagination.astro";
 
+changeLanguage("en");
+
 export async function getStaticPaths({ paginate }) {
-  const posts = await getCollection("blog", ({ data }) => {
-    return !data.draft && data.publishDate < new Date();
-  });
-
-  const tags = new Set();
-  posts.map((post) => {
-    Array.isArray(post.data.tags) &&
-      post.data.tags.map((tag) => tags.add(tag.toLowerCase()));
-  });
-
-  return Array.from(tags).map((tag: string) =>
-    paginate(
-      posts.filter(
-        (post) =>
-          Array.isArray(post.data.tags) &&
-          post.data.tags.find((elem) => elem.toLowerCase() === tag)
-      ),
-      {
+    const posts = await getCollection("blog", ({ data }) => {
+        return !data.draft && data.publishDate < new Date();
+    });
+    const tags = new Set();
+    posts.map((post) => {
+        Array.isArray(post.data.tags) &&
+            post.data.tags.map((tag) => tags.add(tag.toLowerCase()));
+    });
+    return Array.from(tags).map((tag: string) => paginate(posts.filter((post) => Array.isArray(post.data.tags) &&
+        post.data.tags.find((elem) => elem.toLowerCase() === tag)), {
         params: { tag: tag, blog: "tag" || undefined },
         pageSize: 5,
         props: { tag },
-      }
-    )
-  );
+    }));
 }
-
 const { page, tag } = Astro.props;
 ---
 

@@ -7,6 +7,7 @@ import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import { autolinkConfig } from "./plugins/rehype-autolink-config";
 import rehypeSlug from "rehype-slug";
 import NetlifyCMS from "astro-netlify-cms";
+import astroI18next from "astro-i18next";
 
 export default defineConfig({
   site: "https://astroship.zank.it",
@@ -42,6 +43,7 @@ export default defineConfig({
         ],
       },
     }),
+    astroI18next(),
   ],
   markdown: {
     rehypePlugins: [

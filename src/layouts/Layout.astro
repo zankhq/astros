@@ -2,6 +2,7 @@
 import { SEO } from "astro-seo";
 import Footer from "@components/footer.astro";
 import Navbar from "@components/navbar/navbar.astro";
+import i18next from "i18next";
 
 export interface Props {
   title: string;
@@ -17,7 +18,7 @@ const makeTitle = title ? title + " | " + "Astroship" : "Astroship - Starter Tem
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang={i18next.language}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />

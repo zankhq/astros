@@ -7,29 +7,31 @@ import Posts from "@components/blog/posts.astro";
 import Sectionhead from "@components/sectionhead.astro";
 import Pagination from "@components/blog/pagination.astro";
 
-changeLanguage("en");
+changeLanguage("it");
 
 export async function getStaticPaths({ paginate }) {
-    // get post collections
-    var posts = await getCollection("blog", ({ data }) => {
+    const posts = await getCollection("blog", ({ data }) => {
         return !data.draft && data.publishDate < new Date();
     });
-    // Sort content entries by publication date
-    posts.sort(function (a, b) {
-        return b.data.publishDate.valueOf() - a.data.publishDate.valueOf();
+    const tags = new Set();
+    posts.map((post) => {
+        Array.isArray(post.data.tags) &&
+            post.data.tags.map((tag) => tags.add(tag.toLowerCase()));
     });
-    return paginate(posts, {
-        params: { blog: "blog" || undefined },
+    return Array.from(tags).map((tag: string) => paginate(posts.filter((post) => Array.isArray(post.data.tags) &&
+        post.data.tags.find((elem) => elem.toLowerCase() === tag)), {
+        params: { tag: tag, blog: "tag" || undefined },
         pageSize: 5,
-    });
+        props: { tag },
+    }));
 }
-const { page } = Astro.props;
+const { page, tag } = Astro.props;
 ---
 
 <Layout title="Blog">
   <Container>
     <Sectionhead>
-      <Fragment slot="title">Our Blog</Fragment>
+      <Fragment slot="title">#{tag}</Fragment>
       <Fragment slot="desc">
         We write about building startups and thoughts going on our mind.
       </Fragment>

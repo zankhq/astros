@@ -7,7 +7,7 @@ import Posts from "@components/blog/posts.astro";
 import Sectionhead from "@components/sectionhead.astro";
 import Pagination from "@components/blog/pagination.astro";
 
-changeLanguage("en");
+changeLanguage("it");
 
 export async function getStaticPaths({ paginate }) {
     // get post collections
@@ -18,18 +18,25 @@ export async function getStaticPaths({ paginate }) {
     posts.sort(function (a, b) {
         return b.data.publishDate.valueOf() - a.data.publishDate.valueOf();
     });
-    return paginate(posts, {
-        params: { blog: "blog" || undefined },
-        pageSize: 5,
+    const categories = new Set();
+    posts.map((post) => {
+        typeof post.data.category === "string" &&
+            categories.add(post.data.category.toLowerCase());
     });
+    return Array.from(categories).map((category: string) => paginate(posts.filter((post) => typeof post.data.category === "string" &&
+        category === post.data.category.toLowerCase()), {
+        params: { category: category, blog: "category" || undefined },
+        pageSize: 5,
+        props: { category },
+    }));
 }
-const { page } = Astro.props;
+const { page, category } = Astro.props;
 ---
 
 <Layout title="Blog">
   <Container>
     <Sectionhead>
-      <Fragment slot="title">Our Blog</Fragment>
+      <Fragment slot="title">{category}</Fragment>
       <Fragment slot="desc">
         We write about building startups and thoughts going on our mind.
       </Fragment>
