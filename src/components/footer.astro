@@ -2,6 +2,7 @@
 import logo from "assets/logo.svg";
 import { Image } from "@astrojs/image/components";
 import { localizePath } from "astro-i18next";
+import { LanguageSelector } from "astro-i18next/components";
 ---
 
 <footer class="pb-12 pt-24">
@@ -22,7 +23,11 @@ import { localizePath } from "astro-i18next";
       </li><li role="listitem">
         <a href="#" class="duration-300 hover:text-gray-900"> Pricing</a>
       </li>
-    </ul><div class="m-auto mt-4 flex w-max items-center justify-between space-x-4 text-gray-500">
+    </ul>
+    <div class="flex justify-center">
+      <LanguageSelector showFlag={true} languageMapping={{ en: "English", it: "Italiano" }} />
+    </div>
+    <div class="m-auto mt-4 flex w-max items-center justify-between space-x-4 text-gray-500">
       <a class="duration-300 hover:text-gray-900" href="#" title="twitter" target="blank" aria-label="twitter">
         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="m-auto h-5 w-5" viewBox="0 0 16 16">
           <path

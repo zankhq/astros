@@ -5,7 +5,6 @@ import Dropdown from "./dropdown.astro";
 import { Image } from "@astrojs/image/components";
 import logo from "assets/logo.svg";
 import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
-import { LanguageSelector } from "astro-i18next/components";
 import { localizePath } from "astro-i18next";
 
 const menuitems = [
@@ -66,9 +65,6 @@ const menuitems = [
         </div>
       </MenuItems>
     </Astronav>
-    <div>
-      <LanguageSelector showFlag={true} languageMapping={{ en: "English", it: "Italiano" }} class="my-select-class" />
-    </div>
     <div>
       <div class="hidden lg:flex items-center gap-4">
         <Link href={localizePath("/contact")} size="md">Contact</Link>
