@@ -12,7 +12,7 @@
       "request": "launch",
       "name": "Generate article",
       "skipFiles": ["<node_internals>/**"],
-      "program": "${workspaceFolder}\\scripts\\generateArticle.js"
+      "program": "${workspaceFolder}\\scripts\\generate-article.js"
     }
   ]
 }

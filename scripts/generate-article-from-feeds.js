@@ -14,11 +14,12 @@ let parser = new Parser();
 
 let filter = new Filter();
 
-const blogFeeds = process.env.BLOG_FEEDS.split(",");
+const blogFeeds = process.env.BLOG_FEEDS?.split(",");
 
 const configuration = new Configuration({
   apiKey: process.env.OPENAI_API_KEY,
 });
+
 const openai = new OpenAIApi(configuration);
 
 async function generateText(prompt, maxTokens) {

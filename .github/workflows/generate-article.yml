@@ -23,8 +23,8 @@ jobs:
           echo BLOG_FEEDS=${{ secrets.BLOG_FEEDS }} >> .env
       - name: Install dependencies
         run: npm install
-      - name: generateArticle
-        run: npm run generateArticle
+      - name: Generate Article
+        run: npm run article:generate
       - name: Push changes
         uses: mikeal/publish-to-github-action@master
         env:

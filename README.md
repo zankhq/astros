@@ -1,121 +1,98 @@
-# Astroship - Astro Starter Template 🛸
+<a href="https://astros.warps.it">
+  <img src=".github/assets/astros.gif" />
+</a>
 
-Astroship is a starter template for startups, marketing websites, landing pages & blog. Built with Astro & TailwindCSS.
+# [Astros](https://astros.warps.it)
 
-This Free Template is sponsored by [Web3Templates](https://web3templates.com)
+Astros is a showcase template for various components of the [Astro](https://astro.build) framework.
 
-## Live Demo
+[![Deploy to Cloudflare Workers](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/warpsio/astros)
 
-### [https://astroship.zank.it/](https://astroship.zank.it/)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/warpsio/astros)
 
-## Deploy this template
-
-You can instantly clone this to your GitHub and deploy the site by clicking the below buttons to deploy to your chosen providers!
-
-Click here to deploy on Netlify:
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/zk-g/astroship/)
-
-## Preview
-
-![image](https://user-images.githubusercontent.com/1884712/200831799-10ef2456-a02e-4068-b580-4b5326f0b33b.png)
-
-### Pagespeed Score
-
-[![pagespeed](https://user-images.githubusercontent.com/1884712/210250214-7aa98167-7993-4b90-8138-326b8fa0c223.png)](https://pagespeed.web.dev/report?url=https%3A%2F%2Fastroship.web3templates.com%2F)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/warpsio/astros)
 
 
-## Installation
+### [🧑‍🚀 Astro website →](https://astro.build/)
 
-If you are reading this on github, you can click on the "Use this template" button above to create a new repository from astroship to your account. Then you can do a `git clone` to clone it to your local system.
+---
 
-Alternatively, you can clone the project directly from this repo to your local system.
+## 🧪 Test
 
-### 1. Clone the repo
+On the folder run
 
-```bash
-git clone https://github.com/surjithctly/astroship.git myProjectName
-# or
-git clone https://github.com/surjithctly/astroship.git .
-```
+`npm i` or `yarn`
 
-The `.` will clone it to the current directory so make sure you are inside your project folder first.
+`npm run dev` or `yarn dev`
 
-### 2. Install Dependencies
+(if it's not working report an [issue](https://github.com/warpsio/astros/issues))
 
-```bash
-npm install
-# or
-yarn install
-# or (recommended)
-pnpm install
-```
+## 🚀 Deploy
 
-### 3. Start development Server
+### Cloudflare pages (suggested)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or (recommended)
-pnpm dev
-```
+You can either click on the button above to deploy to Clouflare automatically, or you can fork this repository and deploy manually from cloudflare dashboard.
 
-### Preview & Build
+You can leave build settings as defaults.
 
-```bash
-npm run preview
-npm run build
-# or
-yarn preview
-yarn build
-# or (recommended)
-pnpm preview
-pnpm build
-```
+<details>
+<summary>Work with modules in relink</summary>
 
-We recommend using [pnpm](https://pnpm.io/) to save disk space on your computer.
+![Alt text](.github/images/image.png)
 
-### Other Commands
+</details>
 
-```bash
-pnpm astro ...
-pnpm astro add
-pnpm astro --help
-```
+### Netlify
 
-## Project Structure
+### Vercel
 
-Inside of your Astro project, you'll see the following folders and files:
+### Others
+
+You can check the deploy documentation at https://docs.astro.build/en/guides/deploy/
+
+## 🧞 Dependencies
+
+Astros depends on the following packages:
+
+| Dependency                                                                         | Version        |
+| ---------------------------------------------------------------------------------- | -------------- |
+| [@astrojs/image](https://www.npmjs.com/package/@astrojs/image)                     | ^0.17.0        |
+| [@astrojs/mdx](https://www.npmjs.com/package/@astrojs/mdx)                         | ^0.19.7        |
+| [@astrojs/rss](https://www.npmjs.com/package/@astrojs/rss)                         | ^2.4.3         |
+| [@astrojs/sitemap](https://www.npmjs.com/package/@astrojs/sitemap)                 | ^1.3.3         |
+| [@astrojs/tailwind](https://www.npmjs.com/package/@astrojs/tailwind)               | ^3.1.3         |
+| [@fontsource/inter](https://www.npmjs.com/package/@fontsource/inter)               | ^5.0.2         |
+| [astro](https://www.npmjs.com/package/astro)                                       | ^2.6.1         |
+| [astro-feather-icons](https://www.npmjs.com/package/astro-feather-icons)           | ^1.0.2         |
+| [astro-i18next](https://www.npmjs.com/package/astro-i18next)                       | ^1.0.0-beta.21 |
+| [astro-icon](https://www.npmjs.com/package/astro-icon)                             | ^0.8.1         |
+| [astro-navbar](https://www.npmjs.com/package/astro-navbar)                         | ^1.2.0         |
+| [astro-netlify-cms](https://www.npmjs.com/package/astro-netlify-cms)               | ^0.5.3         |
+| [astro-seo](https://www.npmjs.com/package/astro-seo)                               | ^0.7.4         |
+| [bad-words](https://www.npmjs.com/package/bad-words)                               | ^3.0.4         |
+| [dotenv](https://www.npmjs.com/package/dotenv)                                     | ^16.1.4        |
+| [openai](https://www.npmjs.com/package/openai)                                     | ^3.2.1         |
+| [rehype-autolink-headings](https://www.npmjs.com/package/rehype-autolink-headings) | ^6.1.1         |
+| [rehype-slug](https://www.npmjs.com/package/rehype-slug)                           | ^5.1.0         |
+| [rss-parser](https://www.npmjs.com/package/rss-parser)                             | ^3.13.0        |
+| [tailwindcss](https://www.npmjs.com/package/tailwindcss)                           | ^3.3.2         |
+
+## FAQ
+
+<details>
+  <summary>Work with modules in relink</summary>
+  
+  This is helpful if you want to apply some changes to various modules while you are working on the website.
+
+To do so you have to go into each module and run
 
 ```
-/
-├── public/
-│   └── ...
-├── src/
-│   ├── components/
-│   │   └── ...
-│   ├── layouts/
-│   │   └── ...
-│   └── pages/
-│       └── ...
-└── package.json
+npm link
 ```
+</details>
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+<br/>
 
-Any static assets, like images, can be placed in the `public/` directory.
+---
 
-## TailwindCSS
-
-TailwindCSS is already configured in this repo, so you can start using it without any installation.
-
-## Credits
-
-[Hero Illustration](https://www.figma.com/community/file/1108400791662599811) by [Streamline](https://www.streamlinehq.com/)
-
-## 👀 Want to learn more?
-
-Feel free to check out [Astro Docs](https://docs.astro.build) or jump into our [Discord Chat](https://web3templates.com/discord).
-
-[![Built with Astro](https://astro.badg.es/v1/built-with-astro.svg)](https://astro.build)
+<p align="right"><a href="https://warps.it/" target="_blank">warps.it</p>
