@@ -1,5 +1,5 @@
 ---
-import { changeLanguage } from "i18next";
+import i18next, { changeLanguage } from "i18next";
 import { getCollection } from "astro:content";
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/container.astro";
@@ -9,19 +9,25 @@ import { localizePath } from "astro-i18next";
 changeLanguage("en");
 
 // Generate a new path for every collection entry
-export async function getStaticPaths() {
+export async function getStaticPaths() {changeLanguage('en')
     const blogEntries = await getCollection("blog");
-    return blogEntries.map((entry) => ({
-        params: { blog: entry.slug },
-        props: { entry },
-    }));
+    return blogEntries.map((entry) => {
+        let slug = entry.slug;
+        if (i18next.language == "en" && slug.startsWith("en/")) {
+            slug = slug.substring(3);
+        }
+        return {
+            params: { blog: slug },
+            props: { entry, lang: i18next.language },
+        };
+    });
 }
 // Get the entry directly from the prop on render
-const { entry } = Astro.props;
+const { entry, lang } = Astro.props;
 const { Content } = await entry.render();
 ---
 
-<Layout title={entry.data.title}>
+<Layout title={entry.data.title} lang={lang}>
   <Container>
     <div class="mx-auto prose prose-lg mt-14">
       <a href={localizePath(`/category/${entry.data.category?.toLowerCase()}`)} class="text-blue-400 uppercase tracking-wider text-sm font-medium no-underline">

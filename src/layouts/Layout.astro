@@ -7,19 +7,20 @@ import i18next from "i18next";
 
 export interface Props {
   title: string;
+  lang: string;
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
 
 const resolvedImageWithDomain = new URL("/opengraph.jpg", Astro.site).toString();
 
-const { title } = Astro.props;
+const { title, lang = null } = Astro.props;
 
 const makeTitle = title ? title + " | " + "Astroship" : "Astroship - Starter Template for Astro with Tailwind CSS";
 ---
 
 <!DOCTYPE html>
-<html lang={i18next.language}>
+<html lang={lang ?? i18next.language}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
