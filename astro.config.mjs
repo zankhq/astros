@@ -27,6 +27,8 @@ export default defineConfig({
 					base_url: "https://astros-7h0.pages.dev",
 					auth_endpoint: "/api/auth",
 				},
+				media_folder: "public/images",
+				public_folder: "/images",
 				i18n: {
 					structure: "multiple_folders",
 					locales: ["en", "it"],
