@@ -1,10 +1,13 @@
 <a href="https://astros.warps.it">
-  <img src=".github/assets/astros.gif" />
+  <img src=".github/images/astros.gif" />
 </a>
 
 # [Astros](https://astros.warps.it)
 
-Astros is a showcase template for various components of the [Astro](https://astro.build) framework.
+Astros is a template ,ade with [Astro](https://astro.build).
+
+This project is strongly inspired by [Astroships](https://github.com/surjithctly/astroship), make sure to check it out as well!
+
 
 [![Deploy to Cloudflare Workers](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/warpsio/astros)
 
@@ -15,15 +18,16 @@ Astros is a showcase template for various components of the [Astro](https://astr
 
 ### [🧑‍🚀 Astro website →](https://astro.build/)
 
+### [🕮 Astro docs →](https://docs.astro.build/en/getting-started/)
+
 ---
 
 ## 🧪 Test
 
 On the folder run
 
-`npm i` or `yarn`
-
-`npm run dev` or `yarn dev`
+1. `npm i`  <small>(or `yarn` or `pnpm i`)</small>
+2. `npm run dev`  <small>(or `yarn dev` or `pnpm dev`)</small>
 
 (if it's not working report an [issue](https://github.com/warpsio/astros/issues))
 
@@ -31,7 +35,7 @@ On the folder run
 
 ### Cloudflare pages (suggested)
 
-You can either click on the button above to deploy to Clouflare automatically, or you can fork this repository and deploy manually from cloudflare dashboard.
+You can either click on the button above to deploy to Cloudflare automatically, or you can fork this repository and deploy manually from cloudflare dashboard.
 
 You can leave build settings as defaults.
 

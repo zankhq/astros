@@ -5,6 +5,7 @@ import Layout from "@layouts/Layout.astro";
 import Container from "@components/container.astro";
 import { Icon } from "astro-icon";
 import { localizePath } from "astro-i18next";
+import { getArticleReadingTime } from "@utils/blog";
 
 changeLanguage("en");
 
@@ -25,6 +26,7 @@ export async function getStaticPaths() {changeLanguage('en')
 // Get the entry directly from the prop on render
 const { entry, lang } = Astro.props;
 const { Content } = await entry.render();
+const readTime  = getArticleReadingTime(entry.body);
 ---
 
 <Layout title={entry.data.title} lang={lang}>
@@ -33,27 +35,32 @@ const { Content } = await entry.render();
       <a href={localizePath(`/category/${entry.data.category?.toLowerCase()}`)} class="text-blue-400 uppercase tracking-wider text-sm font-medium no-underline">
         {entry.data.category}
       </a>
-      <h1 class="text-4xl lg:text-5xl font-bold lg:tracking-tight mt-1 lg:leading-tight">
+      <h1 class="text-4xl mb-3 lg:text-5xl font-bold lg:tracking-tight mt-1 lg:leading-tight">
         {entry.data.title}
       </h1>
-      <div class="flex gap-2 mt-3 items-center flex-wrap md:flex-nowrap">
+	  <div class="flex gap-2 items-center">
+		<div class="w-full md:w-auto flex flex-wrap gap-3">
+			{
+			  entry.data.tags.map((tag) => (
+				<a href={localizePath(`/tag/${tag}`)} class="text-sm text-gray-500">
+				  #{tag}
+				</a>
+			  ))
+			}
+		  </div>
+	  </div>
+      <div class="flex gap-2 mt-4 items-center flex-wrap md:flex-nowrap">
         <span class="text-gray-400">
           {entry.data.author}
         </span>
         <span class="text-gray-400">•</span>
+		<span class="text-gray-400">
+			{readTime} min
+		  </span>
+        <span class="text-gray-400">•</span>
         <time class="text-gray-400" datetime={entry.data.publishDate.toISOString()}>
           {entry.data.publishDate.toDateString()}
         </time>
-        <span class="text-gray-400 hidden md:block">•</span>
-        <div class="w-full md:w-auto flex flex-wrap gap-3">
-          {
-            entry.data.tags.map((tag) => (
-              <a href={localizePath(`/tag/${tag}`)} class="text-sm text-gray-500">
-                #{tag}
-              </a>
-            ))
-          }
-        </div>
       </div>
     </div>
 
