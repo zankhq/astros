@@ -2,56 +2,72 @@
 import logo from "assets/logo.svg";
 import { Image } from "@astrojs/image/components";
 import { localizePath } from "astro-i18next";
-import { LanguageSelector } from "astro-i18next/components";
+import LanguageSelector from "@components/languageselector.astro";
+import ThemeSelector from "@components/themeselector.astro";
+import { menuitems } from "@components/navbar/navbar.astro";
+import { t } from "i18next";
 ---
 
-<footer class="pb-12 pt-28">
-  <div class="mx-auto max-w-6xl px-6 md:px-12 lg:px-6 xl:px-0">
-    <a href={localizePath("/")} aria-label="logo" class="group flex items-center justify-center space-x-2">
-      <Image class="inline-block" src={logo} alt="Astros" width={30} height={30} />
-      <span class="text-semibold duration-300 text-gray-400 group-hover:text-gray-900">Astros</span>
-    </a>
-    <ul role="list" class="mt-12 flex flex-wrap items-center justify-center gap-4 py-4 text-gray-600 dark:text-gray-400 sm:gap-8">
-      <li role="listitem">
-        <a href="#" class="duration-300 hover:text-gray-900"> Home</a>
-      </li><li role="listitem">
-        <a href="#" class="duration-300 hover:text-gray-900"> Features</a>
-      </li><li role="listitem">
-        <a href="#" class="duration-300 hover:text-gray-900"> Solution</a>
-      </li><li role="listitem">
-        <a href="#" class="duration-300 hover:text-gray-900"> Reviews</a>
-      </li><li role="listitem">
-        <a href="#" class="duration-300 hover:text-gray-900"> Pricing</a>
-      </li>
-    </ul>
-    <div class="m-auto mt-4 flex w-max items-center justify-between space-x-4 text-gray-500">
-      <a class="duration-300 hover:text-gray-900" href="#" title="twitter" target="blank" aria-label="twitter">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="m-auto h-5 w-5" viewBox="0 0 16 16">
-          <path
-            d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"
-          ></path>
-        </svg>
-      </a>
-      <a class="duration-300 hover:text-gray-900" href="#" title="facebook" target="blank" aria-label="facebook">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="m-auto w-5" viewBox="0 0 16 16">
-          <path
-            d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"
-          ></path>
-        </svg>
-      </a>
-      <a class="duration-300 hover:text-gray-900" href="#" title="linkedin" target="blank" aria-label="linkedin">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="m-auto w-5" viewBox="0 0 16 16">
-          <path
-            d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"
-          ></path>
-        </svg>
-      </a>
-    </div>
-    <div class="flex justify-center mt-12">
-      <LanguageSelector showFlag={false} languageMapping={{ en: "English", it: "Italiano" }} class="appearance-none py-1 px-2 rounded bg-slate-100" />
-    </div>
-    <div class="mt-4 text-center">
-      <span class="text-sm tracking-wide text-gray-500">Copyright © astroship 2023 - Present | All rights reserved</span>
-    </div>
-  </div>
+<footer class="pb-12 pt-28 dark:bg-stone-950">
+	<div class="mx-auto max-w-6xl px-6 md:px-12 lg:px-6 xl:px-0">
+		<!-- DECOMMENT HERE IF YOU WANT YOUR LOGO IN THE FOOTER -->
+		<!-- <a href={localizePath("/")} aria-label="logo" class="group flex items-center justify-center space-x-2">
+			<Image class="inline-block" src={logo} alt="Astros" width={30} height={30} />
+			<span class="text-semibold duration-300 text-gray-400 group-hover:text-gray-900 dark:text-white dark:group-hover:text-gray-100">
+				Astros
+			</span>
+		</a> -->
+		<ul role="list" class="flex flex-wrap items-center justify-center gap-4 py-4 text-gray-600 dark:text-white sm:gap-8">
+			<li role="listitem">
+				<a href="#" class="duration-300 hover:text-gray-900 dark:hover:text-gray-100">Home</a>
+			</li>
+			{
+				menuitems.map(
+					(item) =>
+						item &&
+						item.path && (
+							<li role="listitem">
+								<a href={localizePath(item.path)} class="duration-300 hover:text-gray-900 dark:hover:text-gray-100">
+									{t(item.title)}
+								</a>
+							</li>
+						)
+				)
+			}
+		</ul>
+		<div class="m-auto mt-4 flex w-max items-center justify-between space-x-4 text-gray-500 dark:text-white">
+			<a class="duration-300 hover:text-gray-900 dark:hover:text-gray-100" href="#" title="twitter" target="blank" aria-label="twitter">
+				<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="m-auto h-5 w-5" viewBox="0 0 16 16">
+					<path
+						d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z">
+					</path>
+				</svg>
+			</a>
+			<a class="duration-300 hover:text-gray-900 dark:hover:text-gray-100" href="#" title="facebook" target="blank" aria-label="facebook">
+				<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="m-auto w-5" viewBox="0 0 16 16">
+					<path
+						d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z">
+					</path>
+				</svg>
+			</a>
+			<a class="duration-300 hover:text-gray-900 dark:hover:text-gray-100" href="#" title="linkedin" target="blank" aria-label="linkedin">
+				<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="m-auto w-5" viewBox="0 0 16 16">
+					<path
+						d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.520-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z">
+					</path>
+				</svg>
+			</a>
+		</div>
+		<div class="flex justify-center mt-12 gap-3">
+			<LanguageSelector
+				showFlag={false}
+				languageMapping={{ en: "English", it: "Italiano" }}
+				class="appearance-none py-1 px-2 rounded bg-slate-100 dark:bg-stone-950"
+			/>
+			<ThemeSelector />
+		</div>
+		<div class="mt-4 text-center">
+			<span class="text-sm tracking-wide text-gray-500 dark:text-white">Copyright © Your Company 2023 - Present. All rights reserved</span>
+		</div>
+	</div>
 </footer>

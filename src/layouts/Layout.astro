@@ -4,10 +4,11 @@ import Footer from "@components/footer.astro";
 import Navbar from "@components/navbar/navbar.astro";
 import { HeadHrefLangs } from "astro-i18next/components";
 import i18next from "i18next";
+import "@fontsource-variable/inter";
 
 export interface Props {
-  title: string;
-  lang: string;
+	title: string;
+	lang: string;
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
@@ -16,53 +17,48 @@ const resolvedImageWithDomain = new URL("/opengraph.jpg", Astro.site).toString()
 
 const { title, lang = null } = Astro.props;
 
-const makeTitle = title ? title + " | " + "Astroship" : "Astroship - Starter Template for Astro with Tailwind CSS";
+const makeTitle = title ? title + " | " + "Astros" : "Astros - Starter Template for Astro with Tailwind CSS";
 ---
 
 <!DOCTYPE html>
 <html lang={lang ?? i18next.language}>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
-    <HeadHrefLangs />
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<HeadHrefLangs />
 
-    <!-- Global CSS -->
-    <link rel="stylesheet" href="/index.css" />
+		<!-- Global CSS -->
+		<link rel="stylesheet" href="/index.css" />
 
-    <SEO
-      title={makeTitle}
-      description="Astroship is a starter website template for Astro built with TailwindCSS."
-      canonical={canonicalURL}
-      twitter={{
-        creator: "@surjithctly",
-        site: "@web3templates",
-        card: "summary_large_image",
-      }}
-      openGraph={{
-        basic: {
-          url: canonicalURL,
-          type: "website",
-          title: `Astroship - Starter Template for Astro`,
-          image: resolvedImageWithDomain,
-        },
-        image: {
-          alt: "Astroship Homepage Screenshot",
-        },
-      }}
-    />
-  </head>
-  <body>
-    <Navbar />
-    <slot />
-    <Footer />
-    <style is:global>
-      /* Improve Page speed */
-      /* https://css-tricks.com/almanac/properties/c/content-visibility/ */
-      img {
-        content-visibility: auto;
-      }
-    </style>
-  </body>
+		<SEO
+			title={makeTitle}
+			description="Astros is a starter website template for Astro built with TailwindCSS and alpine js."
+			canonical={canonicalURL}
+			openGraph={{
+				basic: {
+					url: canonicalURL,
+					type: "website",
+					title: `Astros - Starter Template for Astro`,
+					image: resolvedImageWithDomain,
+				},
+				image: {
+					alt: "Astros Homepage Screenshot",
+				},
+			}}
+		/>
+	</head>
+	<body class="dark:bg-stone-950">
+		<Navbar />
+		<slot />
+		<Footer />
+		<style is:global>
+			/* Improve Page speed */
+			/* https://css-tricks.com/almanac/properties/c/content-visibility/ */
+			img {
+				content-visibility: auto;
+			}
+		</style>
+	</body>
 </html>

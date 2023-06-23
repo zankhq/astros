@@ -8,41 +8,74 @@ import Button from "@components/ui/button.astro";
 import Contactform from "@components/contactform.astro";
 
 changeLanguage("en");
+
+let contacts = [
+    {
+        title: "Collaborate",
+        email: "test@yourcompany.com",
+        phone: "+1 (555) 555-5555",
+    },
+    {
+        title: "Press",
+        email: "test@yourcompany.com",
+        phone: "+1 (555) 555-5555",
+    },
+    {
+        title: "Join our team",
+        email: "test@yourcompany.com",
+        phone: "+1 (555) 555-5555",
+    },
+    {
+        title: "Say hello",
+        email: "test@yourcompany.com",
+        phone: "+1 (555) 555-5555",
+    },
+];
 ---
 
 <Layout title="Contact">
-  <Container>
-    <Sectionhead>
-      <Fragment slot="title">Contact</Fragment>
-      <Fragment slot="desc">We are a here to help.</Fragment>
-    </Sectionhead>
+	<Container>
+		<Sectionhead>
+			<Fragment slot="title">Contact</Fragment>
+			<Fragment slot="desc">We are a here to help.</Fragment>
+		</Sectionhead>
 
-    <div class="grid md:grid-cols-2 gap-10 mx-auto max-w-4xl mt-16">
-      <div>
-        <h2 class="font-medium text-2xl text-gray-800">Contact Astroship</h2>
-        <p class="text-lg leading-relaxed text-slate-500 mt-3">
-          Have something to say? We are here to help. Fill up the form or send
-          email or call phone.
-        </p>
-        <div class="mt-5">
-          <div class="flex items-center mt-2 space-x-2 text-gray-600">
-            <Icon class="text-gray-400 w-4 h-4" name="uil:map-marker" />
-            <span>1734 Sanfransico, CA 93063</span>
-          </div><div class="flex items-center mt-2 space-x-2 text-gray-600">
-            <Icon class="text-gray-400 w-4 h-4" name="uil:envelope" /><a
-              href="mailto:hello@astroshipstarter.com"
-              >hello@astroshipstarter.com</a
-            >
-          </div><div class="flex items-center mt-2 space-x-2 text-gray-600">
-            <Icon class="text-gray-400 w-4 h-4" name="uil:phone" /><a
-              href="tel:+1 (987) 4587 899">+1 (987) 4587 899</a
-            >
-          </div>
-        </div>
-      </div>
-      <div>
-        <Contactform />
-      </div>
-    </div>
-  </Container>
+		<div class="py-24 sm:py-32">
+			<div class="mx-auto max-w-7xl px-6 lg:px-8">
+				<div class="mx-auto max-w-2xl space-y-16 divide-y divide-gray-100 lg:mx-0 lg:max-w-none">
+					<div class="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-3">
+						<div>
+							<h2 class="text-3xl font-bold tracking-tight text-gray-900 dark:text-white">Get in touch</h2>
+							<p class="mt-4 leading-7 text-gray-600 dark:text-gray-200">
+								Quam nunc nunc eu sed. Sed rhoncus quis ultricies ac pellentesque.
+							</p>
+						</div>
+						<div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:col-span-2 lg:gap-8">
+							{
+								contacts.map((item) => (
+									<div class="rounded-2xl bg-gray-50 dark:bg-stone-800 p-10">
+										<h3 class="text-base font-semibold leading-7 text-gray-900 dark:text-white">{item.title}</h3>
+										<dl class="mt-3 space-y-1 text-sm leading-6 text-gray-600 dark:text-white">
+											<div>
+												<dt class="sr-only">Email</dt>
+												<dd>
+													<a class="font-semibold text-stone-600 dark:text-white" href="mailto:collaborate@example.com">
+														{item.email}
+													</a>
+												</dd>
+											</div>
+											<div class="mt-1">
+												<dt class="sr-only">Phone number</dt>
+												<dd>{item.phone}</dd>
+											</div>
+										</dl>
+									</div>
+								))
+							}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</Container>
 </Layout>

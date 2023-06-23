@@ -1,5 +1,26 @@
 {
-  "hero": {
-    "title": "Dati per arricchire il tuo business online!"
-  }
+	"hero": {
+		"title": "Sviluppo web potenziato!",
+		"subtitle": "Liberare il Potere del Web: Combina Astro, Tailwind CSS e Alpine.js per Semplificare il Tuo Processo di Sviluppo Web.",
+		"globe_title": "Crea Siti Web Sorprendenti ad Alte Prestazioni con Facilità e Velocità.",
+		"main_button_text": "Scarica su github",
+		"secondary_button_text": "Vai a versione animata"
+	},
+	"hero_animated": {
+		"secondary_button_text": "Vai a versione base"
+	},
+	"header": {
+		"features": "Funzionalità",
+		"princing": "Prezzi",
+		"blog": "Blog",
+		"contact": "Contatti",
+		"primary_button_text": "Scarica",
+		"secondary_button_text": "Login"
+	},
+	"features": {
+		"learn_more": "Scopri di più",
+		"title": "Funzionalità",
+		"subtitle": "Tutti glil strumenti di cui hai bisogno",
+		"description": "Astro è un generatore di siti statici ad alte prestazioni che si integra perfettamente con Tailwind CSS e Alpine.js. Ti permette di costruire siti web con facilità e velocità, senza sacrificare le prestazioni."
+	}
 }

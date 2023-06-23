@@ -29,7 +29,14 @@ const pricingData = [
             original: "$24",
         },
         popular: true,
-        features: ["All Free Features", "Up to 20 users", "20 Custom domains", "Unlimited Collaborators", "Advanced Integrations", "Priority Support"],
+        features: [
+            "All Free Features",
+            "Up to 20 users",
+            "20 Custom domains",
+            "Unlimited Collaborators",
+            "Advanced Integrations",
+            "Priority Support",
+        ],
         button: {
             text: "Get Started",
             link: "#",
@@ -39,14 +46,7 @@ const pricingData = [
         name: "Enterprise",
         price: "Custom",
         popular: false,
-        features: [
-            "All Pro Features",
-            "Unlimited Custom domains",
-            "99.99% Uptime SLA",
-            "SAML & SSO Integration",
-            "Dedicated Account Manager",
-            "24/7 Phone Support",
-        ],
+        features: ["All Pro Features", "Unlimited Custom domains", "99.99% Uptime SLA", "SAML & SSO Integration", "24/7 Phone Support"],
         button: {
             text: "Contact us",
             link: "/contact",
@@ -56,16 +56,16 @@ const pricingData = [
 ---
 
 <Layout title="Pricing">
-  <Container>
-    <Sectionhead>
-      <Fragment slot="title">Pricing</Fragment>
-      <Fragment slot="desc">Simple & Predictable pricing. No Surprises.</Fragment>
-    </Sectionhead>
+	<Container>
+		<Sectionhead>
+			<Fragment slot="title">Pricing</Fragment>
+			<Fragment slot="desc">Simple & Predictable pricing. No Surprises.</Fragment>
+		</Sectionhead>
 
-    <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-4xl mt-20">
-      {pricingData.map((item) => <Pricing plan={item} />)}
-    </div>
-    <Logos />
-    <Faq />
-  </Container>
+		<div class="grid md:grid-cols-3 gap-10 mx-auto max-w-4xl mt-20">
+			{pricingData.map((item) => <Pricing plan={item} />)}
+		</div>
+		<!-- <Logos /> -->
+		<Faq />
+	</Container>
 </Layout>

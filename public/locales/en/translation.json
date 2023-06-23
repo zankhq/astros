@@ -1,5 +1,26 @@
 {
-  "hero": {
-    "title": "Data to enrich your online business!"
-  }
+	"hero": {
+		"title": "Supercharged web development!",
+		"subtitle": "Unleashing the Power of the Web: Combines Astro, Tailwind CSS and Alpine.js to Streamline Your Web Development Process.",
+		"globe_title": "Craft Stunning, High-Performance Websites with Ease and Speed",
+		"main_button_text": "Download on github",
+		"secondary_button_text": "Go to animated version"
+	},
+	"hero_animated": {
+		"secondary_button_text": "Go to base version"
+	},
+	"header": {
+		"features": "Features",
+		"princing": "Pricing",
+		"blog": "Blog",
+		"contact": "Contacts",
+		"primary_button_text": "Download",
+		"secondary_button_text": "Login"
+	},
+	"features": {
+		"learn_more": "Learn more",
+		"title": "Features",
+		"subtitle": "All the tools you need",
+		"description": "Astro is a high-performance static site builder that seamlessly integrates with Tailwind CSS and Alpine.js. It allows you to build websites with ease and speed, without sacrificing on performance."
+	}
 }

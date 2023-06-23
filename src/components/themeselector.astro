@@ -1,0 +1,39 @@
+---
+import { Icon } from "astro-icon";
+---
+
+<div
+	class="flex items-center pl-2 rounded-md text-sm font-semibold text-center transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 border outline-2 outline-offset-2 border-gray-300 text-gray-700 hover:border-gray-400 active:bg-gray-100 dark:active:bg-stone-950">
+	<Icon name="fluent:dark-theme-20-filled" class="w-5 dark:text-white" />
+	<select
+		x-data="{
+				theme: localStorage.theme || 'system',
+				updateDocumentClassTheme: function() {
+					if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+						document.documentElement.classList.add('dark');
+					} else {
+						document.documentElement.classList.remove('dark');
+					}
+				},
+				switchTheme: function (newValue) {
+					if (newValue == 'dark') {
+						localStorage.theme = 'dark';
+					} else if (newValue == 'light') {
+						localStorage.theme = 'light';
+					} else {
+						localStorage.removeItem('theme');
+					}
+					this.updateDocumentClassTheme();
+				},
+			}"
+		name="theme-selector"
+		id="theme-selector"
+		class="appearance-none cursor-pointer rounded-md pl-3 pr-2 py-1.5 dark:bg-stone-950 dark:text-white focus-visible:outline-none"
+		x-init="updateDocumentClassTheme()"
+		x-model="theme"
+		@change="switchTheme($event.target.value)">
+		<option value="system">System</option>
+		<option value="dark">Dark</option>
+		<option value="light">Light</option>
+	</select>
+</div>

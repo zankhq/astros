@@ -1,44 +1,96 @@
 ---
 const { plan } = Astro.props;
+
+const faq = [
+	{
+		title: "Bring Your Own Framework",
+		description: "Build your site using React, Svelte, Vue, Preact, web components, or just plain ol' HTML + JavaScript.",
+		icon: "bx:bxs-briefcase",
+	},
+	{
+		title: "100% Static HTML, No JS",
+		description: "Astro renders your entire page to static HTML, removing all JavaScript from your final build by default.",
+		icon: "bx:bxs-window-alt",
+	},
+	{
+		title: "On-Demand Components",
+		description: "Need some JS? Astro can automatically hydrate interactive components when they become visible on the page.  ",
+		icon: "bx:bxs-data",
+	},
+	{
+		title: "Broad Integration",
+		description: "Astro supports TypeScript, Scoped CSS, CSS Modules, Sass, Tailwind, Markdown, MDX, and any other npm packages.",
+		icon: "bx:bxs-bot",
+	},
+	{
+		title: "SEO Enabled",
+		description: "Automatic sitemaps, RSS feeds, pagination and collections take the pain out of SEO and syndication. It just works!",
+		icon: "bx:bxs-file-find",
+	},
+	{
+		title: "Community",
+		description: "Astro is an open source project powered by hundreds of contributors making thousands of individual contributions.",
+		icon: "bx:bxs-user",
+	},
+];
 ---
 
-<div class="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8 lg:py-40">
-  <div class="mx-auto max-w-4xl divide-y divide-gray-900/10">
-    <h2 class="text-2xl font-bold leading-10 tracking-tight text-gray-900">Frequently asked questions</h2>
-    <dl class="mt-10 space-y-6 divide-y divide-gray-900/10">
-      <div class="pt-6">
-        <dt>
-          <!-- Expand/collapse question button -->
-          <button type="button" class="flex w-full items-start justify-between text-left text-gray-900" aria-controls="faq-0" aria-expanded="false">
-            <span class="text-base font-semibold leading-7">What&#039;s the best thing about Switzerland?</span>
-            <span class="ml-6 flex h-7 items-center">
-              <!--
-                  Icon when question is collapsed.
+<div class="mx-auto max-w-5xl px-6 py-24 sm:py-32 lg:px-8 lg:py-40 dark:bg-stone-950">
+	<div class="mx-auto divide-y divide-gray-900/10 dark:divide-gray-100/10">
+		<h2 class="text-2xl font-bold leading-10 tracking-tight text-gray-900 dark:text-white">Frequently asked questions</h2>
+		<dl class="mt-10 space-y-6 divide-y divide-gray-900/10 dark:divide-gray-100/10">
+			<div class="pt-6" x-data="{ open: false }">
+				<dt>
+					<!-- Expand/collapse question button -->
+					<button
+						type="button"
+						class="flex w-full items-start justify-between text-left text-gray-900 dark:text-white"
+						aria-controls="faq-0"
+						@click="open = !open"
+						:x-bind:aria-expanded="open.toString()">
+						<span class="text-base font-semibold leading-7">What&#039;s the best thing about Switzerland?</span>
+						<span class="ml-6 flex h-7 items-center">
+							<svg
+								class="h-6 w-6"
+								fill="none"
+								viewBox="0 0 24 24"
+								stroke-width="1.5"
+								stroke="currentColor"
+								aria-hidden="true"
+								x-show="!open">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m6-6H6"></path>
+							</svg>
+							<svg
+								class="h-6 w-6"
+								fill="none"
+								viewBox="0 0 24 24"
+								stroke-width="1.5"
+								stroke="currentColor"
+								aria-hidden="true"
+								x-show="open">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M18 12H6"></path>
+							</svg>
+						</span>
+					</button>
+				</dt>
+				<dd
+					x-transition:enter="transition ease-out duration-100"
+					x-transition:enter-start="opacity-0 transform scale-90"
+					x-transition:enter-end="opacity-100 transform scale-100"
+					x-transition:leave="transition ease-in duration-100"
+					x-transition:leave-start="opacity-100 transform scale-100"
+					x-transition:leave-end="opacity-0 transform scale-90"
+					class="mt-2 pr-12"
+					id="faq-0"
+					x-show="open">
+					<p class="text-base leading-7 text-gray-600 dark:text-gray-100">
+						I don&#039;t know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate
+						laboriosam fugiat.
+					</p>
+				</dd>
+			</div>
 
-                  Item expanded: "hidden", Item collapsed: ""
-                -->
-              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m6-6H6"></path>
-              </svg>
-              <!--
-                  Icon when question is expanded.
-
-                  Item expanded: "", Item collapsed: "hidden"
-                -->
-              <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M18 12H6"></path>
-              </svg>
-            </span>
-          </button>
-        </dt>
-        <dd class="mt-2 pr-12" id="faq-0">
-          <p class="text-base leading-7 text-gray-600">
-            I don&#039;t know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.
-          </p>
-        </dd>
-      </div>
-
-      <!-- More questions... -->
-    </dl>
-  </div>
+			<!-- More questions... -->
+		</dl>
+	</div>
 </div>

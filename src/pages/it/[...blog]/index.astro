@@ -5,6 +5,7 @@ import Layout from "@layouts/Layout.astro";
 import Container from "@components/container.astro";
 import { Icon } from "astro-icon";
 import { localizePath } from "astro-i18next";
+import { getArticleReadingTime } from "@utils/blog";
 
 changeLanguage("it");
 
@@ -25,66 +26,81 @@ export async function getStaticPaths() {changeLanguage('it')
 // Get the entry directly from the prop on render
 const { entry, lang } = Astro.props;
 const { Content } = await entry.render();
+const readTime = getArticleReadingTime(entry.body);
 ---
 
 <Layout title={entry.data.title} lang={lang}>
-  <Container>
-    <div class="mx-auto prose prose-lg mt-14">
-      <a href={localizePath(`/category/${entry.data.category?.toLowerCase()}`)} class="text-blue-400 uppercase tracking-wider text-sm font-medium no-underline">
-        {entry.data.category}
-      </a>
-      <h1 class="text-4xl lg:text-5xl font-bold lg:tracking-tight mt-1 lg:leading-tight">
-        {entry.data.title}
-      </h1>
-      <div class="flex gap-2 mt-3 items-center flex-wrap md:flex-nowrap">
-        <span class="text-gray-400">
-          {entry.data.author}
-        </span>
-        <span class="text-gray-400">•</span>
-        <time class="text-gray-400" datetime={entry.data.publishDate.toISOString()}>
-          {entry.data.publishDate.toDateString()}
-        </time>
-        <span class="text-gray-400 hidden md:block">•</span>
-        <div class="w-full md:w-auto flex flex-wrap gap-3">
-          {
-            entry.data.tags.map((tag) => (
-              <a href={localizePath(`/tag/${tag}`)} class="text-sm text-gray-500">
-                #{tag}
-              </a>
-            ))
-          }
-        </div>
-      </div>
-    </div>
+	<Container>
+		<div class="mx-auto prose prose-lg dark:prose-invert mt-14">
+			<a
+				href={localizePath(`/category/${entry.data.category?.toLowerCase()}`)}
+				class="text-blue-400 dark:text-stone-400 uppercase tracking-wider text-sm font-medium no-underline">
+				{entry.data.category}
+			</a>
+			<h1 class="text-4xl mb-3 lg:text-5xl font-bold lg:tracking-tight mt-1 lg:leading-tight dark:text-white">
+				{entry.data.title}
+			</h1>
+			<div class="flex gap-2 items-center">
+				<div class="w-full md:w-auto flex flex-wrap gap-3">
+					{
+						entry.data.tags.map((tag) => (
+							<a href={localizePath(`/tag/${tag}`)} class="text-sm text-gray-500 dark:text-stone-300">
+								#{tag}
+							</a>
+						))
+					}
+				</div>
+			</div>
+			<div class="flex gap-2 mt-4 items-center flex-wrap md:flex-nowrap">
+				<span class="text-gray-400 dark:text-stone-400">
+					{entry.data.author}
+				</span>
+				<span class="text-gray-400 dark:text-stone-400">•</span>
+				<span class="text-gray-400 dark:text-stone-400">
+					{readTime} min
+				</span>
+				<span class="text-gray-400 dark:text-stone-400">•</span>
+				<time class="text-gray-400 dark:text-stone-400" datetime={entry.data.publishDate.toISOString()}>
+					{entry.data.publishDate.toDateString()}
+				</time>
+			</div>
+		</div>
 
-    <div class="mx-auto prose prose-lg mt-6">
-      <Content />
-    </div>
-    <div class="mx-auto mt-20">
-      <a href={localizePath("/blog")}>
-        <div class="flex flex-row align-middle justify-center">
-          <Icon name="tabler:chevron-left" class="w-6 h-6" />
-          <p class="ml-2">Back to blog</p>
-        </div>
-      </a>
-    </div>
-    <div class="mx-auto prose prose-lg mt-20">
-      <script
-        src="https://giscus.app/client.js"
-        data-repo="zk-g/astroship"
-        data-repo-id="R_kgDOJCevvQ"
-        data-category="Blog"
-        data-category-id="DIC_kwDOJCevvc4CU0R7"
-        data-mapping="pathname"
-        data-strict="0"
-        data-reactions-enabled="1"
-        data-emit-metadata="0"
-        data-input-position="top"
-        data-theme="light"
-        data-lang="en"
-        data-loading="lazy"
-        crossorigin="anonymous"
-        async></script>
-    </div>
-  </Container>
+		<div class="mx-auto prose prose-lg dark:prose-invert mt-6 dark:text-gray-200">
+			<Content />
+		</div>
+		<div class="mx-auto mt-20">
+			<a href={localizePath("/blog")}>
+				<div class="flex flex-row align-middle justify-center dark:text-stone-200">
+					<Icon name="tabler:chevron-left" class="w-6 h-6" />
+					<p class="ml-2">Back to blog</p>
+				</div>
+			</a>
+		</div>
+		<div
+			class="mx-auto prose prose-lg dark:prose-invert mt-20"
+			x-data="{
+				initGiscus: function() {
+					let script = document.createElement('script');
+					script.src = 'https://giscus.app/client.js';
+					script.dataset.repo = 'zk-g/astroship';
+					script.dataset.repoId = 'R_kgDOJCevvQ';
+					script.dataset.category = 'Blog';
+					script.dataset.categoryId = 'DIC_kwDOJCevvc4CU0R7';
+					script.dataset.mapping = 'pathname';
+					script.dataset.strict = '0';
+					script.dataset.reactionsEnabled = '1';
+					script.dataset.emitMetadata = '0';
+					script.dataset.inputPosition = 'top';
+					script.dataset.theme = localStorage.theme == 'dark' ? 'dark' : 'light';
+					script.dataset.lang = 'en';
+					script.dataset.loading = 'lazy';
+					script.crossOrigin = 'anonymous';
+					script.async = true;
+					this.$el.appendChild(script);
+				}
+			}"
+			x-init="initGiscus()">
+		</div>
+	</Container>
 </Layout>

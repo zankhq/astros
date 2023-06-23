@@ -8,9 +8,11 @@ import { autolinkConfig } from "./plugins/rehype-autolink-config";
 import rehypeSlug from "rehype-slug";
 import NetlifyCMS from "astro-netlify-cms";
 import astroI18next from "astro-i18next";
+import alpinejs from "@astrojs/alpinejs";
 
+// https://astro.build/config
 export default defineConfig({
-	site: "https://astroship.zank.it",
+	site: "https://astros.zank.it",
 	integrations: [
 		tailwind(),
 		image({
@@ -120,6 +122,7 @@ export default defineConfig({
 			},
 		}),
 		astroI18next(),
+		alpinejs(),
 	],
 	markdown: {
 		rehypePlugins: [

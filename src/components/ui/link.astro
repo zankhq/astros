@@ -2,32 +2,42 @@
 import { localizePath } from "astro-i18next";
 
 interface Props {
-  href: string;
-  size?: "md" | "lg";
-  block?: boolean;
-  style?: "outline" | "primary" | "inverted" | "muted";
-  class?: string;
-  [x: string]: any;
+	href: string;
+	size?: "xs" | "sm" | "md" | "lg";
+	block?: boolean;
+	style?: "outline" | "primary" | "hover" | "muted";
+	class?: string;
+	[x: string]: any;
 }
 
-const { href, block, size = "lg", style = "primary", class: className, ...rest } = Astro.props;
+const { href, block, size = "md", style = "primary", class: className, ...rest } = Astro.props;
 
 const sizes = {
-  lg: "px-5 py-2.5",
-  md: "px-4 py-2",
+	xs: "",
+	sm: "px-3 py-1.5",
+	md: "px-4 py-2.5",
+	lg: "px-5 py-2.5",
 };
 
 const styles = {
-  outline: "bg-white border-2 border-black hover:bg-gray-100 text-black ",
-  primary: "bg-black text-white hover:bg-gray-800  border-2 border-transparent",
-  inverted: "bg-white text-black   border-2 border-transparent",
-  muted: "bg-gray-100 hover:bg-gray-200   border-2 border-transparent",
+	outline:
+		"text-center border outline-2 outline-offset-2 transition-colors border-gray-300 text-gray-700 dark:text-gray-100 hover:border-gray-400 dark:text-white active:bg-gray-100",
+	primary:
+		"text-center bg-stone-950 dark:bg-gray-100 hover:bg-stone-800 dark:hover:bg-white focus-visible:bg-stone-500 dark:focus-visible:bg-gray-100 text-white dark:text-black border-transparent shadow-sm",
+	muted: "text-sm font-semibold leading-6 text-gray-800 dark:text-gray-100",
+	hover: "text-center text-stone-950 hover:text-gray-900 focus:text-gray-900 focus:bg-gray-200 focus:outline-none focus:shadow-outline hover:bg-gray-200 dark:hover:bg-gray-600 dark:focus:bg-gray-600 dark:focus:text-white dark:hover:text-white dark:text-gray-200",
 };
 ---
 
 <a
-  href={localizePath(href)}
-  {...rest}
-  class:list={["rounded text-center transition focus-visible:ring-2 ring-offset-2 ring-gray-200", block && "w-full", sizes[size], styles[style], className]}
-  ><slot />
+	href={href.startsWith("http") ? href : localizePath(href)}
+	{...rest}
+	class:list={[
+		"rounded-md text-sm font-semibold transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2",
+		block && "w-full",
+		sizes[size],
+		styles[style],
+		className,
+	]}>
+	<slot />
 </a>
