@@ -111,7 +111,10 @@ export const menuitems = [
 											x-init={`() => {
 												const path = $el.getAttribute('data-path');
 												const checkPath = () => {
-													isActive = window.location.pathname === path || window.location.pathname === '/' + path;
+													isActive = window.location.pathname === path ||
+																window.location.pathname === '/' + path ||
+																window.location.pathname === '/' + path + '/' ||
+																window.location.pathname === path + '/';
 												};
 												checkPath();
 												window.addEventListener('popstate', checkPath);
@@ -133,7 +136,10 @@ export const menuitems = [
 							x-init={`() => {
 								const path = $el.getAttribute('data-path');
 								const checkPath = () => {
-									isActive = window.location.pathname === path || window.location.pathname === '/' + path;
+									isActive = window.location.pathname === path ||
+																window.location.pathname === '/' + path ||
+																window.location.pathname === '/' + path + '/' ||
+																window.location.pathname === path + '/';
 								};
 								checkPath();
 								window.addEventListener('popstate', checkPath);
