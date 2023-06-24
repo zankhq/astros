@@ -46,7 +46,7 @@ You can either click on the button above to deploy to Cloudflare automatically, 
 You can leave build settings as defaults.
 
 <details>
-<summary>Work with modules in relink</summary>
+<summary>Cloudflare configuration</summary>
 
 ![Alt text](.github/images/image.png)
 
