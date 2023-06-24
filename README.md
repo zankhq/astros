@@ -26,6 +26,8 @@ This project is strongly inspired by [Astroships](https://github.com/surjithctly
 
 ![Astros Preview](.github/images/astros-preview.png)
 
+![Pagespeed](.github/images/pagespeed.png)
+
 ## 🧪 Test
 
 On the folder run
