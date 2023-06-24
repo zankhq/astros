@@ -24,9 +24,9 @@ This project is strongly inspired by [Astroships](https://github.com/surjithctly
 
 ## Preview
 
-![Astros Preview](.github/images/astros-preview.png)
+![Alt text](.github/images/pagespeed-small.png)
 
-![Pagespeed](.github/images/pagespeed.png)
+![Astros Preview](.github/images/astros-preview.png)
 
 ## 🧪 Test
 
