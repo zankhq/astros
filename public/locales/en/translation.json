@@ -21,6 +21,23 @@
 		"learn_more": "Learn more",
 		"title": "Features",
 		"subtitle": "All the tools you need",
-		"description": "Astro is a high-performance static site builder that seamlessly integrates with Tailwind CSS and Alpine.js. It allows you to build websites with ease and speed, without sacrificing on performance."
+		"description": "Astro is a high-performance static site builder that seamlessly integrates with Tailwind CSS and Alpine.js. It allows you to build websites with ease and speed, without sacrificing on performance.",
+		"astro": "Astro is the all-in-one web framework designed for speed. Pull your content from anywhere and deploy everywhere, all powered by your favorite UI components and libraries.",
+		"alpine": "Alpine is a rugged, minimal tool for composing behavior directly in your markup. Think of it like jQuery for the modern web. Plop in a script tag and get going.",
+		"tailwind": "A utility-first CSS framework packed with classes that can be composed to build any design, directly in your markup.",
+		"localization": "An astro integration of i18next + some utility components to help you translate your astro websites!",
+		"light_dark_mode": "Light/Dark mode based on tailwind classes",
+		"giscus": "A comments system powered by GitHub Discussions. Let visitors leave comments and reactions on your website via GitHub!"
+	},
+	"faq": {
+		"title": "Frequently Asked Questions"
+	},
+	"newsletter": {
+		"title": "Subscribe to our newsletter",
+		"subtitle": "Get notified for all updates",
+		"input_placeholder": "Enter your email",
+		"button_text": "Subscribe",
+		"privacy": "We care about the protection of your data. Read our",
+		"privacy_link": "Privacy Policy."
 	}
 }

@@ -8,37 +8,37 @@ import { t } from "i18next";
 const features = [
 	{
 		title: "Astro",
-		description: "Build your site using React, Svelte, Vue, Preact, web components, or just plain ol' HTML + JavaScript.",
+		description: "features.astro",
 		icon: "bx:bxs-briefcase",
 		url: "https://astro.build/",
 	},
 	{
 		title: "Alpine",
-		description: "Astro renders your entire page to static HTML, removing all JavaScript from your final build by default.",
+		description: "features.alpine",
 		icon: "bx:bxs-window-alt",
 		url: "https://alpinejs.dev/",
 	},
 	{
 		title: "Tailwind",
-		description: "Need some JS? Astro can automatically hydrate interactive components when they become visible on the page.  ",
+		description: "features.tailwind",
 		icon: "bx:bxs-data",
 		url: "https://tailwindcss.com/",
 	},
 	{
 		title: "Localization",
-		description: "Astro supports TypeScript, Scoped CSS, CSS Modules, Sass, Tailwind, Markdown, MDX, and any other npm packages.",
+		description: "features.localization",
 		icon: "bx:bxs-bot",
 		url: "https://github.com/yassinedoghri/astro-i18next",
 	},
 	{
 		title: "Ligh/Dark Mode",
-		description: "Automatic sitemaps, RSS feeds, pagination and collections take the pain out of SEO and syndication. It just works!",
+		description: "features.light_dark_mode",
 		icon: "bx:bxs-file-find",
 		url: "https://tailwindcss.com/docs/dark-mode",
 	},
 	{
 		title: "Giscus",
-		description: "Astro is an open source project powered by hundreds of contributors making thousands of individual contributions.",
+		description: "features.giscus",
 		icon: "bx:bxs-user",
 		url: "https://giscus.app/",
 	},
@@ -65,7 +65,7 @@ const features = [
 							{item.title}
 						</dt>
 						<dd class="mt-4 flex flex-auto flex-col text-base leading-7 text-gray-900 dark:text-gray-100">
-							<p class="flex-auto">{item.description}</p>
+							<p class="flex-auto">{t(item.description)}</p>
 							<p class="mt-6">
 								<Link href={item.url} style="muted" size="xs" class="leading-6 text-left text-black dark:text-white">
 									{t("features.learn_more")}{" "}

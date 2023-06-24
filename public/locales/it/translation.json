@@ -21,6 +21,23 @@
 		"learn_more": "Scopri di più",
 		"title": "Funzionalità",
 		"subtitle": "Tutti glil strumenti di cui hai bisogno",
-		"description": "Astro è un generatore di siti statici ad alte prestazioni che si integra perfettamente con Tailwind CSS e Alpine.js. Ti permette di costruire siti web con facilità e velocità, senza sacrificare le prestazioni."
+		"description": "Astro è un generatore di siti statici ad alte prestazioni che si integra perfettamente con Tailwind CSS e Alpine.js. Ti permette di costruire siti web con facilità e velocità, senza sacrificare le prestazioni.",
+		"astro": "Astro è il framework web all-in-one progettato per la velocità. Preleva i tuoi contenuti da qualsiasi luogo e distribuiscili ovunque, il tutto alimentato dai tuoi componenti UI e librerie preferiti.",
+		"alpine": "Alpine è uno strumento robusto e minimale per comporre comportamenti direttamente nel tuo markup. Pensalo come jQuery per il web moderno. Inserisci un tag script e inizia.",
+		"tailwind": "Un framework CSS basato su utility pieno di classi che possono essere composte per costruire qualsiasi design, direttamente nel tuo markup.",
+		"localization": "Un'integrazione di i18next con Astro + alcuni componenti utilità per aiutarti a tradurre i tuoi siti web Astro!",
+		"light_dark_mode": "Modalità Dark basata sulle classi di Tailwind.",
+		"giscus": "Un sistema di commenti alimentato da GitHub Discussions. Lascia che i visitatori lascino commenti e reazioni sul tuo sito web tramite GitHub!"
+	},
+	"faq": {
+		"title": "Domande frequenti"
+	},
+	"newsletter": {
+		"title": "Sottoscriviti alla nostra newsletter",
+		"subtitle": "Ricevi le notifiche per gli ultimi aggiornamenti e novità.",
+		"input_placeholder": "Inserisci la tua email",
+		"button_text": "Sottoscriviti",
+		"privacy": "Ci importa della tua privacy. Leggi la nostra",
+		"privacy_link": "Privacy Policy."
 	}
 }

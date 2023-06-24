@@ -1,96 +1,134 @@
 ---
 const { plan } = Astro.props;
+import { t } from "i18next";
 
-const faq = [
+const faqs = [
 	{
-		title: "Bring Your Own Framework",
-		description: "Build your site using React, Svelte, Vue, Preact, web components, or just plain ol' HTML + JavaScript.",
-		icon: "bx:bxs-briefcase",
+		title: "What is this?",
+		description: "This is a astro template that uses tailwindcss and alpinejs",
 	},
 	{
-		title: "100% Static HTML, No JS",
-		description: "Astro renders your entire page to static HTML, removing all JavaScript from your final build by default.",
-		icon: "bx:bxs-window-alt",
+		title: "Why alpinejs? Why don't just use js?",
+		description: "Alpine js is less than 17kb and it make javascript very fast to write, there are also various open source ready to use components like https://js.hyperui.dev, https://www.alpinetoolbox.com/examples, https://alpinejs.dev/components#components",
 	},
 	{
-		title: "On-Demand Components",
-		description: "Need some JS? Astro can automatically hydrate interactive components when they become visible on the page.  ",
-		icon: "bx:bxs-data",
+		title: "But I don't need alpine js, can I remove it?",
+		description: `Of course, but some components use it and you'll have to edit these, more specifically you ll have to: <br/>
+					<ul style="list-style: inside;">
+						<li>First remove the package with the command <code>npm unistall @astrojs/alpinejs @types/alpinejs alpinejs</code></li>
+						<li>Adjust all components that uses alpine js: <code>faq.astro</code>, <code>themeselector.astro</code>, <code>navbar.astro</code></li>
+					</ul>`,
 	},
 	{
-		title: "Broad Integration",
-		description: "Astro supports TypeScript, Scoped CSS, CSS Modules, Sass, Tailwind, Markdown, MDX, and any other npm packages.",
-		icon: "bx:bxs-bot",
+		title: "Can I remove also tailwidcss?",
+		description: "I mean, you can, but you'll have to basically rewrite all the template, so I don't recommend it",
 	},
 	{
-		title: "SEO Enabled",
-		description: "Automatic sitemaps, RSS feeds, pagination and collections take the pain out of SEO and syndication. It just works!",
-		icon: "bx:bxs-file-find",
+		title: "I don't need multiple language, how can I remove it?",
+		description: `One way is to simply keep one language and remove the selector from the footer but in order to fully remove the localization you have to: <br/>
+					<ul style="list-style: inside;">
+						<li>Remove the i18next pacakage <code>npm unistall astro-i18next</code></li>
+						<li>Remove <code>astro-i18next.config.mjs</code> file</li>
+						<li>Remove <code>locales</code> folder from public</li>
+						<li>Remove <code>languageselector.astro</code> file and from footer</li>
+						<li>Find all reference to <code>i18next</code> and <code>astro-i18next</code> and replace with your text</li>
+					</ul>`
 	},
 	{
-		title: "Community",
-		description: "Astro is an open source project powered by hundreds of contributors making thousands of individual contributions.",
-		icon: "bx:bxs-user",
+		title: "I don't need dark mode, how can I remove it?",
+		description: "Dark mode is embedded into tailwindcss, so you can't remove it, but you can remove the switch from the navbar",
 	},
+	{
+		title: "I don't need decap CMS, how can I remove it?",
+		description: `In order to remove decap CMS you need to:
+					<ul style="list-style: inside;">
+						<li>Remove the netlify-cms pacakage <code>npm unistall astro-netlify-cms</code></li>
+						<li>Remove NetlifyCMS configuration from <code>astro.config.mjs</code></li>
+					</ul>`,
+	},
+	{
+		title: "How can I configure the decap CMS authentication with cloudflare?",
+		description: `To configure decap CMS with cloudflare follow this guide <a href="https://github.com/i40west/netlify-cms-cloudflare-pages" target="_blank">https://github.com/i40west/netlify-cms-cloudflare-pages</a>`,
+	},
+	{
+		title: "How can I configure the decap CMS authentication with netlify?",
+		description: `To configure decap CMS with netlify do the followings:
+					<ul style="list-style: inside;">
+						<li>Change NetlifyCMS config <code>config.backend.name</code> to git-gateway</li>
+						<li>Use integrated NetlifyCMS auth <a href="https://decapcms.org/docs/git-gateway-backend/#git-gateway-with-netlify" target="_blank">https://decapcms.org/docs/git-gateway-backend/#git-gateway-with-netlify</a></li>
+					</ul>`,
+	},
+	{
+		title: "How can I change the localization languages?",
+		description: `In order to change the languages you have to change the languages in the file <code>astro-i18next.config.mjs</code> and in the netlifyCMS configuration on the file <code>astro.config.mjs</code> <br/>
+					Then change the locales files folders in <code>public/locales</code>`,
+	},
+	{
+		title: "What are the files in the funciotn folder used for?",
+		description: `These are cloudflare function that are used for the authentication to the decap CMS`,
+	},
+	{
+		title: "The build on cloudflare keep failing, why?",
+		description: `One of the problem could be that the Build system version is setted to version 1, make sure that version 2 is selected`,
+	}
 ];
 ---
 
 <div class="mx-auto max-w-5xl px-6 py-24 sm:py-32 lg:px-8 lg:py-40 dark:bg-stone-950">
 	<div class="mx-auto divide-y divide-gray-900/10 dark:divide-gray-100/10">
-		<h2 class="text-2xl font-bold leading-10 tracking-tight text-gray-900 dark:text-white">Frequently asked questions</h2>
+		<h2 class="text-2xl font-bold leading-10 tracking-tight text-gray-900 dark:text-white">{t("faq.title")}</h2>
 		<dl class="mt-10 space-y-6 divide-y divide-gray-900/10 dark:divide-gray-100/10">
-			<div class="pt-6" x-data="{ open: false }">
-				<dt>
-					<!-- Expand/collapse question button -->
-					<button
-						type="button"
-						class="flex w-full items-start justify-between text-left text-gray-900 dark:text-white"
-						aria-controls="faq-0"
-						@click="open = !open"
-						:x-bind:aria-expanded="open.toString()">
-						<span class="text-base font-semibold leading-7">What&#039;s the best thing about Switzerland?</span>
-						<span class="ml-6 flex h-7 items-center">
-							<svg
-								class="h-6 w-6"
-								fill="none"
-								viewBox="0 0 24 24"
-								stroke-width="1.5"
-								stroke="currentColor"
-								aria-hidden="true"
-								x-show="!open">
-								<path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m6-6H6"></path>
-							</svg>
-							<svg
-								class="h-6 w-6"
-								fill="none"
-								viewBox="0 0 24 24"
-								stroke-width="1.5"
-								stroke="currentColor"
-								aria-hidden="true"
-								x-show="open">
-								<path stroke-linecap="round" stroke-linejoin="round" d="M18 12H6"></path>
-							</svg>
-						</span>
-					</button>
-				</dt>
-				<dd
-					x-transition:enter="transition ease-out duration-100"
-					x-transition:enter-start="opacity-0 transform scale-90"
-					x-transition:enter-end="opacity-100 transform scale-100"
-					x-transition:leave="transition ease-in duration-100"
-					x-transition:leave-start="opacity-100 transform scale-100"
-					x-transition:leave-end="opacity-0 transform scale-90"
-					class="mt-2 pr-12"
-					id="faq-0"
-					x-show="open">
-					<p class="text-base leading-7 text-gray-600 dark:text-gray-100">
-						I don&#039;t know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate
-						laboriosam fugiat.
-					</p>
-				</dd>
-			</div>
-
-			<!-- More questions... -->
+			{
+				faqs.map((faq) => (
+					<div class="pt-6" x-data="{ open: false }">
+						<dt>
+							<button
+								type="button"
+								class="flex w-full items-start justify-between text-left text-gray-900 dark:text-white"
+								aria-controls="faq-0"
+								@click="open = !open"
+								:x-bind:aria-expanded="open.toString()">
+								<span class="text-base font-semibold leading-7">{faq.title}</span>
+								<span class="ml-6 flex h-7 items-center">
+									<svg
+										class="h-6 w-6"
+										fill="none"
+										viewBox="0 0 24 24"
+										stroke-width="1.5"
+										stroke="currentColor"
+										aria-hidden="true"
+										x-show="!open">
+										<path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m6-6H6"></path>
+									</svg>
+									<svg
+										class="h-6 w-6"
+										fill="none"
+										viewBox="0 0 24 24"
+										stroke-width="1.5"
+										stroke="currentColor"
+										aria-hidden="true"
+										x-show="open">
+										<path stroke-linecap="round" stroke-linejoin="round" d="M18 12H6"></path>
+									</svg>
+								</span>
+							</button>
+						</dt>
+						<dd
+							x-transition:enter="transition ease-out duration-100"
+							x-transition:enter-start="opacity-0 transform scale-90"
+							x-transition:enter-end="opacity-100 transform scale-100"
+							x-transition:leave="transition ease-in duration-100"
+							x-transition:leave-start="opacity-100 transform scale-100"
+							x-transition:leave-end="opacity-0 transform scale-90"
+							class="mt-2 pr-12"
+							id="faq-0"
+							x-show="open">
+							<p class="text-base leading-7 text-gray-600 dark:text-gray-100"  set:html={faq.description}>
+							</p>
+						</dd>
+					</div>
+				))
+			}
 		</dl>
 	</div>
 </div>

@@ -22,6 +22,10 @@ This project is strongly inspired by [Astroships](https://github.com/surjithctly
 
 ---
 
+## Preview
+
+![Astros Preview](.github/images/astros-preview.png)
+
 ## 🧪 Test
 
 On the folder run

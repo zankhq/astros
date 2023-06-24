@@ -38,7 +38,7 @@ export const menuitems = [
 		<a
 			href={localizePath("/")}
 			class="flex gap-3 items-center text-lg font-semibold tracking-widest text-gray-900 uppercase rounded-lg dark:text-white focus:outline-none focus:shadow-outline">
-			<Image src={logo} width="30" class="dark:invert"></Image>
+			<Image src={logo} width="30" class="dark:invert" alt="Logo"></Image>
 			Astros
 		</a>
 		<button class="md:hidden text-gray-500 w-10 h-10 relative focus:outline-none" @click="open = !open">
@@ -71,7 +71,7 @@ export const menuitems = [
 		x-transition:leave="transition ease-in duration-200"
 		x-transition:leave-start="opacity-100 transform scale-100"
 		x-transition:leave-end="opacity-0 transform scale-90"
-		class="md:mt-0 lg:pl-8 md:items-center flex-grow pb-4 md:pb-0 flex-col gap-2 transition-all ease-out md:transition-none md:justify-center md:flex-row">
+		class="md:mt-0 lg:pl-8 md:items-center flex-grow pb-4 md:pb-0 flex-col gap-2 transition-all ease-out md:transition-none md:justify-center md:flex-row hidden">
 		<div class="flex flex-col flex-grow text-center gap-2 md:justify-center md:items-center md:flex md:flex-row md:mx-auto">
 			{
 				menuitems.map((item) =>
