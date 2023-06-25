@@ -8,10 +8,10 @@ import { t } from "i18next";
 const { dynamic = false } = Astro.props;
 ---
 
-<div class="relative isolate pt-14 bg-white dark:bg-stone-950">
+<div class="relative isolate pt-14 dark:bg-stone-950">
 	<div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80">
 		<svg
-			class="relative left-[calc(50%-11rem)] -z-10 h-[21.1875rem] max-w-none -translate-x-1/2 rotate-[30deg] sm:left-[calc(50%-30rem)] sm:h-[42.375rem]"
+			class="relative left-[calc(50%-11rem)] -z-10 h-[21.1875rem] max-w-none -translate-x-1/2 rotate-[30deg] sm:left-[calc(50%-30rem)] sm:h-[42.375rem] animate-slide"
 			viewBox="0 0 1155 678">
 			<path
 				fill="url(#9b2541ea-d39d-499b-bd42-aeea3e93f5ff)"
@@ -27,12 +27,12 @@ const { dynamic = false } = Astro.props;
 					y2="474.645"
 					gradientUnits="userSpaceOnUse">
 					<stop stop-color="#9089FC"></stop>
-					<stop offset="1" stop-color="#FF80B5"></stop>
+					<stop offset="1" stop-color="#FFD580"></stop>
 				</linearGradient>
 			</defs>
 		</svg>
 	</div>
-	<div class="sm:py-10">
+	<div class="sm:pt-10">
 		<div class="mx-auto max-w-7xl">
 			<div class="mx-auto max-w-2xl text-center">
 				<h1 class="text-4xl font-bold tracking-tight text-black dark:text-white sm:text-6xl">{t("hero.title")}</h1>
@@ -80,7 +80,7 @@ const { dynamic = false } = Astro.props;
 	</div>
 	<div class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]">
 		<svg
-			class="relative left-[calc(50%+3rem)] h-[21.1875rem] max-w-none -translate-x-1/2 sm:left-[calc(50%+36rem)] sm:h-[42.375rem]"
+			class="relative left-[calc(50%+3rem)] h-[21.1875rem] max-w-none -translate-x-1/2 sm:left-[calc(50%+36rem)] sm:h-[42.375rem] animate-slide"
 			viewBox="0 0 1155 678">
 			<path
 				fill="url(#b9e4a85f-ccd5-4151-8e84-ab55c66e5aa1)"
@@ -95,10 +95,35 @@ const { dynamic = false } = Astro.props;
 					y1=".177"
 					y2="474.645"
 					gradientUnits="userSpaceOnUse">
-					<stop stop-color="#9089FC"></stop>
-					<stop offset="1" stop-color="#FF80B5"></stop>
+					<stop stop-color="#9089FC">
+						<animate attributeName="stop-color" values="#9089FC; #FF80B5; #9089FC" dur="5s" repeatCount="indefinite"></animate>
+					</stop>
+					<stop offset="1" stop-color="#ffb6c1">
+						<animate attributeName="stop-color" values="#ffb6c1; #9089FC; #ffb6c1" dur="5s" repeatCount="indefinite"></animate>
+					</stop>
 				</linearGradient>
 			</defs>
 		</svg>
 	</div>
 </div>
+
+<style>
+	@keyframes slide {
+		0% {
+			left: calc(50% - 70rem);
+			transform: rotate(0deg);
+		}
+		50% {
+			left: calc(50% - 30rem);
+			transform: rotate(-180deg);
+		}
+		100% {
+			left: calc(50% - 70rem);
+			transform: rotate(0deg);
+		}
+	}
+
+	.animate-slide {
+		animation: slide 25s infinite;
+	}
+</style>
