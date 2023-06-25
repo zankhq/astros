@@ -114,6 +114,8 @@ export const menuitems = [
 													isActive = window.location.pathname === path ||
 																window.location.pathname === '/' + path ||
 																window.location.pathname === '/' + path + '/' ||
+																window.location.pathname === '/it/' + path ||
+																window.location.pathname === '/it/' + path + '/' ||
 																window.location.pathname === path + '/';
 												};
 												checkPath();
@@ -137,9 +139,11 @@ export const menuitems = [
 								const path = $el.getAttribute('data-path');
 								const checkPath = () => {
 									isActive = window.location.pathname === path ||
-																window.location.pathname === '/' + path ||
-																window.location.pathname === '/' + path + '/' ||
-																window.location.pathname === path + '/';
+												window.location.pathname === '/' + path ||
+												window.location.pathname === '/' + path + '/' ||
+												window.location.pathname === '/it/' + path ||
+												window.location.pathname === '/it/' + path + '/' ||
+												window.location.pathname === path + '/';
 								};
 								checkPath();
 								window.addEventListener('popstate', checkPath);
