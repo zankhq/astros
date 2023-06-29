@@ -9,33 +9,34 @@ import Pagination from "@components/blog/pagination.astro";
 
 changeLanguage("en");
 
-export async function getStaticPaths({ paginate }) {changeLanguage('en')
-    var posts = await getCollection("blog", ({ data }) => {
-        return !data.draft && data.publishDate < new Date();
-    });
-    const localizedPosts = posts.filter((page) => {
-        const [lang, ...slug] = page.slug.split("/");
-        return lang === i18next.language;
-    });
-    // Sort content entries by publication date
-    localizedPosts.sort(function (a, b) {
-        return b.data.publishDate.valueOf() - a.data.publishDate.valueOf();
-    });
-    return paginate(localizedPosts, {
-        params: { blog: "blog" || undefined },
-        pageSize: 5,
-    });
+export async function getStaticPaths({ paginate }) {
+	changeLanguage("en");
+	var posts = await getCollection("blog", ({ data }) => {
+		return !data.draft && data.publishDate < new Date();
+	});
+	const localizedPosts = posts.filter((page) => {
+		const [lang, ...slug] = page.slug.split("/");
+		return lang === i18next.language;
+	});
+	// Sort content entries by publication date
+	localizedPosts.sort(function (a, b) {
+		return b.data.publishDate.valueOf() - a.data.publishDate.valueOf();
+	});
+	return paginate(localizedPosts, {
+		params: { blog: "blog" || undefined },
+		pageSize: 5,
+	});
 }
 const { page } = Astro.props;
 ---
 
 <Layout title="Blog">
-  <Container>
-    <Sectionhead>
-      <Fragment slot="title">Our Blog</Fragment>
-      <Fragment slot="desc">We write about building startups and thoughts going on our mind.</Fragment>
-    </Sectionhead>
-    <Posts posts={page.data} />
-    <Pagination class="mt-20" prevUrl={page.url.prev} nextUrl={page.url.next} />
-  </Container>
+	<Container>
+		<Sectionhead>
+			<Fragment slot="title">Our Blog</Fragment>
+			<Fragment slot="desc">Discover Industry Insights, Company News, and Expert Opinions.</Fragment>
+		</Sectionhead>
+		<Posts posts={page.data} />
+		<Pagination class="mt-20" prevUrl={page.url.prev} nextUrl={page.url.next} />
+	</Container>
 </Layout>
