@@ -96,18 +96,21 @@ Astros depends on the following packages:
 
 <details>
   <summary>What is this?</summary>
+<br/>
   This is a astro template that uses tailwindcss and alpinejs
 </details>
 <br/>
 
 <details>
   <summary>Why alpinejs? Why don't just use js?</summary>
+<br/>
   Alpine js is less than 17kb and it make javascript very fast to write, there are also various open source ready to use components like https://js.hyperui.dev, https://www.alpinetoolbox.com/examples, https://alpinejs.dev/components#components
 </details>
 <br/>
 
 <details>
   <summary>But I don't need alpine js, can I remove it?</summary>
+<br/>
   Of course, but some components use it and you'll have to edit these, more specifically you ll have to: <br/>
   <ul style="list-style: inside;">
     <li>First remove the package with the command <code>npm unistall @astrojs/alpinejs @types/alpinejs alpinejs</code></li>
@@ -118,12 +121,14 @@ Astros depends on the following packages:
 
 <details>
   <summary>Can I remove also tailwidcss?</summary>
+<br/>
   I mean, you can, but you'll have to basically rewrite all the template, so I don't recommend it
 </details>
 <br/>
 
 <details>
   <summary>I don't need multiple language, how can I remove it?</summary>
+<br/>
   One way is to simply keep one language and remove the selector from the footer but in order to fully remove the localization you have to: <br/>
   <ul style="list-style: inside;">
     <li>Remove the i18next pacakage <code>npm unistall astro-i18next</code></li>
@@ -137,12 +142,14 @@ Astros depends on the following packages:
 
 <details>
   <summary>I don't need dark mode, how can I remove it?</summary>
+<br/>
   Dark mode is embedded into tailwindcss, so you can't remove it, but you can remove the switch from the navbar
 </details>
 <br/>
 
 <details>
   <summary>I don't need decap CMS, how can I remove it?</summary>
+<br/>
   In order to remove decap CMS you need to:
   <ul style="list-style: inside;">
     <li>Remove the netlify-cms pacakage <code>npm unistall astro-netlify-cms</code></li>
@@ -153,12 +160,14 @@ Astros depends on the following packages:
 
 <details>
   <summary>How can I configure the decap CMS authentication with cloudflare?</summary>
+<br/>
   To configure decap CMS with cloudflare follow this guide <a href="https://github.com/i40west/netlify-cms-cloudflare-pages" target="_blank">https://github.com/i40west/netlify-cms-cloudflare-pages</a>
 </details>
 <br/>
 
 <details>
   <summary>How can I configure the decap CMS authentication with netlify?</summary>
+<br/>
   To configure decap CMS with netlify do the followings:
   <ul style="list-style: inside;">
     <li>Change NetlifyCMS config <code>config.backend.name</code> to git-gateway</li>
@@ -169,6 +178,7 @@ Astros depends on the following packages:
 
 <details>
   <summary>How can I change the localization languages?</summary>
+<br/>
   In order to change the languages you have to change the languages in the file <code>astro-i18next.config.mjs</code> and in the netlifyCMS configuration on the file <code>astro.config.mjs</code> <br/>
   Then change the locales files folders in <code>public/locales</code>
 </details>
@@ -176,18 +186,21 @@ Astros depends on the following packages:
 
 <details>
   <summary>What are the files in the function folder used for?</summary>
+<br/>
   These are cloudflare function that are used for the authentication to the decap CMS
 </details>
 <br/>
 
 <details>
   <summary>The build on cloudflare keep failing, why?</summary>
+<br/>
   One of the problem could be that the Build system version is setted to version 1, make sure that version 2 is selected
 </details>
 <br/>
 
 <details>
   <summary>Work with modules in relink</summary>
+<br/>
   This is helpful if you want to apply some changes to various modules while you are working on the website.
 To do so you have to go into each module and run
 ```
