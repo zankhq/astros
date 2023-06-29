@@ -122,8 +122,9 @@ const faqs = [
 							class="mt-2 pr-12"
 							id="faq-0"
 							x-show="open">
-							<p class="text-base leading-7 text-gray-600 dark:text-gray-100"  set:html={faq.description}>
-							</p>
+							<span class="text-base leading-7 text-gray-600 dark:text-gray-100">
+								<span set:html={faq.description}></span>
+							</span>
 						</dd>
 					</div>
 				))
