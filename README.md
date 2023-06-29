@@ -104,7 +104,7 @@ Astros depends on the following packages:
 <details>
   <summary>Why alpinejs? Why don't just use js?</summary>
 <br/>
-  Alpine js is less than 17kb and it make javascript very fast to write, there are also various open source ready to use components like https://js.hyperui.dev, https://www.alpinetoolbox.com/examples, https://alpinejs.dev/components#components
+  Alpine js is less than 17kb and it make javascript very fast to write, there are also various open source ready to use components like https://js.hyperui.dev, https://devdojo.com/pines, https://www.alpinetoolbox.com/examples, https://alpinejs.dev/components#components
 </details>
 <br/>
 
