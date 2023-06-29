@@ -92,18 +92,108 @@ Astros depends on the following packages:
 
 ## FAQ
 
+<br/>
+
+<details>
+  <summary>What is this?</summary>
+  This is a astro template that uses tailwindcss and alpinejs
+</details>
+<br/>
+
+<details>
+  <summary>Why alpinejs? Why don't just use js?</summary>
+  Alpine js is less than 17kb and it make javascript very fast to write, there are also various open source ready to use components like https://js.hyperui.dev, https://www.alpinetoolbox.com/examples, https://alpinejs.dev/components#components
+</details>
+<br/>
+
+<details>
+  <summary>But I don't need alpine js, can I remove it?</summary>
+  Of course, but some components use it and you'll have to edit these, more specifically you ll have to: <br/>
+  <ul style="list-style: inside;">
+    <li>First remove the package with the command <code>npm unistall @astrojs/alpinejs @types/alpinejs alpinejs</code></li>
+    <li>Adjust all components that uses alpine js: <code>faq.astro</code>, <code>themeselector.astro</code>, <code>navbar.astro</code></li>
+  </ul>
+</details>
+<br/>
+
+<details>
+  <summary>Can I remove also tailwidcss?</summary>
+  I mean, you can, but you'll have to basically rewrite all the template, so I don't recommend it
+</details>
+<br/>
+
+<details>
+  <summary>I don't need multiple language, how can I remove it?</summary>
+  One way is to simply keep one language and remove the selector from the footer but in order to fully remove the localization you have to: <br/>
+  <ul style="list-style: inside;">
+    <li>Remove the i18next pacakage <code>npm unistall astro-i18next</code></li>
+    <li>Remove <code>astro-i18next.config.mjs</code> file</li>
+    <li>Remove <code>locales</code> folder from public</li>
+    <li>Remove <code>languageselector.astro</code> file and from footer</li>
+    <li>Find all reference to <code>i18next</code> and <code>astro-i18next</code> and replace with your text</li>
+  </ul>
+</details>
+<br/>
+
+<details>
+  <summary>I don't need dark mode, how can I remove it?</summary>
+  Dark mode is embedded into tailwindcss, so you can't remove it, but you can remove the switch from the navbar
+</details>
+<br/>
+
+<details>
+  <summary>I don't need decap CMS, how can I remove it?</summary>
+  In order to remove decap CMS you need to:
+  <ul style="list-style: inside;">
+    <li>Remove the netlify-cms pacakage <code>npm unistall astro-netlify-cms</code></li>
+    <li>Remove NetlifyCMS configuration from <code>astro.config.mjs</code></li>
+  </ul>
+</details>
+<br/>
+
+<details>
+  <summary>How can I configure the decap CMS authentication with cloudflare?</summary>
+  To configure decap CMS with cloudflare follow this guide <a href="https://github.com/i40west/netlify-cms-cloudflare-pages" target="_blank">https://github.com/i40west/netlify-cms-cloudflare-pages</a>
+</details>
+<br/>
+
+<details>
+  <summary>How can I configure the decap CMS authentication with netlify?</summary>
+  To configure decap CMS with netlify do the followings:
+  <ul style="list-style: inside;">
+    <li>Change NetlifyCMS config <code>config.backend.name</code> to git-gateway</li>
+    <li>Use integrated NetlifyCMS auth <a href="https://decapcms.org/docs/git-gateway-backend/#git-gateway-with-netlify" target="_blank">https://decapcms.org/docs/git-gateway-backend/#git-gateway-with-netlify</a></li>
+  </ul>
+</details>
+<br/>
+
+<details>
+  <summary>How can I change the localization languages?</summary>
+  In order to change the languages you have to change the languages in the file <code>astro-i18next.config.mjs</code> and in the netlifyCMS configuration on the file <code>astro.config.mjs</code> <br/>
+  Then change the locales files folders in <code>public/locales</code>
+</details>
+<br/>
+
+<details>
+  <summary>What are the files in the function folder used for?</summary>
+  These are cloudflare function that are used for the authentication to the decap CMS
+</details>
+<br/>
+
+<details>
+  <summary>The build on cloudflare keep failing, why?</summary>
+  One of the problem could be that the Build system version is setted to version 1, make sure that version 2 is selected
+</details>
+<br/>
+
 <details>
   <summary>Work with modules in relink</summary>
-  
   This is helpful if you want to apply some changes to various modules while you are working on the website.
-
 To do so you have to go into each module and run
-
 ```
 npm link
 ```
 </details>
-
 <br/>
 
 ---
