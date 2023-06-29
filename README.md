@@ -85,6 +85,11 @@ Astros depends on the following packages:
 | [rss-parser](https://www.npmjs.com/package/rss-parser)                                 | ^3.13.0        |
 | [tailwindcss](https://www.npmjs.com/package/tailwindcss)                               | ^3.3.2         |
 
+## Known issues
+
+- Localization is not detected automatically
+- Localization has problems on article detail page
+
 ## FAQ
 
 <details>
