@@ -203,6 +203,7 @@ Astros depends on the following packages:
 <br/>
   This is helpful if you want to apply some changes to various modules while you are working on the website.
 To do so you have to go into each module and run
+
 ```
 npm link
 ```
