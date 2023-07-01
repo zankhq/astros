@@ -42,5 +42,9 @@
 		"button_text": "Sottoscriviti",
 		"privacy": "Ci importa della tua privacy. Leggi la nostra",
 		"privacy_link": "Privacy Policy."
+	},
+	"blog": {
+		"prev": "Precedente",
+		"next": "Succiessiva"
 	}
 }
