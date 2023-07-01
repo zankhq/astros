@@ -1,15 +1,17 @@
 ---
 title: Sfruttare il Potere degli Annunci su TikTok Una Guida Completa
 draft: false
-author: Il tuo nome
+author: Jon Doe
 tags:
   - TikTok
   - socialmedia
   - advertising
 image:
-  src: https://images.unsplash.com/photo-1593720213428-28a5b9e94613?&fit=crop&w=430&h=240
+  src: /images/tik-tok-ads.png
   alt: Annunci su TikTok
-snippet: Nel mondo del marketing sui social media, un nuovo player sta avendo un impatto significativo TikTok. Questa guida esplora il potenziale degli annunci su TikTok e come sfruttarli efficacemente
+snippet: Nel mondo del marketing sui social media, un nuovo player sta avendo un
+  impatto significativo TikTok. Questa guida esplora il potenziale degli annunci
+  su TikTok e come sfruttarli efficacemente
 publishDate: 2023-06-29 11:39
 category: Marketing
 ---

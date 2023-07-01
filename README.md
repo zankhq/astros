@@ -64,6 +64,15 @@ You can leave build settings as defaults.
 
 You can check the deploy documentation at https://docs.astro.build/en/guides/deploy/
 
+## ✅ Features
+
+- [x] Localization (with astro-i18next)
+- [x] Light/Dark mode (provided by tailwind)
+- [x] Discussion on articles (thanks to giscus)
+- [x] Blog
+- [x] CMS for editing blog post (thanks to decap CMS)
+- [ ] AI to generate article posts
+
 ## 🧞 Dependencies
 
 Astros depends on the following packages:

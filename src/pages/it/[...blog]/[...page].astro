@@ -23,19 +23,19 @@ export async function getStaticPaths({ paginate }) {changeLanguage('it')
     });
     return paginate(localizedPosts, {
         params: { blog: "blog" || undefined },
-        pageSize: 5,
+        pageSize: 4,
     });
 }
 const { page } = Astro.props;
 ---
 
 <Layout title="Blog">
-  <Container>
-    <Sectionhead>
-      <Fragment slot="title">Our Blog</Fragment>
-      <Fragment slot="desc">We write about building startups and thoughts going on our mind.</Fragment>
-    </Sectionhead>
-    <Posts posts={page.data} />
-    <Pagination class="mt-20" prevUrl={page.url.prev} nextUrl={page.url.next} />
-  </Container>
+	<Container>
+		<Sectionhead>
+			<Fragment slot="title">Our Blog</Fragment>
+			<Fragment slot="desc">Discover Industry Insights, Company News, and Expert Opinions.</Fragment>
+		</Sectionhead>
+		<Posts posts={page.data} />
+		<Pagination class="mt-20" prevUrl={page.url.prev} nextUrl={page.url.next} />
+	</Container>
 </Layout>

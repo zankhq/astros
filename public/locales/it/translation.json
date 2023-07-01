@@ -27,7 +27,10 @@
 		"tailwind": "Un framework CSS basato su utility pieno di classi che possono essere composte per costruire qualsiasi design, direttamente nel tuo markup.",
 		"localization": "Un'integrazione di i18next con Astro + alcuni componenti utilità per aiutarti a tradurre i tuoi siti web Astro!",
 		"light_dark_mode": "Modalità Dark basata sulle classi di Tailwind.",
-		"giscus": "Un sistema di commenti alimentato da GitHub Discussions. Lascia che i visitatori lascino commenti e reazioni sul tuo sito web tramite GitHub!"
+		"giscus": "Un sistema di commenti alimentato da GitHub Discussions. Lascia che i visitatori lascino commenti e reazioni sul tuo sito web tramite GitHub!",
+		"decapcms": "Gestione dei contenuti open source per il tuo flusso di lavoro Git",
+		"rss": "RSS feed generato da @astrojs/rss",
+		"articlegenerator": "Usa l'inteligenza artificiale per generare gli articoli del tuo blog"
 	},
 	"faq": {
 		"title": "Domande frequenti"

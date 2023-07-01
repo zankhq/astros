@@ -1,35 +1,36 @@
 ---
 import { Icon } from "astro-icon";
 import { localizePath } from "astro-i18next";
+import Link from "@components/ui/link.astro";
 
 export interface Props {
-  prevUrl: string;
-  nextUrl: string;
-  prevText?: string;
-  nextText?: string;
-  class?: string;
+	prevUrl: string;
+	nextUrl: string;
+	prevText?: string;
+	nextText?: string;
+	class?: string;
 }
 
 const { prevUrl, nextUrl, prevText = "Prev", nextText = "Next", class: className } = Astro.props;
 ---
 
 {
-  (prevUrl || nextUrl) && (
-    <div class:list={["container flex", className]}>
-      <div class="flex flex-row mx-auto container justify-center gap-8">
-        <a href={localizePath(prevUrl)} class={`${!prevUrl ? "invisible" : ""}`}>
-          <div class="flex flex-row align-middle">
-            <Icon name="tabler:chevron-left" class="w-6 h-6" />
-            <p class="ml-2">{prevText}</p>
-          </div>
-        </a>
-        <a href={localizePath(nextUrl)} class={`${!nextUrl ? "invisible" : ""}`}>
-          <div class="flex flex-row align-middle">
-            <span class="mr-2">{nextText}</span>
-            <Icon name="tabler:chevron-right" class="w-6 h-6" />
-          </div>
-        </a>
-      </div>
-    </div>
-  )
+	(prevUrl || nextUrl) && (
+		<div class:list={["container flex", className]}>
+			<div class="flex flex-row mx-auto container justify-center gap-8">
+				<Link href={localizePath(prevUrl)} style="muted" class={`${!prevUrl ? "invisible" : ""}`}>
+					<div class="flex flex-row align-middle">
+						<Icon name="tabler:chevron-left" class="w-6 h-6" />
+						<p class="ml-2">{prevText}</p>
+					</div>
+				</Link>
+				<Link href={localizePath(nextUrl)} style="muted" class={`${!nextUrl ? "invisible" : ""}`}>
+					<div class="flex flex-row align-middle">
+						<span class="mr-2">{nextText}</span>
+						<Icon name="tabler:chevron-right" class="w-6 h-6" />
+					</div>
+				</Link>
+			</div>
+		</div>
+	)
 }
