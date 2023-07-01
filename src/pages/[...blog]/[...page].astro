@@ -13,11 +13,17 @@ export async function getStaticPaths({ paginate }) {changeLanguage('en')
     var posts = await getCollection("blog", ({ data }) => {
         return !data.draft && data.publishDate < new Date();
     });
-    const localizedPosts = posts.filter((page) => {
-        const [lang, ...slug] = page.slug.split("/");
-        return lang === i18next.language;
+    // Preprocess the posts to split the slugs and get the languages
+    var processedPosts = posts.map((post) => {
+        const [lang, ...slug] = post.slug.split("/");
+        return {
+            ...post,
+            slug: slug.join("/"),
+            lang: lang,
+        };
     });
-    // Sort content entries by publication date
+    // Filter posts based on the current language
+    const localizedPosts = processedPosts.filter((post) => post.lang === i18next.language);
     localizedPosts.sort(function (a, b) {
         return b.data.publishDate.valueOf() - a.data.publishDate.valueOf();
     });
