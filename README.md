@@ -20,6 +20,8 @@ This project is strongly inspired by [Astroships](https://github.com/surjithctly
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/warpsio/astros)
 
 
+### [🧪 Site preview →](https://astros.warps.it)
+
 ### [🧑‍🚀 Astro website →](https://astro.build/)
 
 ### [🕮 Astro docs →](https://docs.astro.build/en/getting-started/)
@@ -72,6 +74,12 @@ You can check the deploy documentation at https://docs.astro.build/en/guides/dep
 - [x] Blog
 - [x] CMS for editing blog post (thanks to decap CMS)
 - [ ] AI to generate article posts
+
+## ✍️ Admin dashboard
+
+You can access the admin dashboard for editing blog post at `/admin` (https://astros.warps.it/admin)
+
+For more information follow Decap CMS documentation at https://decapcms.org/docs/
 
 ## 🧞 Dependencies
 
