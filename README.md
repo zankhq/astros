@@ -60,7 +60,11 @@ You can leave build settings as defaults.
 
 ### Netlify
 
+`TODO`
+
 ### Vercel
+
+`TODO`
 
 ### Others
 
