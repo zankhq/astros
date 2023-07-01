@@ -12,7 +12,7 @@ changeLanguage("en");
 export async function getStaticPaths({ paginate }) {
 	changeLanguage("en");
 	var posts = await getCollection("blog", ({ data }) => {
-		return !data.draft && data.publishDate < new Date();
+		return !data.draft;
 	});
 	// Preprocess the posts to split the slugs and get the languages
 	var processedPosts = posts.map((post) => {
