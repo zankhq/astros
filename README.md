@@ -77,6 +77,7 @@ You can check the deploy documentation at https://docs.astro.build/en/guides/dep
 - [x] Discussion on articles (thanks to giscus)
 - [x] Blog
 - [x] CMS for editing blog post (thanks to decap CMS)
+- [x] PWA (thanks to vite-pwa)
 - [ ] AI to generate article posts
 
 ## ✍️ Admin dashboard
