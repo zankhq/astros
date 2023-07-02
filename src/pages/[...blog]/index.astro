@@ -92,7 +92,7 @@ const readTime = getArticleReadingTime(entry.body);
 					script.dataset.reactionsEnabled = '1';
 					script.dataset.emitMetadata = '0';
 					script.dataset.inputPosition = 'top';
-					script.dataset.theme = localStorage.theme == 'dark' ? 'dark' : 'light';
+					script.dataset.theme = localStorage.theme == 'dark' ? 'dark' : localStorage.theme == 'light' ? 'light' : 'preferred_color_scheme';
 					script.dataset.lang = 'en';
 					script.dataset.loading = 'lazy';
 					script.crossOrigin = 'anonymous';
