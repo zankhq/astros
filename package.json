@@ -44,6 +44,7 @@
 		"@vite-pwa/astro": "^0.1.1",
 		"prettier": "2.8.8",
 		"rehype": "^12.0.1",
-		"sharp": "^0.32.1"
+		"sharp": "^0.32.1",
+		"workbox-window": "^7.0.0"
 	}
 }

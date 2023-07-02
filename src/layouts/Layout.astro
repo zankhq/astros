@@ -4,6 +4,7 @@ import Footer from "@components/footer.astro";
 import Navbar from "@components/navbar/navbar.astro";
 import { HeadHrefLangs } from "astro-i18next/components";
 import i18next from "i18next";
+import { pwaInfo } from "virtual:pwa-info";
 import "@fontsource-variable/inter";
 
 export interface Props {
@@ -14,6 +15,9 @@ export interface Props {
 const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
 
 const resolvedImageWithDomain = new URL("/meta/opengraph.png", Astro.site).toString();
+
+// replaced dynamically
+const buildDate = __DATE__;
 
 const { title, lang = null } = Astro.props;
 
@@ -27,6 +31,7 @@ const makeTitle = title ? title + " | " + "Astros" : "Astros - Starter Template 
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
+		<meta name="theme-color" content="#ffffff">
 		<HeadHrefLangs />
 
 		<!-- Global CSS -->
@@ -48,6 +53,9 @@ const makeTitle = title ? title + " | " + "Astros" : "Astros - Starter Template 
 				},
 			}}
 		/>
+
+		{pwaInfo && <Fragment set:html={pwaInfo.webManifest.linkTag} />}
+		<script src="/src/pwa.ts"></script>
 	</head>
 	<body class="dark:bg-stone-950">
 		<Navbar />
