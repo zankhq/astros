@@ -6,7 +6,6 @@ import Container from "@components/container.astro";
 import Posts from "@components/blog/posts.astro";
 import Sectionhead from "@components/sectionhead.astro";
 import Pagination from "@components/blog/pagination.astro";
-import { Debug } from "astro/components";
 
 changeLanguage("it");
 
@@ -40,8 +39,6 @@ export async function getStaticPaths({ paginate }) {changeLanguage('it')
 }
 const { page } = Astro.props;
 ---
-
-<Debug {page} />
 
 <Layout title="Blog">
 	<Container>
