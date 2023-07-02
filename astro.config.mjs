@@ -119,6 +119,7 @@ export default defineConfig({
 						],
 					},
 				],
+				disableIdentityWidgetInjection: true,
 			},
 		}),
 		astroI18next(),
