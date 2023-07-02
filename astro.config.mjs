@@ -9,6 +9,7 @@ import rehypeSlug from "rehype-slug";
 import NetlifyCMS from "astro-netlify-cms";
 import astroI18next from "astro-i18next";
 import alpinejs from "@astrojs/alpinejs";
+import AstroPWA from "@vite-pwa/astro";
 
 // https://astro.build/config
 export default defineConfig({
@@ -124,6 +125,7 @@ export default defineConfig({
 		}),
 		astroI18next(),
 		alpinejs(),
+		AstroPWA(),
 	],
 	markdown: {
 		rehypePlugins: [

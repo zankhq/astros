@@ -12,7 +12,8 @@
 		"astro": "astro",
 		"article:generate": "node ./scripts/generate-article.js",
 		"i18n:generate": "astro-i18next generate && npm run script:change-language-in-dynamic-pages",
-		"script:change-language-in-dynamic-pages": "node ./scripts/change-language-in-dynamic-pages.js"
+		"script:change-language-in-dynamic-pages": "node ./scripts/change-language-in-dynamic-pages.js",
+		"pwa:generate-assets": "pwa-assets-generator --preset minimal public/logo.svg"
 	},
 	"dependencies": {
 		"@astrojs/alpinejs": "^0.2.2",
@@ -39,6 +40,8 @@
 	},
 	"devDependencies": {
 		"@tailwindcss/typography": "^0.5.9",
+		"@vite-pwa/assets-generator": "^0.0.3",
+		"@vite-pwa/astro": "^0.1.1",
 		"prettier": "2.8.8",
 		"rehype": "^12.0.1",
 		"sharp": "^0.32.1"
