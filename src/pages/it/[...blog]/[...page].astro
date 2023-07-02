@@ -6,16 +6,22 @@ import Container from "@components/container.astro";
 import Posts from "@components/blog/posts.astro";
 import Sectionhead from "@components/sectionhead.astro";
 import Pagination from "@components/blog/pagination.astro";
+import { Debug } from "astro/components";
 
 changeLanguage("it");
 
 export async function getStaticPaths({ paginate }) {changeLanguage('it')
     var posts = await getCollection("blog", ({ data }) => {
-        return !data.draft && data.publishDate < new Date();
+        return !data.draft;
     });
     // Preprocess the posts to split the slugs and get the languages
     var processedPosts = posts.map((post) => {
-        const [lang, ...slug] = post.slug.split("/");
+        const [...slug] = post.slug.split("/");
+        let lang = i18next.language;
+        var firstSlug = post.slug.match(/^([^\/]*)\//);
+        if (firstSlug) {
+            lang = firstSlug[1];
+        }
         return {
             ...post,
             slug: slug.join("/"),
@@ -34,6 +40,8 @@ export async function getStaticPaths({ paginate }) {changeLanguage('it')
 }
 const { page } = Astro.props;
 ---
+
+<Debug {page} />
 
 <Layout title="Blog">
 	<Container>
