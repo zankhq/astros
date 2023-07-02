@@ -12,7 +12,7 @@ import alpinejs from "@astrojs/alpinejs";
 
 // https://astro.build/config
 export default defineConfig({
-	site: "https://astros.zank.it",
+	site: "https://astros.warps.it",
 	integrations: [
 		tailwind(),
 		image({
