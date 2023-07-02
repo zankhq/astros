@@ -24,7 +24,7 @@
 		"@fontsource-variable/inter": "^5.0.3",
 		"@types/alpinejs": "^3.7.2",
 		"alpinejs": "^3.12.2",
-		"astro": "^2.7.0",
+		"astro": "^2.7.2",
 		"astro-i18next": "^1.0.0-beta.21",
 		"astro-icon": "^0.8.1",
 		"astro-netlify-cms": "^0.5.3",

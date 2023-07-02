@@ -1,9 +1,7 @@
 ---
-import Container from "@components/container.astro";
 import Link from "@components/ui/link.astro";
 import Button from "@components/ui/button.astro";
-import { Image } from "@astrojs/image/components";
-import logo from "assets/logo.svg";
+import { Icon } from "astro-icon";
 import { localizePath } from "astro-i18next";
 import { t } from "i18next";
 
@@ -38,7 +36,7 @@ export const menuitems = [
 		<a
 			href={localizePath("/")}
 			class="flex gap-3 items-center text-lg font-semibold tracking-widest text-gray-900 uppercase rounded-lg dark:text-white focus:outline-none focus:shadow-outline">
-			<Image src={logo} width="30" class="dark:invert" alt="Logo"></Image>
+			<Icon name="logo" width="30" class="dark:invert" alt="Logo"></Icon>
 			Astros
 		</a>
 		<button class="md:hidden text-gray-500 w-10 h-10 relative focus:outline-none" @click="open = !open">

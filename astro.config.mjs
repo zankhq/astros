@@ -132,4 +132,5 @@ export default defineConfig({
 			[rehypeAutolinkHeadings, autolinkConfig],
 		],
 	},
+	experimental: { assets: true },
 });
