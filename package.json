@@ -7,6 +7,7 @@
 		"dev": "astro dev --host",
 		"start": "astro dev",
 		"build": "astro build",
+		"build:localized": "npm run i18n:generate && npm run build",
 		"preview": "astro preview",
 		"astro": "astro",
 		"article:generate": "node ./scripts/generate-article.js",

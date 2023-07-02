@@ -72,7 +72,14 @@ const { dynamic = false } = Astro.props;
 							<Cobe />
 						</>
 					) : (
-						<Image class="inline-block mt-12 md:mt-20" src={abstractDottedGlobeIllustration} alt="Astros" width={600} height={600} />
+						<Image
+							class="inline-block mt-12 md:mt-20"
+							src={abstractDottedGlobeIllustration}
+							alt="Astros"
+							width={600}
+							height={600}
+							loading="eager"
+						/>
 					)
 				}
 			</div>
