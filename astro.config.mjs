@@ -13,7 +13,7 @@ import AstroPWA from "@vite-pwa/astro";
 
 // https://astro.build/config
 export default defineConfig({
-	site: "https://astros.warps.it",
+	site: "https://astros.zank.studio",
 	vite: {
 		define: {
 			__DATE__: `'${new Date().toISOString()}'`,

@@ -1,8 +1,8 @@
-<a href="https://astros.warps.it">
+<a href="https://astros.zank.studio">
   <img src=".github/images/astros.gif" />
 </a>
 
-# [Astros](https://astros.warps.it)
+# [Astros](https://astros.zank.studio)
 
 <a href="https://astro.build/">![Astro](.github/images/astro-icon.png)</a>
 <a href="https://tailwindcss.com/">![Tailwind](.github/images/tailwind-icon.png)</a>
@@ -20,7 +20,7 @@ This project is strongly inspired by [Astroship](https://github.com/surjithctly/
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/warpsio/astros)
 
 
-### [🧪 Site preview →](https://astros.warps.it)
+### [🧪 Site preview →](https://astros.zank.studio)
 
 ### [🧑‍🚀 Astro website →](https://astro.build/)
 
@@ -82,7 +82,7 @@ You can check the deploy documentation at https://docs.astro.build/en/guides/dep
 
 ## ✍️ Admin dashboard
 
-You can access the admin dashboard for editing blog post at `/admin` (https://astros.warps.it/admin)
+You can access the admin dashboard for editing blog post at `/admin` (https://astros.zank.studio/admin)
 
 For more information follow Decap CMS documentation at https://decapcms.org/docs/
 
@@ -244,4 +244,4 @@ npm link
 
 ---
 
-<p align="right"><a href="https://warps.it/" target="_blank">warps.it</p>
+<p align="right"><a href="https://zank.studio/" target="_blank">zank.studio</p>
