@@ -13,11 +13,11 @@ Astros is a template made with [Astro](https://astro.build), [Tailwind](https://
 This project is strongly inspired by [Astroship](https://github.com/surjithctly/astroship), [Flowbite](https://flowbite.com/blocks/) and [Tailwind UI](https://tailwindui.com/components) components, make sure to check them out as well!
 
 
-[![Deploy to Cloudflare Workers](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/warpsio/astros)
+[![Deploy to Cloudflare Workers](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/zankhq/astros)
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/warpsio/astros)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/zankhq/astros)
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/warpsio/astros)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/zankhq/astros)
 
 
 ### [🧪 Site preview →](https://astros.zank.studio)
@@ -41,7 +41,7 @@ On the folder run
 1. `npm i`  <small>(or `yarn` or `pnpm i`)</small>
 2. `npm run dev`  <small>(or `yarn dev` or `pnpm dev`)</small>
 
-(if it's not working report an [issue](https://github.com/warpsio/astros/issues))
+(if it's not working report an [issue](https://github.com/zankhq/astros/issues))
 
 ## 🚀 Deploy
 

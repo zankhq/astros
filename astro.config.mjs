@@ -26,9 +26,9 @@ export default defineConfig({
 			config: {
 				backend: {
 					name: "github",
-					repo: "warpsi/astros",
+					repo: "zankhq/astros",
 					branch: "main",
-					base_url: "https://astros-7h0.pages.dev",
+					base_url: "https://astros.zank.studio",
 					auth_endpoint: "/api/auth",
 				},
 				media_folder: "public/images",
