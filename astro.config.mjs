@@ -157,11 +157,12 @@ export default defineConfig({
 			},
 			workbox: {
 				navigateFallback: "/404",
-				globPatterns: ["**/*.{css,js,svg,png,ico}"],
+				globPatterns: ["*.js"],
 			},
 			devOptions: {
 				enabled: true,
 				navigateFallbackAllowlist: [/^\/404$/],
+				suppressWarnings: true,
 			},
 		}),
 	],
