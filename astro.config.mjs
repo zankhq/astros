@@ -1,6 +1,5 @@
 import { defineConfig } from "astro/config";
 import tailwind from "@astrojs/tailwind";
-import image from "@astrojs/image";
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
@@ -21,9 +20,6 @@ export default defineConfig({
 	},
 	integrations: [
 		tailwind(),
-		image({
-			serviceEntryPoint: "@astrojs/image/sharp",
-		}),
 		mdx(),
 		sitemap(),
 		NetlifyCMS({
@@ -161,7 +157,7 @@ export default defineConfig({
 			},
 			workbox: {
 				navigateFallback: "/404",
-				globPatterns: ["**/*.{css,js,html,svg,png,ico,txt}"],
+				globPatterns: ["**/*.{css,js,svg,png,ico}"],
 			},
 			devOptions: {
 				enabled: true,
@@ -176,5 +172,8 @@ export default defineConfig({
 			[rehypeAutolinkHeadings, autolinkConfig],
 		],
 	},
-	experimental: { assets: true },
+	experimental: {
+		assets: true,
+		viewTransitions: true,
+	},
 });

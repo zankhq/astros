@@ -6,6 +6,7 @@ import { HeadHrefLangs } from "astro-i18next/components";
 import i18next from "i18next";
 import { pwaInfo } from "virtual:pwa-info";
 import "@fontsource-variable/inter";
+import { ViewTransitions } from "astro:transitions";
 
 export interface Props {
 	title: string;
@@ -33,6 +34,8 @@ const makeTitle = title ? title + " | " + "Astros" : "Astros - Starter Template 
 		<meta name="generator" content={Astro.generator} />
 		<meta name="theme-color" content="#ffffff" />
 		<HeadHrefLangs />
+
+		<ViewTransitions />
 
 		<!-- Global CSS -->
 		<link rel="stylesheet" href="/index.css" />
