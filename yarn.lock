@@ -1568,10 +1568,10 @@
   resolved "https://registry.yarnpkg.com/@esbuild/win32-x64/-/win32-x64-0.18.17.tgz#bcb2e042631b3c15792058e189ed879a22b2968b"
   integrity sha512-fGEb8f2BSA3CW7riJVurug65ACLuQAzKq0SSqkY2b2yHHH0MzDfbLyKIGzHwOI/gkHcxM/leuSW6D5w/LMNitA==
 
-"@fontsource-variable/inter@^5.0.6":
-  version "5.0.6"
-  resolved "https://registry.yarnpkg.com/@fontsource-variable/inter/-/inter-5.0.6.tgz#f448750e313b119e524b8bc6b49c8b6671951b11"
-  integrity sha512-mFU2iEcG0pWKVA3hZ26tEyZj0wd6qaXIFE9+MK5B36GuzfqZFgm7L2+g6zjbLWfggU1G1NDU46ZwX0hPIVieoQ==
+"@fontsource-variable/inter@^5.0.7":
+  version "5.0.7"
+  resolved "https://registry.yarnpkg.com/@fontsource-variable/inter/-/inter-5.0.7.tgz#8c60390f20a78835bee8364a551049397c17c4d1"
+  integrity sha512-aOG0xPnkjV9w5Iw9maGWYyM3P2ivRKCFHkzbSVN2MAmwsMQJP3Dkr6Og1FSHoQBZjGx4SfMWTU72h+dXthND5g==
 
 "@hapi/address@^4.0.1":
   version "4.1.0"

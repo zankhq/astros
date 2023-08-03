@@ -21,7 +21,7 @@
 		"@astrojs/rss": "^2.4.3",
 		"@astrojs/sitemap": "^2.0.1",
 		"@astrojs/tailwind": "^4.0.0",
-		"@fontsource-variable/inter": "^5.0.6",
+		"@fontsource-variable/inter": "^5.0.7",
 		"@types/alpinejs": "^3.7.2",
 		"alpinejs": "^3.12.3",
 		"astro": "^2.9.7",
