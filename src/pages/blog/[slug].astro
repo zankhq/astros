@@ -15,7 +15,7 @@ export async function getStaticPaths() {changeLanguage('en')
     var localizedBlogEntries = blogEntries.filter((entry) => entry.slug.startsWith(i18next.language));
     return localizedBlogEntries.map((post) => {
         let slug = post.slug;
-        slug = slug.substring(3);
+        slug = slug.substring(3).replaceAll("blog/", "");
         return {
             params: { slug: slug },
             props: { post: post },
