@@ -10,18 +10,17 @@ import { getArticleReadingTime } from "@utils/blog";
 changeLanguage("it");
 
 // Generate a new path for every collection post
-export async function getStaticPaths() {
-	changeLanguage("it");
-	const blogEntries = await getCollection("blog");
-	var localizedBlogEntries = blogEntries.filter((entry) => entry.slug.startsWith(i18next.language));
-	return localizedBlogEntries.map((post) => {
-		let slug = post.slug;
-		slug = slug.substring(3);
-		return {
-			params: { slug: slug },
-			props: { post: post },
-		};
-	});
+export async function getStaticPaths() {changeLanguage('it')
+    const blogEntries = await getCollection("blog");
+    var localizedBlogEntries = blogEntries.filter((entry) => entry.slug.startsWith(i18next.language));
+    return localizedBlogEntries.map((post) => {
+        let slug = post.slug;
+        slug = slug.substring(3);
+        return {
+            params: { slug: slug },
+            props: { post: post },
+        };
+    });
 }
 // Get the post directly from the prop on render
 const { post, lang } = Astro.props;
@@ -45,7 +44,7 @@ const readTime = getArticleReadingTime(post.body);
 				<div class="w-full md:w-auto flex flex-wrap gap-3">
 					{
 						post.data.tags.map((tag) => (
-							<a href={localizePath(`/blog/tag/${tag.toLowerCase()}`)} class="text-sm text-gray-500 dark:text-stone-300">
+							<a href={localizePath(`/blog/tag/${tag?.toLowerCase()}`)} class="text-sm text-gray-500 dark:text-stone-300">
 								#{tag}
 							</a>
 						))

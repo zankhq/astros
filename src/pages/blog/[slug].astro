@@ -10,18 +10,17 @@ import { getArticleReadingTime } from "@utils/blog";
 changeLanguage("en");
 
 // Generate a new path for every collection post
-export async function getStaticPaths() {
-	changeLanguage("en");
-	const blogEntries = await getCollection("blog");
-	var localizedBlogEntries = blogEntries.filter((entry) => entry.slug.startsWith(i18next.language));
-	return localizedBlogEntries.map((post) => {
-		let slug = post.slug;
-		slug = slug.substring(3);
-		return {
-			params: { slug: slug },
-			props: { post: post },
-		};
-	});
+export async function getStaticPaths() {changeLanguage('en')
+    const blogEntries = await getCollection("blog");
+    var localizedBlogEntries = blogEntries.filter((entry) => entry.slug.startsWith(i18next.language));
+    return localizedBlogEntries.map((post) => {
+        let slug = post.slug;
+        slug = slug.substring(3);
+        return {
+            params: { slug: slug },
+            props: { post: post },
+        };
+    });
 }
 // Get the post directly from the prop on render
 const { post, lang } = Astro.props;
