@@ -20,7 +20,6 @@ export async function getStaticPaths() {changeLanguage('en')
     const categories = new Set();
     localizedPosts.map((post) => {
         typeof post.data.category === "string" && categories.add(post.data.category.toLowerCase());
-        post.slug = post.slug.replace(/^(\w{2})\//, "$1/blog/");
     });
     return Array.from(categories).map((category) => {
         return {

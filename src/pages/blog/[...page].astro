@@ -21,7 +21,6 @@ export async function getStaticPaths({ paginate }) {changeLanguage('en')
         if (firstSlug) {
             lang = firstSlug[1];
         }
-        slug.splice(1, 0, "blog");
         return {
             ...post,
             slug: slug.join("/"),
