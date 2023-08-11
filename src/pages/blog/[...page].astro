@@ -7,9 +7,9 @@ import Posts from "@components/blog/posts.astro";
 import Sectionhead from "@components/sectionhead.astro";
 import Pagination from "@components/blog/pagination.astro";
 
-changeLanguage("it");
+changeLanguage("en");
 
-export async function getStaticPaths({ paginate }) {changeLanguage('it')
+export async function getStaticPaths({ paginate }) {changeLanguage('en')
     var posts = await getCollection("blog", ({ data }) => {
         return !data.draft;
     });
@@ -21,6 +21,7 @@ export async function getStaticPaths({ paginate }) {changeLanguage('it')
         if (firstSlug) {
             lang = firstSlug[1];
         }
+        slug.splice(1, 0, "blog");
         return {
             ...post,
             slug: slug.join("/"),
