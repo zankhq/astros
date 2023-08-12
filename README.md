@@ -124,7 +124,6 @@ Astros depends on the following packages:
 ## Known issues
 
 - Localization is not detected automatically
-- Localization has problems on article detail page
 
 ## FAQ
 
