@@ -25,7 +25,7 @@ export default defineConfig({
 				backend: {
 					name: "git-gateway",
 					repo: "zankhq/astros",
-					branch: "main",
+					branch: "feat/netlify",
 					base_url: "https://astros.zank.studio",
 				},
 				media_folder: "public/images",
