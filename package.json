@@ -22,6 +22,7 @@
 		"@astrojs/tailwind": "^5.0.0",
 		"@fontsource-variable/inter": "^5.0.8",
 		"@types/alpinejs": "^3.7.2",
+		"@vite-pwa/astro": "^0.1.2",
 		"alpinejs": "^3.13.0",
 		"astro": "^3.0.7",
 		"astro-decap-cms-oauth": "^0.2.4",
@@ -40,7 +41,6 @@
 	"devDependencies": {
 		"@tailwindcss/typography": "^0.5.9",
 		"@vite-pwa/assets-generator": "^0.0.9",
-		"@vite-pwa/astro": "^0.1.2",
 		"prettier": "3.0.3",
 		"prettier-plugin-astro": "^0.12.0",
 		"rehype": "^13.0.1",
