@@ -8,6 +8,7 @@ import NetlifyCMS from "astro-netlify-cms";
 import astroI18next from "astro-i18next";
 import alpinejs from "@astrojs/alpinejs";
 import AstroPWA from "@vite-pwa/astro";
+import decapCmsOauth from "astro-decap-cms-oauth";
 
 // https://astro.build/config
 export default defineConfig({
@@ -26,7 +27,7 @@ export default defineConfig({
 					name: "git-gateway",
 					repo: "zankhq/astros",
 					branch: "feat/netlify",
-					base_url: "https://astros.zank.studio",
+					base_url: "https://dulcet-pothos-78fa4f.netlify.app",
 				},
 				media_folder: "public/images",
 				public_folder: "/images",
@@ -162,6 +163,7 @@ export default defineConfig({
 				suppressWarnings: true,
 			},
 		}),
+		decapCmsOauth(),
 	],
 	markdown: {
 		rehypePlugins: [
