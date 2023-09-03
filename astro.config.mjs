@@ -23,7 +23,7 @@ export default defineConfig({
 		NetlifyCMS({
 			config: {
 				backend: {
-					name: "github",
+					name: "git-gateway",
 					repo: "zankhq/astros",
 					branch: "main",
 					base_url: "https://astros.zank.studio",
