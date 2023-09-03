@@ -1,6 +1,5 @@
 import { defineConfig } from "astro/config";
 import tailwind from "@astrojs/tailwind";
-import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import { autolinkConfig } from "./plugins/rehype-autolink-config";
@@ -20,7 +19,6 @@ export default defineConfig({
 	},
 	integrations: [
 		tailwind(),
-		mdx(),
 		sitemap(),
 		NetlifyCMS({
 			config: {
@@ -172,9 +170,5 @@ export default defineConfig({
 			// This adds links to headings
 			[rehypeAutolinkHeadings, autolinkConfig],
 		],
-	},
-	experimental: {
-		assets: true,
-		viewTransitions: true,
 	},
 });
