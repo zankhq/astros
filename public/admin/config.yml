@@ -1,10 +1,9 @@
 backend:
-  name: github
+  name: git-gateway
   repo: zankhq/astros
   branch: feat/netlify
   site_domain: dulcet-pothos-78fa4f.netlify.app
   base_url: https://dulcet-pothos-78fa4f.netlify.app
-  auth_endpoint: oauth
 media_folder: "public/images"
 public_folder: "/images"
 i18n:
