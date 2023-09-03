@@ -215,6 +215,7 @@ Astros depends on the following packages:
   <ul style="list-style: inside;">
     <li>Change NetlifyCMS config <code>config.backend.name</code> to git-gateway</li>
     <li>Remove <code>disableIdentityWidgetInjection: true</code> from the NetlifyCMS configuration on <code>astro.config.mjs</code></li>
+    <li>Remove <code>auth_endpoint: "/api/auth"</code> from the NetlifyCMS backend configuration on <code>astro.config.mjs</code></li>
     <li>Use integrated NetlifyCMS auth <a href="https://decapcms.org/docs/git-gateway-backend/#git-gateway-with-netlify" target="_blank">https://decapcms.org/docs/git-gateway-backend/#git-gateway-with-netlify</a></li>
   </ul>
 </details>
