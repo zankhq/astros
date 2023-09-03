@@ -119,7 +119,7 @@ export default defineConfig({
 					},
 				],
 			},
-			disableIdentityWidgetInjection: true,
+			// disableIdentityWidgetInjection: true,
 		}),
 		astroI18next(),
 		alpinejs(),
