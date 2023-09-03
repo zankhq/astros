@@ -27,7 +27,6 @@ export default defineConfig({
 					repo: "zankhq/astros",
 					branch: "main",
 					base_url: "https://astros.zank.studio",
-					auth_endpoint: "/api/auth",
 				},
 				media_folder: "public/images",
 				public_folder: "/images",
