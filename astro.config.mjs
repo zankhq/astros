@@ -163,7 +163,7 @@ export default defineConfig({
 				suppressWarnings: true,
 			},
 		}),
-		decapCmsOauth(),
+		// decapCmsOauth(),
 	],
 	markdown: {
 		rehypePlugins: [
