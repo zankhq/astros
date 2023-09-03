@@ -163,9 +163,8 @@ export default defineConfig({
 				suppressWarnings: true,
 			},
 		}),
-		decapCmsOauth(),
+		// decapCmsOauth(), // Use this if you don't want to bel locked to netlify, see https://github.com/dorukgezici/astro-decap-cms-oauth
 	],
-	output: "server",
 	markdown: {
 		rehypePlugins: [
 			rehypeSlug,
