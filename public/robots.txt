@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: http://astros.zank.studio/sitemap-index.xml
+Sitemap: http://orole.studio/sitemap-index.xml

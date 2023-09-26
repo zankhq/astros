@@ -40,24 +40,12 @@ const { dynamic = false } = Astro.props;
 					{t("hero.subtitle")}
 				</p>
 				<div class="mt-10 flex items-center justify-center gap-x-2 md:gap-x-6">
-					<Link href="https://github.com/zankhq/astros">{t("hero.main_button_text")}</Link>
-					{
-						dynamic ? (
-							<Link href="/" style="muted">
-								{t("hero_animated.secondary_button_text")}
-								<span aria-hidden="true" class="pl-1 text-black dark:text-white">
-									→
-								</span>
-							</Link>
-						) : (
-							<Link href="/animated" style="muted">
-								{t("hero.secondary_button_text")}
-								<span aria-hidden="true" class="pl-1 text-black dark:text-white">
-									→
-								</span>
-							</Link>
-						)
-					}
+					<Link href="/contact">{t("hero.main_button_text")}</Link>
+
+					<Link href="/blog" style="muted">
+						{t("hero.secondary_button_text")}
+						<span aria-hidden="true" class="pl-1 text-black dark:text-white">→</span>
+					</Link>
 				</div>
 			</div>
 			<div class="flex justify-center items-center mt-4 md:mt-8">
@@ -75,7 +63,7 @@ const { dynamic = false } = Astro.props;
 						<Image
 							class="inline-block mt-12 md:mt-20"
 							src={abstractDottedGlobeIllustration}
-							alt="Astros"
+							alt="Orole"
 							width={600}
 							height={600}
 							loading="eager"

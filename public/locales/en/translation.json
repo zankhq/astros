@@ -1,36 +1,32 @@
 {
 	"hero": {
-		"title": "Supercharged web development!",
-		"subtitle": "Unleashing the Power of the Web: Combines Astro, Tailwind CSS and Alpine.js to Streamline Your Web Development Process.",
+		"title": "Boost your online presence with ease",
+		"subtitle": "We help businesses and individuals to create a stunning presence online with our high-performance websites.",
 		"globe_title": "Craft Stunning, High-Performance Websites with Ease and Speed",
-		"main_button_text": "Download on github",
-		"secondary_button_text": "Go to animated version"
+		"main_button_text": "Contact us",
+		"secondary_button_text": "Learn more"
 	},
 	"hero_animated": {
 		"secondary_button_text": "Go to base version"
 	},
 	"header": {
-		"features": "Features",
+		"home": "Home",
 		"pricing": "Pricing",
 		"blog": "Blog",
-		"contact": "Contacts",
-		"primary_button_text": "Download",
-		"secondary_button_text": "Login"
+		"contact": "Contact",
+		"services": "Services"
 	},
 	"features": {
 		"learn_more": "Learn more",
-		"title": "Features",
-		"subtitle": "All the tools you need",
-		"description": "Astro is a high-performance static site builder that seamlessly integrates with Tailwind CSS and Alpine.js. It allows you to build websites with ease and speed, without sacrificing on performance.",
-		"astro": "Astro is the all-in-one web framework designed for speed. Pull your content from anywhere and deploy everywhere, all powered by your favorite UI components and libraries.",
-		"alpine": "Alpine is a rugged, minimal tool for composing behavior directly in your markup. Think of it like jQuery for the modern web. Plop in a script tag and get going.",
-		"tailwind": "A utility-first CSS framework packed with classes that can be composed to build any design, directly in your markup.",
-		"localization": "An astro integration of i18next + some utility components to help you translate your astro websites!",
-		"light_dark_mode": "Light/Dark mode based on tailwind classes",
-		"giscus": "A comments system powered by GitHub Discussions. Let visitors leave comments and reactions on your website via GitHub!",
-		"decapcms": "Open source content management for your Git workflow",
-		"rss": "RSS feed generato da @astrojs/rss",
-		"articlegenerator": "Use AI to generate your articles posts"
+		"title": "What we offer",
+		"subtitle": "Our services and products",
+		"description": "Orole helps businesses and individuals to create a stunning presence online with our high-performance websites. All our websites are built with the latest technologies by a team of experts.",
+		"webdev": "Launch a fully featured website, platform or dashboard.",
+		"appdev": "We make mobile apps for iOS and Android, using React Native.",
+		"desktopdev": "We build desktop apps for Windows, macOS and Linux.",
+		"backenddev": "API's are the backbone of every application. We build them too.",
+		"ecommerce": "Extend your reach with an e-commerce store. ",
+		"blockchain": "We build decentralized applications on the blockchain."
 	},
 	"faq": {
 		"title": "Frequently Asked Questions"
