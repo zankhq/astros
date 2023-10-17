@@ -158,7 +158,7 @@ export default defineConfig({
 				globPatterns: ["*.js"],
 			},
 			devOptions: {
-				enabled: true,
+				enabled: false,
 				navigateFallbackAllowlist: [/^\/404$/],
 				suppressWarnings: true,
 			},
