@@ -6,11 +6,14 @@ const { icon = "", languageMapping = { en: "English", it: "Italiano" }, ...rest 
 ---
 
 <div
-	class="flex items-center pl-2 rounded-md text-sm font-semibold text-center transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 border outline-2 outline-offset-2 border-gray-300 text-gray-700 hover:border-gray-400 active:bg-gray-100 dark:active:bg-stone-950">
+	class="flex items-center pl-2 rounded-md text-sm font-semibold text-center transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 border outline-2 outline-offset-2 border-gray-300 text-gray-700 hover:border-gray-400 active:bg-gray-100 dark:active:bg-stone-950"
+	aria-label="Language selection">
 	<Icon name="ion:language" class="w-5 dark:text-white" />
+	<label for="language-selector" class="sr-only">Choose a language</label>
 	<LanguageSelector
 		showFlag={false}
 		languageMapping={languageMapping}
 		class="appearance-none cursor-pointer pl-3 pr-2 py-1.5 rounded-md dark:bg-stone-950 dark:text-white focus-visible:outline-none"
+		aria-label="Choose a language"
 	/>
 </div>
