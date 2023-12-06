@@ -8,8 +8,8 @@ backend:
     branch: main
     base_url: https://cms.majestico.workers.dev
 
-media_folder: "public/images",
-public_folder: "/images",
+media_folder: "public/images"
+public_folder: "/images"
 
 i18n:
     structure: "multiple_folders"
@@ -47,14 +47,8 @@ collections:
             widget: "object"
             i18n: true
             fields:
-                - label: "Source"
-                  name: "src"
-                  widget: "image"
-                  i18n: "duplicate"
-                - label: "Alt Text"
-                  name: "alt"
-                  widget: "string"
-                  i18n: true
+                - { label: Source, name: src, widget: image, i18n: "duplicate" }
+                - { label: Alt Text, name: alt, widget: string, i18n: true }
           - label: "Snippet"
             name: "snippet"
             widget: "text"
