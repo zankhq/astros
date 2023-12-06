@@ -76,7 +76,7 @@ You can check the deploy documentation at https://docs.astro.build/en/guides/dep
 - [x] Light/Dark mode (provided by tailwind)
 - [x] Discussion on articles (thanks to giscus)
 - [x] Blog
-- [x] CMS for editing blog post (thanks to decap CMS)
+- [x] CMS for editing blog post (thanks to Sveltia CMS)
 - [x] PWA (thanks to vite-pwa)
 - [ ] AI to generate article posts
 
@@ -84,16 +84,7 @@ You can check the deploy documentation at https://docs.astro.build/en/guides/dep
 
 You can access the admin dashboard for editing blog post at `/admin` (https://astros.zank.studio/admin)
 
-For more information follow Decap CMS documentation at https://decapcms.org/docs/
-
-In order to access the admin dashboard to change blog articles content you need to have access to the github repo, a quick way to test it test would be fork the repo and than configure decap cms accordingly to your cloud provider (netlify, cloudflare, vercel, etc...).
-
-In this case your environment variable should look like this
-
-![Cloudflare environment variable image](.github/images/cloudflare-env-var.png)
-
-If you use netlify it's actually easier, you will need to change in the file `astro.config.mjs` NetlifyCMS config `config.backend.name` to git-gateway. (See https://decapcms.org/docs/git-gateway-backend/#git-gateway-with-netlify for more info)
-
+For more information follow Sveltia CMS documentation at [https://github.com/sveltia/sveltia-cms](https://github.com/sveltia/sveltia-cms)
 
 ## 🧞 Dependencies
 
@@ -195,18 +186,6 @@ Astros depends on the following packages:
 </details>
 <br/>
 
-<details>
-  <summary>How can I configure the decap CMS authentication with netlify?</summary>
-<br/>
-  To configure decap CMS with netlify do the followings:
-  <ul style="list-style: inside;">
-    <li>Change NetlifyCMS config <code>config.backend.name</code> to git-gateway</li>
-    <li>Remove <code>disableIdentityWidgetInjection: true</code> from the NetlifyCMS configuration on <code>astro.config.mjs</code></li>
-    <li>Remove <code>auth_endpoint: "/api/auth"</code> from the NetlifyCMS backend configuration on <code>astro.config.mjs</code></li>
-    <li>Use integrated NetlifyCMS auth <a href="https://decapcms.org/docs/git-gateway-backend/#git-gateway-with-netlify" target="_blank">https://decapcms.org/docs/git-gateway-backend/#git-gateway-with-netlify</a></li>
-  </ul>
-</details>
-<br/>
 
 <details>
   <summary>How can I change the localization languages?</summary>
