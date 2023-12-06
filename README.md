@@ -88,8 +88,6 @@ For more information follow Decap CMS documentation at https://decapcms.org/docs
 
 In order to access the admin dashboard to change blog articles content you need to have access to the github repo, a quick way to test it test would be fork the repo and than configure decap cms accordingly to your cloud provider (netlify, cloudflare, vercel, etc...).
 
-If you use cloudflare pages you can follow this guide https://github.com/i40west/netlify-cms-cloudflare-pages.
-
 In this case your environment variable should look like this
 
 ![Cloudflare environment variable image](.github/images/cloudflare-env-var.png)
@@ -111,7 +109,6 @@ Astros depends on the following packages:
 | [astro](https://www.npmjs.com/package/astro)                                           | ^2.6.1         |
 | [astro-i18next](https://www.npmjs.com/package/astro-i18next)                           | ^1.0.0-beta.21 |
 | [astro-icon](https://www.npmjs.com/package/astro-icon)                                 | ^0.8.1         |
-| [astro-netlify-cms](https://www.npmjs.com/package/astro-netlify-cms)                   | ^0.5.3         |
 | [astro-seo](https://www.npmjs.com/package/astro-seo)                                   | ^0.7.4         |
 | [bad-words](https://www.npmjs.com/package/bad-words)                                   | ^3.0.4         |
 | [dotenv](https://www.npmjs.com/package/dotenv)                                         | ^16.1.4        |
@@ -190,21 +187,11 @@ Astros depends on the following packages:
 </details>
 <br/>
 
-<details>
-  <summary>I don't need decap CMS, how can I remove it?</summary>
-<br/>
-  In order to remove decap CMS you need to:
-  <ul style="list-style: inside;">
-    <li>Remove the netlify-cms pacakage <code>npm unistall astro-netlify-cms</code></li>
-    <li>Remove NetlifyCMS configuration from <code>astro.config.mjs</code></li>
-  </ul>
-</details>
-<br/>
 
 <details>
-  <summary>How can I configure the decap CMS authentication with cloudflare?</summary>
+  <summary>How can I configure the Sveltia CMS authentication with cloudflare?</summary>
 <br/>
-  To configure decap CMS with cloudflare follow this guide <a href="https://github.com/i40west/netlify-cms-cloudflare-pages" target="_blank">https://github.com/i40west/netlify-cms-cloudflare-pages</a>
+  To configure Sveltia CMS with cloudflare follow this guide <a href="https://github.com/sveltia/sveltia-cms" target="_blank">https://github.com/sveltia/sveltia-cms</a>
 </details>
 <br/>
 
