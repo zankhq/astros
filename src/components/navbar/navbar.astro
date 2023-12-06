@@ -36,8 +36,8 @@ export const menuitems = [
 		<a
 			href={localizePath("/")}
 			class="flex gap-3 items-center text-lg font-semibold tracking-widest text-gray-900 uppercase rounded-lg dark:text-white focus:outline-none focus:shadow-outline">
-			<Icon name="logo" width="30" class="dark:invert" alt="Logo"></Icon>
-			Astros
+			<Icon name="logo" width="30" class="dark:invert" alt="Logo" />
+			 Astros
 		</a>
 		<button class="md:hidden text-gray-500 w-10 h-10 relative focus:outline-none" @click="open = !open">
 			<span class="sr-only">Open main menu</span>
@@ -74,19 +74,19 @@ export const menuitems = [
 			{
 				menuitems.map((item) =>
 					item.children && item.children.length ? (
-						<div @click.away="open = false" class="relative" x-data="{ open: false }">
-							<Button @click="open = !open" style="link" size="sm" class="mt-[2px]">
+						<div x-on:click.away="open = false" class="relative" x-data="{ open: false }">
+							<Button x-on:click="open = !open" style="link" size="sm" class="mt-[2px]">
 								{t(item.title)}
 								<svg
 									fill="currentColor"
 									viewBox="0 0 20 20"
-									:class="{'rotate-180': open, 'rotate-0': !open}"
+									x-bind:class="{'rotate-180': open, 'rotate-0': !open}"
 									class="inline w-4 h-4 mb-[2px] transition-transform duration-200 transform">
 									<path
 										fill-rule="evenodd"
 										d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-										clip-rule="evenodd">
-									</path>
+										clip-rule="evenodd"
+									/>
 								</svg>
 							</Button>
 							<div
@@ -99,7 +99,7 @@ export const menuitems = [
 								x-transition:leave-end="transform opacity-0 scale-95"
 								class="absolute mt-2 bg-white right-0 w-full origin-top-right rounded-md md:w-48 outline-2 border border-gray-300">
 								<div class="px-2 py-2 rounded-md shadow dark:bg-gray-800">
-									{ item.children.map((subitem) =>
+									{item.children.map((subitem) => (
 										<Link
 											href={localizePath(subitem.path)}
 											style="hover"
@@ -108,20 +108,19 @@ export const menuitems = [
 											x-data="{ isActive: false }"
 											x-init={`() => {
 												const path = $el.getAttribute('data-path');
-												const checkPath = () => {
+												const checkSubPath = () => {
 													isActive = window.location.pathname === path ||
 																window.location.pathname === path + '/' ||
 																window.location.pathname === '/it' + path ||
 																window.location.pathname === '/it' + path + '/';
 												};
-												checkPath();
-												window.addEventListener('popstate', checkPath);
+												document.removeEventListener('astro:page-load', checkSubPath);
+												document.addEventListener('astro:page-load', checkSubPath);
 											}`}
-											:class="{ 'bg-gray-200 dark:bg-gray-600': isActive }"
-										>
+											x-bind:class="{ 'bg-gray-200 dark:bg-gray-600': isActive }">
 											{subitem.title}
 										</Link>
-									)}
+									))}
 								</div>
 							</div>
 						</div>
@@ -139,15 +138,14 @@ export const menuitems = [
 												window.location.pathname === '/it' + path ||
 												window.location.pathname === '/it' + path + '/';
 								};
-								checkPath();
-								window.addEventListener('popstate', checkPath);
+								document.removeEventListener('astro:page-load', checkPath);
+								document.addEventListener('astro:page-load', checkPath);
 							}`}
-							:class="{ 'bg-gray-200 dark:bg-gray-600': isActive }"
-							data-path={item.path}
-						>
+							x-bind:class="{ 'bg-gray-200 dark:bg-gray-600': isActive }"
+							data-path={item.path}>
 							{t(item.title)}
 						</Link>
-					)
+					),
 				)
 			}
 		</div>
