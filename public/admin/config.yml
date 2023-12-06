@@ -14,9 +14,7 @@ public_folder: "/images"
 
 i18n:
     structure: "multiple_folders"
-    locales:
-        - "en"
-        - "it"
+    locales: ["en", "it"]
     default_locale: "en"
 
 collections:
