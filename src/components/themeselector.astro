@@ -31,7 +31,6 @@ import { Icon } from "astro-icon";
 		name="theme-selector"
 		id="theme-selector"
 		class="appearance-none cursor-pointer rounded-md pl-3 pr-2 py-1.5 dark:bg-stone-950 dark:text-white focus-visible:outline-none"
-		x-init="updateDocumentClassTheme()"
 		x-model="theme"
 		aria-label="Choose a theme"
 		@change="switchTheme($event.target.value)">
