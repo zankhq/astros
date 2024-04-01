@@ -1,41 +1,44 @@
 ---
-import i18next, { changeLanguage } from "i18next";
 import { getCollection } from "astro:content";
-import Layout from "@layouts/Layout.astro";
-import Container from "@components/container.astro";
-import Posts from "@components/blog/posts.astro";
-import Sectionhead from "@components/sectionhead.astro";
 import Pagination from "@components/blog/pagination.astro";
+import Posts from "@components/blog/posts.astro";
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+import Layout from "@layouts/Layout.astro";
+import i18next, { changeLanguage } from "i18next";
 
 changeLanguage("it");
 
-export async function getStaticPaths({ paginate }) {changeLanguage('it')
-    var posts = await getCollection("blog", ({ data }) => {
-        return !data.draft;
-    });
-    // Preprocess the posts to split the slugs and get the languages
-    var processedPosts = posts.map((post) => {
-        const [...slug] = post.slug.split("/");
-        let lang = i18next.language;
-        var firstSlug = post.slug.match(/^([^\/]*)\//);
-        if (firstSlug) {
-            lang = firstSlug[1];
-        }
-        return {
-            ...post,
-            slug: slug.join("/"),
-            lang: lang,
-        };
-    });
-    // Filter posts based on the current language
-    const localizedPosts = processedPosts.filter((post) => post.lang === i18next.language);
-    localizedPosts.sort(function (a, b) {
-        return b.data.publishDate.valueOf() - a.data.publishDate.valueOf();
-    });
-    return paginate(localizedPosts, {
-        params: { blog: "blog" || undefined },
-        pageSize: 4,
-    });
+export async function getStaticPaths({ paginate }) {
+	changeLanguage("it");
+	var posts = await getCollection("blog", ({ data }) => {
+		return !data.draft;
+	});
+	// Preprocess the posts to split the slugs and get the languages
+	var processedPosts = posts.map((post) => {
+		const [...slug] = post.slug.split("/");
+		let lang = i18next.language;
+		var firstSlug = post.slug.match(/^([^\/]*)\//);
+		if (firstSlug) {
+			lang = firstSlug[1];
+		}
+		return {
+			...post,
+			slug: slug.join("/"),
+			lang: lang,
+		};
+	});
+	// Filter posts based on the current language
+	const localizedPosts = processedPosts.filter(
+		(post) => post.lang === i18next.language,
+	);
+	localizedPosts.sort(
+		(a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf(),
+	);
+	return paginate(localizedPosts, {
+		params: { blog: "blog" || undefined },
+		pageSize: 4,
+	});
 }
 const { page } = Astro.props;
 ---

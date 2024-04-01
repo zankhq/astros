@@ -49,8 +49,5 @@
 		"rehype": "^13.0.1",
 		"sharp": "^0.33.3",
 		"workbox-window": "^7.0.0"
-	},
-	"overrides": {
-		"sharp": "0.33.3"
 	}
 }

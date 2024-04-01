@@ -1,12 +1,12 @@
 ---
-import { SEO } from "astro-seo";
+import { ViewTransitions } from "astro:transitions";
+import { pwaInfo } from "virtual:pwa-info";
 import Footer from "@components/footer.astro";
 import Navbar from "@components/navbar/navbar.astro";
-import { HeadHrefLangs } from "astro-i18next/components";
-import i18next from "i18next";
-import { pwaInfo } from "virtual:pwa-info";
 import "@fontsource-variable/inter";
-import { ViewTransitions } from "astro:transitions";
+import { HeadHrefLangs } from "astro-i18next/components";
+import { SEO } from "astro-seo";
+import i18next from "i18next";
 
 export interface Props {
 	title?: string;
@@ -15,11 +15,16 @@ export interface Props {
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
 
-const resolvedImageWithDomain = new URL("/meta/opengraph.png", Astro.site).toString();
+const resolvedImageWithDomain = new URL(
+	"/meta/opengraph.png",
+	Astro.site,
+).toString();
 
 const { title, lang = null } = Astro.props;
 
-const makeTitle = title ? `${title} | Astros` : "Astros - Starter Template for Astro with Tailwind CSS";
+const makeTitle = title
+	? `${title} | Astros`
+	: "Astros - Starter Template for Astro with Tailwind CSS";
 ---
 
 <!doctype html>

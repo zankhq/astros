@@ -1,26 +1,29 @@
 ---
-import i18next, { changeLanguage } from "i18next";
 import { getCollection } from "astro:content";
-import Layout from "@layouts/Layout.astro";
 import Container from "@components/container.astro";
-import { Icon } from "astro-icon/components";
-import { localizePath } from "astro-i18next";
+import Layout from "@layouts/Layout.astro";
 import { getArticleReadingTime } from "@utils/blog";
+import { localizePath } from "astro-i18next";
+import { Icon } from "astro-icon/components";
+import i18next, { changeLanguage } from "i18next";
 
 changeLanguage("it");
 
 // Generate a new path for every collection post
-export async function getStaticPaths() {changeLanguage('it')
-    const blogEntries = await getCollection("blog");
-    var localizedBlogEntries = blogEntries.filter((entry) => entry.slug.startsWith(i18next.language));
-    return localizedBlogEntries.map((post) => {
-        let slug = post.slug;
-        slug = slug.substring(3).replaceAll("blog/", "");
-        return {
-            params: { slug: slug },
-            props: { post: post },
-        };
-    });
+export async function getStaticPaths() {
+	changeLanguage("it");
+	const blogEntries = await getCollection("blog");
+	var localizedBlogEntries = blogEntries.filter((entry) =>
+		entry.slug.startsWith(i18next.language),
+	);
+	return localizedBlogEntries.map((post) => {
+		let slug = post.slug;
+		slug = slug.substring(3).replaceAll("blog/", "");
+		return {
+			params: { slug: slug },
+			props: { post: post },
+		};
+	});
 }
 // Get the post directly from the prop on render
 const { post, lang } = Astro.props;

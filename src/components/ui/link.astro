@@ -10,7 +10,14 @@ interface Props {
 	[x: string]: any;
 }
 
-const { href, block, size = "md", style = "primary", class: className, ...rest } = Astro.props;
+const {
+	href,
+	block,
+	size = "md",
+	style = "primary",
+	class: className,
+	...rest
+} = Astro.props;
 
 const sizes = {
 	xs: "",
@@ -25,7 +32,8 @@ const styles = {
 	primary:
 		"text-center bg-stone-950 outline-2 dark:bg-gray-100 hover:bg-stone-800 dark:hover:bg-white focus-visible:bg-stone-500 dark:focus-visible:bg-gray-100 text-white dark:text-black border-transparent active:outline shadow-sm",
 	muted: "text-sm font-semibold leading-6 text-gray-800 dark:text-gray-100",
-	hover: "text-center text-stone-950 hover:text-gray-900 focus:text-gray-900 focus:bg-gray-200 focus:outline-none focus:shadow-outline hover:bg-gray-200 dark:hover:bg-gray-600 dark:focus:bg-gray-600 dark:focus:text-white dark:hover:text-white dark:text-gray-200",
+	hover:
+		"text-center text-stone-950 hover:text-gray-900 focus:text-gray-900 focus:bg-gray-200 focus:outline-none focus:shadow-outline hover:bg-gray-200 dark:hover:bg-gray-600 dark:focus:bg-gray-600 dark:focus:text-white dark:hover:text-white dark:text-gray-200",
 };
 ---
 

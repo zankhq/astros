@@ -7,9 +7,9 @@ export const get = async () => {
 	});
 
 	// Sort content entries by publication date
-	posts.sort(function (a, b) {
-		return b.data.publishDate.valueOf() - a.data.publishDate.valueOf();
-	});
+	posts.sort(
+		(a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf(),
+	);
 
 	return rss({
 		title: `Astros`,

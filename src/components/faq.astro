@@ -9,7 +9,8 @@ const faqs = [
 	},
 	{
 		title: "Why alpinejs? Why don't just use js?",
-		description: "Alpine js is less than 17kb and it make javascript very fast to write, there are also various open source ready to use components like https://js.hyperui.dev, https://www.alpinetoolbox.com/examples, https://alpinejs.dev/components#components",
+		description:
+			"Alpine js is less than 17kb and it make javascript very fast to write, there are also various open source ready to use components like https://js.hyperui.dev, https://www.alpinetoolbox.com/examples, https://alpinejs.dev/components#components",
 	},
 	{
 		title: "But I don't need alpine js, can I remove it?",
@@ -21,7 +22,8 @@ const faqs = [
 	},
 	{
 		title: "Can I remove also tailwidcss?",
-		description: "I mean, you can, but you'll have to basically rewrite all the template, so I don't recommend it",
+		description:
+			"I mean, you can, but you'll have to basically rewrite all the template, so I don't recommend it",
 	},
 	{
 		title: "I don't need multiple language, how can I remove it?",
@@ -32,14 +34,16 @@ const faqs = [
 						<li>Remove <code>locales</code> folder from public</li>
 						<li>Remove <code>languageselector.astro</code> file and from footer</li>
 						<li>Find all reference to <code>i18next</code> and <code>astro-i18next</code> and replace with your text</li>
-					</ul>`
+					</ul>`,
 	},
 	{
 		title: "I don't need dark mode, how can I remove it?",
-		description: "Dark mode is embedded into tailwindcss, so you can't remove it, but you can remove the switch from the navbar",
+		description:
+			"Dark mode is embedded into tailwindcss, so you can't remove it, but you can remove the switch from the navbar",
 	},
 	{
-		title: "How can I configure the Sveltia CMS authentication with cloudflare?",
+		title:
+			"How can I configure the Sveltia CMS authentication with cloudflare?",
 		description: `To configure Sveltia CMS with cloudflare follow this guide <a href="https://github.com/sveltia/sveltia-cms" target="_blank">https://github.com/sveltia/sveltia-cms</a>`,
 	},
 	{
@@ -62,7 +66,7 @@ const faqs = [
 	{
 		title: "The build on cloudflare keep failing, why?",
 		description: `One of the problem could be that the Build system version is setted to version 1, make sure that version 2 is selected`,
-	}
+	},
 ];
 ---
 
