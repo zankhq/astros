@@ -7,6 +7,7 @@ import rehypeSlug from "rehype-slug";
 import astroI18next from "astro-i18next";
 import alpinejs from "@astrojs/alpinejs";
 import AstroPWA from "@vite-pwa/astro";
+import icon from "astro-icon";
 
 // https://astro.build/config
 export default defineConfig({
@@ -60,6 +61,7 @@ export default defineConfig({
 				suppressWarnings: true,
 			},
 		}),
+		icon(),
 	],
 	markdown: {
 		rehypePlugins: [
@@ -70,5 +72,5 @@ export default defineConfig({
 	},
 	experimental: {
 		contentCollectionCache: true,
-	}
+	},
 });

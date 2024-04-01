@@ -9,20 +9,17 @@ import "@fontsource-variable/inter";
 import { ViewTransitions } from "astro:transitions";
 
 export interface Props {
-	title: string;
-	lang: string;
+	title?: string;
+	lang?: string;
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
 
 const resolvedImageWithDomain = new URL("/meta/opengraph.png", Astro.site).toString();
 
-// replaced dynamically
-const buildDate = __DATE__;
-
 const { title, lang = null } = Astro.props;
 
-const makeTitle = title ? title + " | " + "Astros" : "Astros - Starter Template for Astro with Tailwind CSS";
+const makeTitle = title ? `${title} | Astros` : "Astros - Starter Template for Astro with Tailwind CSS";
 ---
 
 <!doctype html>

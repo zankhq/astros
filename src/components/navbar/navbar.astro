@@ -1,7 +1,7 @@
 ---
 import Link from "@components/ui/link.astro";
 import Button from "@components/ui/button.astro";
-import { Icon } from "astro-icon";
+import { Icon } from "astro-icon/components";
 import { localizePath } from "astro-i18next";
 import { t } from "i18next";
 
@@ -37,7 +37,7 @@ export const menuitems = [
 			href={localizePath("/")}
 			class="flex gap-3 items-center text-lg font-semibold tracking-widest text-gray-900 uppercase rounded-lg dark:text-white focus:outline-none focus:shadow-outline">
 			<Icon name="logo" width="30" class="dark:invert" alt="Logo" />
-			 Astros
+			Astros
 		</a>
 		<button class="md:hidden text-gray-500 w-10 h-10 relative focus:outline-none" @click="open = !open">
 			<span class="sr-only">Open main menu</span>
