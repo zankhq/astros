@@ -7,7 +7,7 @@ import { t } from "i18next";
 
 export const menuitems = [
 	{
-		title: "Sub items",
+		title: "Inicio",
 		children: [
 			{ title: "Subitem 1", path: "#" },
 			{ title: "Subitem 2", path: "#" },
@@ -15,15 +15,19 @@ export const menuitems = [
 		],
 	},
 	{
-		title: "header.pricing",
+		title: "Quienes somos",
 		path: "/pricing",
 	},
+	,{
+		title: "Servicios",
+		path: "/contact",
+	},
 	{
-		title: "header.blog",
+		title: "Blog",
 		path: "/blog",
 	},
 	{
-		title: "header.contact",
+		title: "Contactanos",
 		path: "/contact",
 	},
 ];
@@ -36,8 +40,9 @@ export const menuitems = [
 		<a
 			href={localizePath("/")}
 			class="flex gap-3 items-center text-lg font-semibold tracking-widest text-gray-900 uppercase rounded-lg dark:text-white focus:outline-none focus:shadow-outline">
+
 			<Icon name="logo" width="30" class="dark:invert" alt="Logo" />
-			Astros
+			WAICA
 		</a>
 		<button class="md:hidden text-gray-500 w-10 h-10 relative focus:outline-none" @click="open = !open">
 			<span class="sr-only">Open main menu</span>
@@ -154,7 +159,7 @@ export const menuitems = [
 				{t("header.secondary_button_text")}
 			</Link>
 			<Link href="https://github.com/zankhq/astros" class="md:px-3 md:py-2 leading-6">
-				{t("header.primary_button_text")}
+				{t("Mas informacion")}
 			</Link>
 		</div>
 	</nav>
