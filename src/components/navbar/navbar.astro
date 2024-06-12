@@ -8,27 +8,29 @@ import { t } from "i18next";
 export const menuitems = [
 	{
 		title: "Inicio",
-		children: [
+		path:"/animated",
+	},
+		/* children: [
 			{ title: "Subitem 1", path: "#" },
 			{ title: "Subitem 2", path: "#" },
 			{ title: "Subitem 3", path: "#" },
 		],
-	},
+	},**/
 	{
 		title: "Quienes somos",
-		path: "/pricing",
+		path: "/",
 	},
 	,{
 		title: "Servicios",
-		path: "/contact",
+		path: "/",
 	},
 	{
 		title: "Blog",
-		path: "/blog",
+		path: "/",
 	},
 	{
 		title: "Contactanos",
-		path: "/contact",
+		path: "/",
 	},
 ];
 ---
@@ -155,12 +157,13 @@ export const menuitems = [
 			}
 		</div>
 		<div class="mt-4 md:mt-0 flex flex-col md:flex-row gap-4">
-			<Link href="/login" style="outline" class="md:px-3 md:py-2 leading-6">
-				{t("header.secondary_button_text")}
-			</Link>
-			<Link href="https://github.com/zankhq/astros" class="md:px-3 md:py-2 leading-6">
+
+	
+			<Link href="/animated" class="md:px-3 md:py-2 leading-6">
 				{t("Mas informacion")}
 			</Link>
+			
 		</div>
 	</nav>
 </div>
+

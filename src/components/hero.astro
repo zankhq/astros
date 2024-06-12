@@ -40,10 +40,10 @@ const { dynamic = false } = Astro.props;
 					{t("hero.subtitle")}
 				</p>
 				<div class="mt-10 flex items-center justify-center gap-x-2 md:gap-x-6">
-					<Link href="https://github.com/zankhq/astros">{t("hero.main_button_text")}</Link>
+					<Link href="/animated">{t("hero.main_button_text")}</Link>
 					{
 						dynamic ? (
-							<Link href="/" style="muted">
+							<Link href="/animated" style="muted">
 								{t("hero_animated.secondary_button_text")}
 								<span aria-hidden="true" class="pl-1 text-black dark:text-white">
 									→

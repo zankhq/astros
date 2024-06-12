@@ -7,7 +7,7 @@ backend:
     repo: zankhq/astros
     branch: main
     base_url: https://cms.majestico.workers.dev
-    automatic_deployments: false
+    automatic_deployments: true
 
 media_folder: "public/images"
 public_folder: "/images"

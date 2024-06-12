@@ -7,60 +7,61 @@ import { t } from "i18next";
 
 const features = [
 	{
-		title: "Astro",
-		description: "features.astro",
-		icon: "bx:bxs-briefcase",
-		url: "https://astro.build/",
+		"title": "Nuestra razón de ser",
+		"description": "features.astro",
+		"icon": "bx:bxs-briefcase",
+		"url": "#"
 	},
 	{
-		title: "Alpine",
-		description: "features.alpine",
-		icon: "bx:bxs-window-alt",
-		url: "https://alpinejs.dev/",
+		"title": "Para nuestros clientes",
+		"description": "features.alpine",
+		"icon": "bx:bxs-window-alt",
+		"url": "#"
 	},
 	{
-		title: "Tailwind",
-		description: "features.tailwind",
-		icon: "bx:bxs-data",
-		url: "https://tailwindcss.com/",
+		"title": "Enfoque colaborativo",
+		"description": "features.tailwind",
+		"icon": "bx:bxs-data",
+		"url": "#"
 	},
 	{
-		title: "Localization",
-		description: "features.localization",
-		icon: "bx:bxs-bot",
-		url: "https://github.com/yassinedoghri/astro-i18next",
+		"title": "Enfoque orientado a resultados tangibles",
+		"description": "features.localization",
+		"icon": "bx:bxs-bot",
+		"url": "#"
 	},
 	{
-		title: "Light/Dark Mode",
-		description: "features.light_dark_mode",
-		icon: "bx:bxs-file-find",
-		url: "https://tailwindcss.com/docs/dark-mode",
+		"title": "Transparencia y confianza",
+		"description": "features.light_dark_mode",
+		"icon": "bx:bxs-file-find",
+		"url": "#"
 	},
 	{
-		title: "Giscus",
-		description: "features.giscus",
-		icon: "bx:bxs-user",
-		url: "https://giscus.app/",
+		"title": "Comprensión de necesidades específicas",
+		"description": "features.giscus",
+		"icon": "bx:bxs-user",
+		"url": "#"
 	},
 	{
-		title: "Decap CMS",
-		description: "features.decapcms",
-		icon: "bx:bxs-user",
-		url: "https://decapcms.org/",
+		"title": "Ser un aliado estratégico",
+		"description": "features.decapcms",
+		"icon": "bx:bxs-user",
+		"url": "#"
 	},
 	{
-		title: "RSS feed",
-		description: "features.rss",
-		icon: "bx:bxs-user",
-		url: "/rss.xml",
+		"title": "Explore nuestras soluciones",
+		"description": "features.rss",
+		"icon": "bx:bxs-user",
+		"url": "/rss.xml"
 	},
 	{
-		title: "Article generator (soon)",
-		description: "features.articlegenerator",
-		icon: "bx:bxs-user",
-		url: "#",
+		"title": "Compromiso con resultados sobresalientes",
+		"description": "features.articlegenerator",
+		"icon": "bx:bxs-user",
+		"url": "#"
 	},
 ];
+
 ---
 
 <div class="relative mx-auto max-w-5xl px-6 lg:px-8">
@@ -83,7 +84,7 @@ const features = [
 							{item.title}
 						</dt>
 						<dd class="mt-4 flex flex-auto flex-col text-base leading-7 text-gray-900 dark:text-gray-100">
-							<p class="flex-auto">{t(item.description)}</p>
+							<p class="flex-auto text-justify">{t(item.description)}</p>
 							<p class="mt-6">
 								<Link href={item.url} style="muted" size="xs" class="leading-6 text-left text-black dark:text-white">
 									{t("features.learn_more")}{" "}

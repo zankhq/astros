@@ -3,70 +3,31 @@ const { plan } = Astro.props;
 import { t } from "i18next";
 
 const faqs = [
-	{
-		title: "What is this?",
-		description: "This is a astro template that uses tailwindcss and alpinejs",
-	},
-	{
-		title: "Why alpinejs? Why don't just use js?",
-		description:
-			"Alpine js is less than 17kb and it make javascript very fast to write, there are also various open source ready to use components like https://js.hyperui.dev, https://www.alpinetoolbox.com/examples, https://alpinejs.dev/components#components",
-	},
-	{
-		title: "But I don't need alpine js, can I remove it?",
-		description: `Of course, but some components use it and you'll have to edit these, more specifically you ll have to: <br/>
-					<ul style="list-style: inside;">
-						<li>First remove the package with the command <code>npm unistall @astrojs/alpinejs @types/alpinejs alpinejs</code></li>
-						<li>Adjust all components that uses alpine js: <code>faq.astro</code>, <code>themeselector.astro</code>, <code>navbar.astro</code></li>
-					</ul>`,
-	},
-	{
-		title: "Can I remove also tailwidcss?",
-		description:
-			"I mean, you can, but you'll have to basically rewrite all the template, so I don't recommend it",
-	},
-	{
-		title: "I don't need multiple language, how can I remove it?",
-		description: `One way is to simply keep one language and remove the selector from the footer but in order to fully remove the localization you have to: <br/>
-					<ul style="list-style: inside;">
-						<li>Remove the i18next pacakage <code>npm unistall astro-i18next</code></li>
-						<li>Remove <code>astro-i18next.config.mjs</code> file</li>
-						<li>Remove <code>locales</code> folder from public</li>
-						<li>Remove <code>languageselector.astro</code> file and from footer</li>
-						<li>Find all reference to <code>i18next</code> and <code>astro-i18next</code> and replace with your text</li>
-					</ul>`,
-	},
-	{
-		title: "I don't need dark mode, how can I remove it?",
-		description:
-			"Dark mode is embedded into tailwindcss, so you can't remove it, but you can remove the switch from the navbar",
-	},
-	{
-		title:
-			"How can I configure the Sveltia CMS authentication with cloudflare?",
-		description: `To configure Sveltia CMS with cloudflare follow this guide <a href="https://github.com/sveltia/sveltia-cms" target="_blank">https://github.com/sveltia/sveltia-cms</a>`,
-	},
-	{
-		title: "How can I configure the decap CMS authentication with netlify?",
-		description: `To configure decap CMS with netlify do the followings:
-					<ul style="list-style: inside;">
-						<li>Change NetlifyCMS config <code>config.backend.name</code> to git-gateway</li>
-						<li>Use integrated NetlifyCMS auth <a href="https://decapcms.org/docs/git-gateway-backend/#git-gateway-with-netlify" target="_blank">https://decapcms.org/docs/git-gateway-backend/#git-gateway-with-netlify</a></li>
-					</ul>`,
-	},
-	{
-		title: "How can I change the localization languages?",
-		description: `In order to change the languages you have to change the languages in the file <code>astro-i18next.config.mjs</code> and in the netlifyCMS configuration on the file <code>astro.config.mjs</code> <br/>
-					Then change the locales files folders in <code>public/locales</code>`,
-	},
-	{
-		title: "What are the files in the funciotn folder used for?",
-		description: `These are cloudflare function that are used for the authentication to the decap CMS`,
-	},
-	{
-		title: "The build on cloudflare keep failing, why?",
-		description: `One of the problem could be that the Build system version is setted to version 1, make sure that version 2 is selected`,
-	},
+{
+    title: "¿Cuál es la razón de ser de WORLDWIDE ADVISORS OF INVESTMENTS AND CAPITAL, LLC (WAICA)?",
+    description: "Nuestra razón de ser es actuar como un puente sólido que conecta a los proveedores de servicios corporativos con los clientes, ofreciendo soluciones integrales de consultoría adaptadas a las necesidades particulares de cada uno."
+},
+{
+    title: "¿Qué tipo de soluciones ofrece WAICA a sus clientes?",
+    description: "Nos encargamos de presentarles al socio idóneo según sus requerimientos específicos, contando con una extensa red y vasta experiencia para vincular a empresas e individuos con las soluciones perfectas para ellos."
+},
+{
+    title: "¿Cuál es el enfoque de WAICA en la consultoría?",
+    description: "Adoptamos un enfoque colaborativo, trabajando en estrecha sinergia con diversas instituciones en Asia, Europa y América, con el objetivo de brindar los servicios corporativos, legales y financieros más destacados."
+},
+{
+    title: "¿Cuál es la filosofía de WAICA en su relación con los clientes?",
+    description: "Creemos firmemente en la transparencia y en forjar relaciones de confianza con nuestros clientes, buscando comprender a profundidad sus objetivos y necesidades específicas para brindarles soluciones personalizadas y eficientes."
+},
+{
+    title: "¿Cuál es la especialización de WORLDWIDE ADVISORS OF INVESTMENTS & CAPITALS LLC (WAICA)?",
+    description: "WAICA se especializa en la prestación de servicios y soluciones de calidad en los ámbitos corporativos, comerciales y financieros, ofreciendo asesoría en transacciones que surten efecto en el mundo del comercio y las finanzas internacionales."
+},
+{
+    title: "¿Qué tipo de clientes suelen buscar los servicios de WAICA?",
+    description: "Regularmente, nuestros clientes son personas naturales, entidades institucionales y empresas comerciales que pueden requerir asistencia para la puesta en marcha de sus iniciativas corporativas, entre otros servicios."
+}
+,
 ];
 ---
 
